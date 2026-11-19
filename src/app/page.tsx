@@ -1,7 +1,7 @@
 const adventures = [
-  { number: "01", title: "THE TOUR", text: "Follow the music. Find a city. Make the night your own.", href: "#tour" },
-  { number: "02", title: "CITY QUEST", text: "Explore with music in your headphones and curiosity in your pocket.", href: "#adventure" },
-  { number: "03", title: "DISCOVER", text: "Find a sound you have never heard. Play it forward.", href: "#discover" },
+  { number: "01", title: "THE TOUR", text: "Follow the music. Find a city. Make the night your own.", href: "/route" },
+  { number: "02", title: "CITY QUEST", text: "Explore with music in your headphones and curiosity in your pocket.", href: "/adventure" },
+  { number: "03", title: "DISCOVER", text: "Find a sound you have never heard. Play it forward.", href: "/adventure#discover" },
   { number: "05", title: "THE FAN EVENT", text: "A proposed Bandcamp Friday adventure for music lovers.", href: "#event" },
 ];
 
