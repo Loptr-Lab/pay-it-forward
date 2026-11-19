@@ -2,7 +2,8 @@ const adventures = [
   { number: "01", title: "THE TOUR", text: "Follow the music. Find a city. Make the night your own.", href: "#tour" },
   { number: "02", title: "CITY QUEST", text: "Explore with music in your headphones and curiosity in your pocket.", href: "#adventure" },
   { number: "03", title: "DISCOVER", text: "Find a sound you have never heard. Play it forward.", href: "#discover" },
-  { number: "04", title: "NOT A TOY TOUR PILOT", text: "Test the PLAY IT FORWARD adventure format with a proposed NOT A TOY tour companion.", href: "#pilot" },\n  { number: "05", title: "THE FAN EVENT", text: "A proposed Bandcamp Friday adventure for music lovers.", href: "#event" },
+  { number: "04", title: "NOT A TOY TOUR PILOT", text: "Test the PLAY IT FORWARD adventure format with a proposed NOT A TOY tour companion.", href: "#pilot" },
+  { number: "05", title: "THE FAN EVENT", text: "A proposed Bandcamp Friday adventure for music lovers.", href: "#event" },
 ];
 
 export default function Home() {
