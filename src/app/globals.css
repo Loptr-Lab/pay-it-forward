@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+:root { color-scheme: dark; --bg: #09090d; --surface: #15151d; --text: #f5f2ee; --muted: #b8b4bf; --accent: #ff4f9a; --lime: #d5ff62; }
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--bg); color: var(--text); font-family: Arial, Helvetica, sans-serif; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--lime); outline-offset: 4px; }
+::selection { background: var(--accent); color: #09090d; }
