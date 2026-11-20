@@ -66,6 +66,13 @@ export default function Home() {
       </section>
 
 
+      <section className="next-track-section" id="next-track" aria-labelledby="next-track-title">
+        <p className="eyebrow">FEATURE PRESENTATION · MUSIC DISCOVERY</p>
+        <h2 id="next-track-title">THE NEXT TRACK<br/><em>IS OUT THERE.</em></h2>
+        <p>Follow a collaboration beyond the credits. Discover a new artist, trace the sound back through their catalog, and build a listening path of your own.</p>
+        <Link className="button primary" href="/music/devour">EXPLORE DEVOUR · VOILÀ × NOT A TOY ↗</Link>
+      </section>
+
       <section className="intro section" id="adventure">
         <p className="eyebrow">NO RULES. NO RUSH.</p>
         <h2>YOUR MUSIC.<br />YOUR ADVENTURE.</h2>
@@ -115,6 +122,20 @@ export default function Home() {
           <strong>Find a song from an artist you have never heard before.</strong>
           <p>What surprised you? What will you remember?</p>
           <a href="https://bandcamp.com/" target="_blank" rel="noreferrer" className="text-link">Explore Bandcamp ↗</a>
+        </div>
+      </section>
+
+      <section className="music-feature-home" aria-labelledby="music-feature-title">
+        <div className="music-feature-copy">
+          <p className="eyebrow">FEATURED COLLABORATION · MUSIC STORY</p>
+          <h2 id="music-feature-title">VOILÀ × NOT A TOY<br/><em>DEVOUR.</em></h2>
+          <p>A theatrical lyric film inspired by sirens, mythology, and the pull of the deep. Start with the collaboration, then follow a focused path into NOT A TOY's discography.</p>
+          <Link className="button primary" href="/music/devour">WATCH · EXPLORE · LISTEN ↗</Link>
+        </div>
+        <div className="music-feature-art">
+          <a href="https://youtu.be/QS9RtfARHBc" target="_blank" rel="noreferrer" aria-label="Watch the Devour lyric film on YouTube">
+            <img src="https://img.youtube.com/vi/QS9RtfARHBc/hqdefault.jpg" alt="Devour theatrical lyric film thumbnail" loading="lazy"/>
+          </a>
         </div>
       </section>
 
