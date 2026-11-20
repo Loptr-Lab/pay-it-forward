@@ -75,3 +75,10 @@
 .filthy-yuck-instagram iframe{display:block;width:100%;height:540px;border:0;background:#fff}
 @media(max-width:850px){.filthy-yuck-home{grid-template-columns:1fr;gap:18px;padding:32px 6vw}.filthy-yuck-instagram{max-width:540px;justify-self:start}}
 @media(max-width:600px){.filthy-yuck-home{padding:28px 6vw}.filthy-yuck-home h2{font-size:clamp(2.2rem,10vw,3.4rem)}.filthy-yuck-instagram iframe{height:520px}.filthy-yuck-store-link{display:block;margin:14px 0 0}}
+
+/* Adventure logistics: compact two-column row for food and venue transport. */
+.adventure-info-row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;padding:48px 8vw 64px}
+.adventure-info-row .quest-intro{padding:0;min-width:0}
+.adventure-info-row .quest-intro h2{font-size:clamp(2.4rem,5vw,4.4rem);}
+.adventure-info-row .quest-intro>p:not(.eyebrow){line-height:1.6}
+@media(max-width:600px){.adventure-info-row{grid-template-columns:1fr;padding:34px 6vw;gap:36px}}
