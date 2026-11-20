@@ -1,6 +1,8 @@
 import Link from "next/link";
 import BandcampFridayHero from "./components/BandcampFridayHero";
 
+const heroPhotoSrc = `${process.env.GITHUB_PAGES ? "/pay-it-forward" : ""}/not-a-toy-film.webp`;
+
 const adventures = [
   { number: "01", title: "THE TOUR", text: "Follow the music. Find a city. Make the night your own.", href: "/route" },
   { number: "02", title: "CITY QUEST", text: "Explore with music in your headphones and curiosity in your pocket.", href: "/adventure" },
@@ -35,7 +37,7 @@ export default function Home() {
           <p className="hero-note">An independent concept prototype · Choose your own pace</p>
         </div>
         <aside className="hero-sidecar" aria-label="Featured NOT A TOY imagery and Bandcamp Friday">
-          <img className="hero-photo" src="/not-a-toy-film.webp" alt="NOT A TOY portraits arranged in a dark film-strip collage" />
+          <img className="hero-photo" src={heroPhotoSrc} alt="NOT A TOY portraits arranged in a dark film-strip collage" />
           <BandcampFridayHero />
         </aside>
       </section>
