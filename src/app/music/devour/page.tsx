@@ -55,13 +55,6 @@ function Breadcrumbs() {
     })),
   };
   return <>
-    <nav className="breadcrumbs" aria-label="Breadcrumb">
-      <ol>
-        <li><Link href="/">Home</Link></li>
-        <li><Link href="/#next-track">Music Discovery</Link></li>
-        <li aria-current="page">Devour</li>
-      </ol>
-    </nav>
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
   </>;
 }
