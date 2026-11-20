@@ -67,7 +67,7 @@ export default function Home() {
 
 
       <section className="filthy-yuck-home" aria-labelledby="filthy-yuck-home-title">
-        <div><p className="eyebrow">COMIC · ART · MERCH</p><h2 id="filthy-yuck-home-title">FILTHY YUCK!<br/><em>BEYOND THE MUSIC.</em></h2><p>Explore the comic and merch from NOT A TOY's world—through the artist's original posts and official store.</p><Link className="button primary" href="/adventure#filthy-yuck">EXPLORE THE COMIC FEATURE ↗</Link></div>
+        <div><p className="eyebrow">PRE-SHOW SIDE QUEST · COMICS & PLAY</p><h2 id="filthy-yuck-home-title">FILTHY YUCK!<br/><em>COMIC SHOP DETOUR.</em></h2><p>Find comic shops, toy stores, cosplay inspiration, and photo-worthy places near your venue—then explore the FILTHY YUCK! comic.</p><Link className="button primary" href="/adventure#filthy-yuck">TAKE THE SIDE QUEST ↗</Link></div>
         <a className="filthy-yuck-store-link" href="https://notatoymerch.myshopify.com/products/filthy-yuck-comic" target="_blank" rel="noreferrer">OFFICIAL FILTHY YUCK! COMIC & MERCH ↗</a>
       </section>
       <section className="intro section" id="adventure">
