@@ -42,7 +42,7 @@ function Breadcrumbs() {
   const items = [
     { name: "Home", url: `${site}/` },
     { name: "Adventure", url: `${site}/adventure/` },
-    { name: "Music Discovery", url: `${site}/adventure/#music-stories` },
+    { name: "The Next Track Is Out There", url: `${site}/#next-track` },
     { name: "Devour", url: pageUrl },
   ];
   const structuredData = {
@@ -60,7 +60,7 @@ function Breadcrumbs() {
       <ol>
         <li><Link href="/">Home</Link></li>
         <li><Link href="/adventure">Adventure</Link></li>
-        <li><Link href="/adventure#discover">Music Stories</Link></li>
+        <li><Link href="/#next-track">The Next Track Is Out There</Link></li>
         <li aria-current="page">Devour</li>
       </ol>
     </nav>
@@ -83,7 +83,7 @@ export default function DevourPage() {
     inAlbum: { "@type": "MusicAlbum", name: "The Wilt to Live (Part II)", byArtist: { "@type": "MusicGroup", name: "VOILÀ" } },
   };
   return <main className="experience-page music-story-page">
-    <header className="experience-nav"><Link href="/" className="wordmark">PIF<span>✳</span></Link><nav><Link href="/adventure">Adventure</Link><Link href="/route">Tour map</Link><Link href="/">Home</Link></nav></header>
+    <header className="experience-nav"><Link href="/" className="wordmark">PIF<span>✳</span></Link><nav><Link href="/adventure">Adventure</Link><Link href="/#next-track">Music discovery</Link><Link href="/route">Tour map</Link></nav></header>
     <Breadcrumbs />
     <article>
       <header className="music-story-hero">
