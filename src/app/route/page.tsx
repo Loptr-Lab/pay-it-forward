@@ -75,12 +75,6 @@ function Breadcrumbs({ current, path }: { current: string; path: string }) {
   };
   return (
     <>
-      <nav className="breadcrumbs" aria-label="Breadcrumb">
-        <ol>
-          <li><Link href="/">Home</Link></li>
-          <li aria-current="page">{current}</li>
-        </ol>
-      </nav>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
     </>
   );
