@@ -6,11 +6,11 @@ const pageUrl = `${site}/music/devour/`;
 
 export const metadata: Metadata = {
   title: "Devour — VOILÀ × NOT A TOY | PLAY IT FORWARD",
-  description: "Discover Devour, the theatrical lyric film and collaboration by VOILÀ and NOT A TOY. Explore its siren mythology and follow a curated path through NOT A TOY's discography.",
+  description: "Discover Devour, the theatrical lyric film and collaboration by VOILÀ and NOT A TOY. Explore VOILÀ on Bandcamp, then follow a curated path into NOT A TOY's discography.",
   alternates: { canonical: pageUrl },
   openGraph: {
     title: "Devour — VOILÀ × NOT A TOY",
-    description: "A siren's song, a cinematic lyric film, and a route into NOT A TOY's discography.",
+    description: "A siren's song, a cinematic lyric film, VOILÀ on Bandcamp, and a route into NOT A TOY's discography.",
     url: pageUrl,
     type: "article",
   },
@@ -41,8 +41,7 @@ const services = [
 function Breadcrumbs() {
   const items = [
     { name: "Home", url: `${site}/` },
-    { name: "Adventure", url: `${site}/adventure/` },
-    { name: "The Next Track Is Out There", url: `${site}/#next-track` },
+    { name: "Music Discovery", url: `${site}/#next-track` },
     { name: "Devour", url: pageUrl },
   ];
   const structuredData = {
@@ -59,8 +58,7 @@ function Breadcrumbs() {
     <nav className="breadcrumbs" aria-label="Breadcrumb">
       <ol>
         <li><Link href="/">Home</Link></li>
-        <li><Link href="/adventure">Adventure</Link></li>
-        <li><Link href="/#next-track">The Next Track Is Out There</Link></li>
+        <li><Link href="/#next-track">Music Discovery</Link></li>
         <li aria-current="page">Devour</li>
       </ol>
     </nav>
@@ -111,14 +109,14 @@ export default function DevourPage() {
         <p className="music-story-visual-note"><strong>Visual language:</strong> the lyric film combines black-and-white maritime imagery—sailors, sirens, and a sinking vessel—with striking neon-green and crimson kinetic typography. Its theatrical contrast makes the song's mythology tangible.</p>
       </section>
       <section className="music-story-collab">
-        <p className="eyebrow">TWO ARTISTS · ONE DISCOVERY PATH</p>
-        <h2>FROM VOILÀ<br/><em>TO NOT A TOY.</em></h2>
-        <p>“Devour” appears on VOILÀ's <em>The Wilt to Live (Part II)</em> (released November 20, 2026). This feature is a doorway—not a detour away from the NOT A TOY pilot. Follow the collaboration into NOT A TOY's own releases, then build a listening path of your own.</p>
+        <p className="eyebrow">FOLLOW THE COLLABORATION</p>
+        <h2>DISCOVER VOILÀ.<br/><em>THEN FOLLOW THE THREAD.</em></h2>
+        <p>Start with the artist behind the collaboration. Explore VOILÀ&apos;s catalog on Bandcamp, then follow “Devour” back to NOT A TOY—the artist this discovery path invites you to find next.</p>
         <div className="music-story-links">
-          <a href="https://music.apple.com/us/artist/not-a-toy/1510814882" target="_blank" rel="noreferrer">NOT A TOY · APPLE MUSIC ↗</a>
-          <a href="https://notatoy.bandcamp.com/" target="_blank" rel="noreferrer">NOT A TOY · BANDCAMP ↗</a>
-          <a href="https://music.apple.com/us/search?term=VOIL%C3%80" target="_blank" rel="noreferrer">VOILÀ · APPLE MUSIC ↗</a>
+          <a href="https://voilamusic.bandcamp.com/music" target="_blank" rel="noreferrer">VOILÀ · BANDCAMP CATALOG ↗</a>
           <a href="https://www.youtube.com/@wearevoila" target="_blank" rel="noreferrer">VOILÀ · OFFICIAL YOUTUBE ↗</a>
+          <a href="https://music.apple.com/us/artist/not-a-toy/1510814882" target="_blank" rel="noreferrer">DISCOVER NOT A TOY · APPLE MUSIC ↗</a>
+          <a href="https://notatoy.bandcamp.com/" target="_blank" rel="noreferrer">DISCOVER NOT A TOY · BANDCAMP ↗</a>
         </div>
       </section>
       <section className="music-story-playlist" aria-labelledby="playlist-title">
