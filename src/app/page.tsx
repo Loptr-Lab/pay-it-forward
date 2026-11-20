@@ -118,6 +118,20 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="music-feature-home" aria-labelledby="music-feature-title">
+        <div className="music-feature-copy">
+          <p className="eyebrow">FEATURED COLLABORATION · MUSIC STORY</p>
+          <h2 id="music-feature-title">VOILÀ × NOT A TOY<br/><em>DEVOUR.</em></h2>
+          <p>A theatrical lyric film inspired by sirens, mythology, and the pull of the deep. Start with the collaboration, then follow a focused path into NOT A TOY's discography.</p>
+          <Link className="button primary" href="/music/devour">WATCH · EXPLORE · LISTEN ↗</Link>
+        </div>
+        <div className="music-feature-art">
+          <a href="https://youtu.be/QS9RtfARHBc" target="_blank" rel="noreferrer" aria-label="Watch the Devour lyric film on YouTube">
+            <img src="https://img.youtube.com/vi/QS9RtfARHBc/hqdefault.jpg" alt="Devour theatrical lyric film thumbnail" loading="lazy"/>
+          </a>
+        </div>
+      </section>
+
       <section className="event-section" id="event">
         <p className="eyebrow">PROPOSED FAN ACTIVATION</p>
         <h2>PLAY IT<br /><em>FORWARD.</em></h2>
