@@ -1,4 +1,4 @@
-import Link from "next/link";\n\nexport const metadata = { title: "City Quest & Fan Adventure", description: "Self-paced music, art, food, local discovery, and show-day quests for your fan adventure." };
+import Link from "next/link";\n\nexport const metadata = { title: "City Quest & Music Fan Adventure", description: "Self-paced music, art, food, local discovery, and show-day quests for your fan adventure." };
 
 const quests = [
   { tag: "01 · LISTEN", title: "SET THE SCENE", body: "Pick three tracks from FILTHY YUCK! or the NOT A TOY catalog. Build a pre-show playlist that starts where you are and ends at full concert energy.", action: "Make your setlist", prompt: "What track would you play as the opening credits to tonight?", link: "https://music.apple.com/us/album/filthy-yuck/6803206084", linkLabel: "OPEN THE ALBUM ↗" },
