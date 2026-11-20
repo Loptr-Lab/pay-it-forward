@@ -23,17 +23,24 @@ export default function Home() {
 
       <section className="hero" aria-labelledby="hero-title">
         <div className="hero-noise" aria-hidden="true" />
-        <BandcampFridayHero />
-        <p className="eyebrow">A MUSIC-LED FAN ADVENTURE</p>
-        <h1 id="hero-title">PLAY IT<br /><em>FORWARD.</em></h1>
-        <p className="hero-copy">Music is a map. The city is a playground. The next discovery is yours.</p>
-        <div className="hero-actions">
-          <Link className="button primary" href="/adventure">START EXPLORING <span aria-hidden="true">↗</span></Link>
-          <Link className="button secondary" href="/route">OPEN THE TOUR MAP <span aria-hidden="true">↗</span></Link>
-          <Link className="button secondary" href="#event">THE FAN EVENT</Link>
+        <div className="hero-layout">
+          <div className="hero-main">
+            <p className="eyebrow">A MUSIC-LED FAN ADVENTURE</p>
+            <h1 id="hero-title">PLAY IT<br /><em>FORWARD.</em></h1>
+            <p className="hero-copy">Music is a map. The city is a playground. The next discovery is yours.</p>
+            <div className="hero-actions">
+              <Link className="button primary" href="/adventure">START EXPLORING <span aria-hidden="true">↗</span></Link>
+              <Link className="button secondary" href="/route">OPEN THE TOUR MAP <span aria-hidden="true">↗</span></Link>
+              <Link className="button secondary" href="#event">THE FAN EVENT</Link>
+            </div>
+            <p className="hero-note">An independent concept prototype · Choose your own pace</p>
+          </div>
+          <aside className="hero-feature" aria-label="Featured pilot artist">
+            <img className="hero-artist-photo" src="https://i.scdn.co/image/ab6761610000e5eb357c40c391323d2f7b2c9cf2" alt="NOT A TOY artist portrait" />
+            <div className="hero-feature-label"><span className="not-a-toy-logo">NOT A TOY</span><span className="album-title">FILTHY YUCK!</span></div>
+            <BandcampFridayHero />
+          </aside>
         </div>
-        <p className="hero-note">An independent concept prototype · Choose your own pace</p>
-        <div className="hero-sticker not-a-toy-wordmark" aria-label="NOT A TOY"><span>NOT A TOY</span></div>
       </section>
 
       <section className="pilot-feature" id="pilot" aria-labelledby="pilot-title">
