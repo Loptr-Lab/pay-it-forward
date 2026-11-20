@@ -1,4 +1,7 @@
 import Link from "next/link";
+import BreadcrumbJsonLd from "../components/BreadcrumbJsonLd";
+
+export const metadata = { title: "Adventure", description: "Self-paced music, art, local discovery, food, and show-day quests for your own fan adventure.", alternates: { canonical: "https://loptr-lab.github.io/pay-it-forward/adventure/" } };
 
 const quests = [
   { tag: "01 · LISTEN", title: "SET THE SCENE", body: "Pick three tracks from FILTHY YUCK! or the NOT A TOY catalog. Build a pre-show playlist that starts where you are and ends at full concert energy.", action: "Make your setlist", prompt: "What track would you play as the opening credits to tonight?", link: "https://music.apple.com/us/album/filthy-yuck/6803206084", linkLabel: "OPEN THE ALBUM ↗" },
@@ -10,7 +13,7 @@ const quests = [
 ];
 
 export default function AdventurePage() {
-  return <main className="experience-page">
+  return <main className="experience-page"><BreadcrumbJsonLd items={[{name:"PLAY IT FORWARD",item:"https://loptr-lab.github.io/pay-it-forward/"},{name:"Adventure"}]} />
     <header className="experience-nav"><Link href="/" className="wordmark">PIF<span>✳</span></Link><nav><Link href="/adventure">Adventure</Link><Link href="/route">Your route</Link><Link href="/">Home</Link></nav></header>
     <section className="experience-hero adventure-hero"><p className="eyebrow">NOT A TOY · PRE-SHOW ADVENTURE</p><h1>GET AMPED.<br/><em>YOUR WAY.</em></h1><p className="experience-lede">The concert starts before the doors. Build a soundtrack, find a clue in the city, discover something new and make the night yours.</p><div className="hero-actions"><a className="button primary" href="#quests">CHOOSE YOUR QUEST ↓</a><Link className="button secondary" href="/route">BUILD A CITY ROUTE ↗</Link></div><p className="disclaimer">An independent fan concept. Not an official artist activity. No ticket, purchase, account, posting or participation required.</p></section>
     <section className="quest-intro" id="quests"><p className="eyebrow">PICK ONE · OR MAKE YOUR OWN</p><h2>THE PRE-SHOW<br/>SIDE QUESTS.</h2><p>There is no sequence and no score. Start anywhere. Do one activity on the way to the show, do all six at home, or simply listen.</p></section>
