@@ -49,3 +49,7 @@
 .hero-sidecar .bandcamp-hero .event-date{font-size:.9rem;}
 @media(max-width:850px){.hero{grid-template-columns:1fr;gap:32px;}.hero-sidecar{max-width:560px;justify-self:start;}.hero-photo{aspect-ratio:1.39;}}
 @media(max-width:600px){.hero{padding:10vh 6vw 7vh;}.hero-sidecar{max-width:none;}.hero-sidecar .bandcamp-hero{margin-top:10px;}.hero-photo{aspect-ratio:1.39;}}
+
+
+/* Accessible breadcrumb trail on secondary pages */
+.breadcrumbs{padding:14px 8vw;background:#09090d;border-bottom:1px solid var(--line)}.breadcrumbs ol{display:flex;flex-wrap:wrap;gap:10px;list-style:none;margin:0;padding:0;font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}.breadcrumbs li+li::before{content:"/";margin-right:10px;color:var(--accent)}.breadcrumbs a{color:var(--muted);text-decoration:none}.breadcrumbs a:hover{color:var(--lime)}.breadcrumbs [aria-current="page"]{color:var(--text)}@media(max-width:600px){.breadcrumbs{padding:12px 6vw}}
