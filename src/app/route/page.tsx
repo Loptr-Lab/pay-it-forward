@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "next/link";\n\nexport const metadata = { title: "Tour Stops & City Guide", description: "Explore tour stops and discover local music, art, tattoo flash, food, quiet spaces, and transit directions near venues." };
 
 type TourStop = {
   region: "EUROPE" | "NORTH AMERICA";
