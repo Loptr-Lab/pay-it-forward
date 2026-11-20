@@ -1,5 +1,7 @@
 import Link from "next/link";
 
+export const metadata = { title: "City Quest & Music Fan Adventure", description: "Self-paced music, art, food, local discovery, and show-day quests for your fan adventure." };
+
 const quests = [
   { tag: "01 · LISTEN", title: "SET THE SCENE", body: "Pick three tracks from FILTHY YUCK! or the NOT A TOY catalog. Build a pre-show playlist that starts where you are and ends at full concert energy.", action: "Make your setlist", prompt: "What track would you play as the opening credits to tonight?", link: "https://music.apple.com/us/album/filthy-yuck/6803206084", linkLabel: "OPEN THE ALBUM ↗" },
   { tag: "02 · DISCOVER", title: "THE SOUND YOU DON'T KNOW", body: "Find a local artist, record shop, radio show or playlist in the city you're visiting. Listen to one track outside your usual lane.", action: "Take a sonic detour", prompt: "Save one discovery to share after the show. No purchase required.", link: "https://loptr-lab.github.io/pay-it-forward/route/", linkLabel: "FIND LOCAL MUSIC STOPS ↗" },

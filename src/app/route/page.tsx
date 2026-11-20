@@ -1,5 +1,7 @@
 import Link from "next/link";
 
+export const metadata = { title: "Tour Stops, Local Music & City Guide", description: "Explore tour stops and discover local music, art, tattoo flash, food, quiet spaces, and transit directions near venues." };
+
 type TourStop = {
   region: "EUROPE" | "NORTH AMERICA";
   city: string;

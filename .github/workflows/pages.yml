@@ -38,3 +38,19 @@ jobs:
     steps:
       - id: deployment
         uses: actions/deploy-pages@v4
+      - name: Notify IndexNow about published pages
+        env:
+          INDEXNOW_KEY: a3a285cf09b84a3ba9128082e43c87b4
+        run: |
+          curl --fail-with-body --silent --show-error -X POST 'https://api.indexnow.org/indexnow' \
+            -H 'Content-Type: application/json; charset=utf-8' \
+            -d '{
+              "host": "loptr-lab.github.io",
+              "key": "'"${INDEXNOW_KEY}"'",
+              "keyLocation": "https://loptr-lab.github.io/pay-it-forward/'"${INDEXNOW_KEY}"'.txt",
+              "urlList": [
+                "https://loptr-lab.github.io/pay-it-forward/",
+                "https://loptr-lab.github.io/pay-it-forward/adventure/",
+                "https://loptr-lab.github.io/pay-it-forward/route/"
+              ]
+            }'
