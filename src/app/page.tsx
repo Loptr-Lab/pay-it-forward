@@ -65,6 +65,11 @@ export default function Home() {
         </div>
       </section>
 
+
+      <section className="filthy-yuck-home" aria-labelledby="filthy-yuck-home-title">
+        <div><p className="eyebrow">COMIC · ART · MERCH</p><h2 id="filthy-yuck-home-title">FILTHY YUCK!<br/><em>BEYOND THE MUSIC.</em></h2><p>Explore the comic and merch from NOT A TOY's world—through the artist's original posts and official store.</p><Link className="button primary" href="/adventure#filthy-yuck">EXPLORE THE COMIC FEATURE ↗</Link></div>
+        <a className="filthy-yuck-store-link" href="https://notatoymerch.myshopify.com/products/filthy-yuck-comic" target="_blank" rel="noreferrer">OFFICIAL FILTHY YUCK! COMIC & MERCH ↗</a>
+      </section>
       <section className="intro section" id="adventure">
         <p className="eyebrow">NO RULES. NO RUSH.</p>
         <h2>YOUR MUSIC.<br />YOUR ADVENTURE.</h2>
