@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://loptr-lab.github.io/pay-it-forward/sitemap.xml
