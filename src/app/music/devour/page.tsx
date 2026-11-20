@@ -18,15 +18,15 @@ export const metadata: Metadata = {
 
 const playlist = [
   { title: "DEVOUR", detail: "VOILÀ × NOT A TOY · the collaboration that opens this path", search: "Devour VOILA Not A Toy" },
-  { title: "DEAD EYES", detail: "A sharp entry point into the current NOT A TOY era", search: "NOT A TOY DEAD EYES" },
+  { title: "DEAD EYES", detail: "A strong current-era entry point", search: "NOT A TOY DEAD EYES" },
   { title: "UNALIVE ME", detail: "Follow the darker, dramatic edge", search: "NOT A TOY UNALIVE ME" },
   { title: "KAMIKAZE", detail: "From FILTHY YUCK!", search: "NOT A TOY KAMIKAZE FILTHY YUCK" },
-  { title: "PLAYING W/ DEATH", detail: "Keep the intensity moving", search: "NOT A TOY PLAYING W DEATH" },
-  { title: "NPC", detail: "A recent single and a quick catalog detour", search: "NOT A TOY NPC" },
-  { title: "THE MAZE", detail: "A single from the 2025 run", search: "NOT A TOY THE MAZE" },
-  { title: "DOOMSDAY HOLIDAY", detail: "Explore the 2025 EP", search: "NOT A TOY DOOMSDAY HOLIDAY" },
+  { title: "PLAYING W/ DEATH", detail: "A high-energy entry from the recent catalog", search: "NOT A TOY PLAYING W DEATH" },
+  { title: "NPC", detail: "A concise single from the recent run", search: "NOT A TOY NPC" },
+  { title: "THE MAZE", detail: "From the 2025 singles", search: "NOT A TOY THE MAZE" },
+  { title: "DOOMSDAY HOLIDAY", detail: "A 2025 EP title track", search: "NOT A TOY DOOMSDAY HOLIDAY" },
   { title: "SIMP", detail: "From PRBLMS — turn toward the band's earlier catalog", search: "NOT A TOY SIMP PRBLMS" },
-  { title: "QUIT QUITTING", detail: "Close with a track from the 2020 self-titled release", search: "NOT A TOY QUIT QUITTING" },
+  { title: "QUIT QUITTING", detail: "Close with the 2020 self-titled release", search: "NOT A TOY QUIT QUITTING" },
 ];
 
 const services = [
@@ -42,7 +42,7 @@ function Breadcrumbs() {
   const items = [
     { name: "Home", url: `${site}/` },
     { name: "Adventure", url: `${site}/adventure/` },
-    { name: "Music Stories", url: `${site}/music/` },
+    { name: "Music Discovery", url: `${site}/adventure/#music-stories` },
     { name: "Devour", url: pageUrl },
   ];
   const structuredData = {
@@ -117,7 +117,7 @@ export default function DevourPage() {
         <div className="music-story-links">
           <a href="https://music.apple.com/us/artist/not-a-toy/1510814882" target="_blank" rel="noreferrer">NOT A TOY · APPLE MUSIC ↗</a>
           <a href="https://notatoy.bandcamp.com/" target="_blank" rel="noreferrer">NOT A TOY · BANDCAMP ↗</a>
-          <a href="https://music.apple.com/us/artist/voil%C3%A0/1333272109" target="_blank" rel="noreferrer">VOILÀ · APPLE MUSIC ↗</a>
+          <a href="https://music.apple.com/us/search?term=VOIL%C3%80" target="_blank" rel="noreferrer">VOILÀ · APPLE MUSIC ↗</a>
           <a href="https://www.youtube.com/@wearevoila" target="_blank" rel="noreferrer">VOILÀ · OFFICIAL YOUTUBE ↗</a>
         </div>
       </section>
