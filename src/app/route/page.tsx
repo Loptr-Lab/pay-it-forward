@@ -54,6 +54,34 @@ function StopCard({ stop }: { stop: TourStop }) {
   );
 }
 
+function Breadcrumbs({ current, path }: { current: string; path: string }) {
+  const items = [
+    { name: "Home", url: "https://loptr-lab.github.io/pay-it-forward/" },
+    { name: current, url: `https://loptr-lab.github.io/pay-it-forward/${path}/` },
+  ];
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.name,
+      item: item.url,
+    })),
+  };
+  return (
+    <>
+      <nav className="breadcrumbs" aria-label="Breadcrumb">
+        <ol>
+          <li><Link href="/">Home</Link></li>
+          <li aria-current="page">{current}</li>
+        </ol>
+      </nav>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
+    </>
+  );
+}
+
 export default function RoutePage() {
   const europe = tourStops.filter((stop) => stop.region === "EUROPE");
   const northAmerica = tourStops.filter((stop) => stop.region === "NORTH AMERICA");
@@ -64,7 +92,7 @@ export default function RoutePage() {
         <Link href="/" className="wordmark">PIF<span>✳</span></Link>
         <nav><Link href="/adventure">Adventure</Link><Link href="/route">Tour map</Link><Link href="/">Home</Link></nav>
       </header>
-      <section className="experience-hero route-hero">
+      <Breadcrumbs current="Tour Map" path="route" />\n      <section className="experience-hero route-hero">
         <p className="eyebrow">NOT A TOY · TOUR PILOT MAP</p>
         <h1>THE TOUR.<br/><em>THE MAP.</em></h1>
         <p className="experience-lede">The tour overview is your starting point. Open a city to find music, art, tattoo culture, food, a quiet reset, or a way to get to the venue.</p>
