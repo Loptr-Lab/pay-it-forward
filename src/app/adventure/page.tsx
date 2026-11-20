@@ -1,4 +1,5 @@
 import Link from "next/link";
+import AdventureBuilder from "../components/AdventureBuilder";
 
 const quests = [
   { tag: "01 · LISTEN", title: "SET THE SCENE", body: "Pick three tracks from FILTHY YUCK! or the NOT A TOY catalog. Build a pre-show playlist that starts where you are and ends at full concert energy.", action: "Make your setlist", prompt: "What track would you play as the opening credits to tonight?", link: "https://music.apple.com/us/album/filthy-yuck/6803206084", linkLabel: "OPEN THE ALBUM ↗" },
@@ -43,6 +44,9 @@ export default function AdventurePage() {
     <header className="experience-nav"><Link href="/" className="wordmark">PIF<span>✳</span></Link><nav><Link href="/adventure">Adventure</Link><Link href="/route">Your route</Link><Link href="/">Home</Link></nav></header>
     <Breadcrumbs current="Adventure" path="adventure" />
     <section className="experience-hero adventure-hero"><p className="eyebrow">NOT A TOY · PRE-SHOW ADVENTURE</p><h1>GET AMPED.<br/><em>YOUR WAY.</em></h1><p className="experience-lede">The concert starts before the doors. Build a soundtrack, find a clue in the city, discover something new and make the night yours.</p><div className="hero-actions"><a className="button primary" href="#quests">CHOOSE YOUR QUEST ↓</a><Link className="button secondary" href="/route">BUILD A CITY ROUTE ↗</Link></div><p className="disclaimer">An independent fan concept. Not an official artist activity. No ticket, purchase, account, posting or participation required.</p></section>
+
+    <AdventureBuilder />
+
 <section className="filthy-yuck-home" aria-labelledby="filthy-yuck-home-title">
         <div className="filthy-yuck-copy"><p className="eyebrow">PRE-SHOW SIDE QUEST · COMICS & PLAY</p><h2 id="filthy-yuck-home-title">FILTHY YUCK!<br/><em>COMIC SHOP DETOUR.</em></h2><p>Find comic shops, toy stores, cosplay inspiration, and photo-worthy places near your venue—then explore the FILTHY YUCK! comic.</p><Link className="button primary" href="/adventure#filthy-yuck">TAKE THE SIDE QUEST ↗</Link><a className="filthy-yuck-store-link" href="https://notatoymerch.myshopify.com/products/filthy-yuck-comic" target="_blank" rel="noreferrer">OFFICIAL COMIC & MERCH ↗</a></div>
         <div className="filthy-yuck-instagram"><iframe title="FILTHY YUCK! Instagram post" src="https://www.instagram.com/p/DeSBB9kFvIL/embed" loading="lazy" allowTransparency frameBorder="0" scrolling="no" /></div>
