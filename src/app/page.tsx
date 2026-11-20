@@ -66,6 +66,13 @@ export default function Home() {
       </section>
 
 
+      <section className="next-track-section" id="next-track" aria-labelledby="next-track-title">
+        <p className="eyebrow">FEATURE PRESENTATION · MUSIC DISCOVERY</p>
+        <h2 id="next-track-title">THE NEXT TRACK<br/><em>IS OUT THERE.</em></h2>
+        <p>Follow a collaboration beyond the credits. Discover a new artist, trace the sound back through their catalog, and build a listening path of your own.</p>
+        <Link className="button primary" href="/music/devour">EXPLORE DEVOUR · VOILÀ × NOT A TOY ↗</Link>
+      </section>
+
       <section className="intro section" id="adventure">
         <p className="eyebrow">NO RULES. NO RUSH.</p>
         <h2>YOUR MUSIC.<br />YOUR ADVENTURE.</h2>
