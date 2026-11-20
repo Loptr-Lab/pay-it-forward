@@ -100,7 +100,6 @@ export default function Home() {
               <Link href="/route#north-america">EXPLORE US STOPS ↗</Link>
             </div>
           </div>
-          <Link className="map-label" href="/route">OPEN THE TOUR MAP ↗</Link>
         </div>
       </section>
 
