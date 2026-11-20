@@ -104,12 +104,10 @@ export default function DevourPage() {
       <section className="music-story-collab">
         <p className="eyebrow">FOLLOW THE COLLABORATION</p>
         <h2>DISCOVER VOILÀ.<br/><em>THEN FOLLOW THE THREAD.</em></h2>
-        <p>Start with the artist behind the collaboration. Explore VOILÀ&apos;s catalog on Bandcamp, then follow “Devour” back to NOT A TOY—the artist this discovery path invites you to find next.</p>
+        <p>Explore VOILÀ&apos;s catalog and official videos, then continue below into the NOT A TOY listening route.</p>
         <div className="music-story-links">
           <a href="https://voilamusic.bandcamp.com/music" target="_blank" rel="noreferrer">VOILÀ · BANDCAMP CATALOG ↗</a>
           <a href="https://www.youtube.com/@wearevoila" target="_blank" rel="noreferrer">VOILÀ · OFFICIAL YOUTUBE ↗</a>
-          <a href="https://music.apple.com/us/artist/not-a-toy/1510814882" target="_blank" rel="noreferrer">DISCOVER NOT A TOY · APPLE MUSIC ↗</a>
-          <a href="https://notatoy.bandcamp.com/" target="_blank" rel="noreferrer">DISCOVER NOT A TOY · BANDCAMP ↗</a>
         </div>
       </section>
       <section className="music-story-playlist" aria-labelledby="playlist-title">
