@@ -42,6 +42,10 @@ function StopCard({ stop }: { stop: TourStop }) {
       <h3>{stop.city}</h3>
       <p className="route-address">{stop.venue} · {stop.area}</p>
       <p>Explore around the venue instead of searching the whole city. Map results are discovery links—not vetted recommendations or official tour partners.</p>
+      <a className="text-link" href={venueSearch(stop, "comic book shops comic stores manga")} target="_blank" rel="noreferrer">COMIC BOOK SHOPS ↗</a>
+      <a className="text-link" href={venueSearch(stop, "toy stores collectible toys action figures")} target="_blank" rel="noreferrer">TOY SHOPS & COLLECTIBLES ↗</a>
+      <a className="text-link" href={venueSearch(stop, "cosplay costume shops")} target="_blank" rel="noreferrer">COSPLAY & COSTUME SHOPS ↗</a>
+      <a className="text-link" href={venueSearch(stop, "parks scenic photography locations")} target="_blank" rel="noreferrer">PARKS & PHOTO SPOTS ↗</a>
       <a className="text-link" href={venueSearch(stop, "independent record shops music venues")} target="_blank" rel="noreferrer">LOCAL MUSIC & RECORD SHOPS ↗</a>
       <a className="text-link" href={venueSearch(stop, "street art murals galleries")} target="_blank" rel="noreferrer">ART, MURALS & GALLERIES ↗</a>
       <a className="text-link" href={venueSearch(stop, "tattoo studios tattoo flash artists")} target="_blank" rel="noreferrer">TATTOO / FLASH ART ↗</a>

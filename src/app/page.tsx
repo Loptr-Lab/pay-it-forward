@@ -65,6 +65,7 @@ export default function Home() {
         </div>
       </section>
 
+
       <section className="intro section" id="adventure">
         <p className="eyebrow">NO RULES. NO RUSH.</p>
         <h2>YOUR MUSIC.<br />YOUR ADVENTURE.</h2>
