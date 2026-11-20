@@ -92,7 +92,8 @@ export default function RoutePage() {
         <Link href="/" className="wordmark">PIF<span>✳</span></Link>
         <nav><Link href="/adventure">Adventure</Link><Link href="/route">Tour map</Link><Link href="/">Home</Link></nav>
       </header>
-      <Breadcrumbs current="Tour Map" path="route" />\n      <section className="experience-hero route-hero">
+      <Breadcrumbs current="Tour Map" path="route" />
+      <section className="experience-hero route-hero">
         <p className="eyebrow">NOT A TOY · TOUR PILOT MAP</p>
         <h1>THE TOUR.<br/><em>THE MAP.</em></h1>
         <p className="experience-lede">The tour overview is your starting point. Open a city to find music, art, tattoo culture, food, a quiet reset, or a way to get to the venue.</p>
