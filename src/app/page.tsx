@@ -23,17 +23,21 @@ export default function Home() {
 
       <section className="hero" aria-labelledby="hero-title">
         <div className="hero-noise" aria-hidden="true" />
-        <BandcampFridayHero />
-        <p className="eyebrow">A MUSIC-LED FAN ADVENTURE</p>
-        <h1 id="hero-title">PLAY IT<br /><em>FORWARD.</em></h1>
-        <p className="hero-copy">Music is a map. The city is a playground. The next discovery is yours.</p>
-        <div className="hero-actions">
-          <Link className="button primary" href="/adventure">START EXPLORING <span aria-hidden="true">↗</span></Link>
-          <Link className="button secondary" href="/route">OPEN THE TOUR MAP <span aria-hidden="true">↗</span></Link>
-          <Link className="button secondary" href="#event">THE FAN EVENT</Link>
+        <div className="hero-content">
+          <p className="eyebrow">A MUSIC-LED FAN ADVENTURE</p>
+          <h1 id="hero-title">PLAY IT<br /><em>FORWARD.</em></h1>
+          <p className="hero-copy">Music is a map. The city is a playground. The next discovery is yours.</p>
+          <div className="hero-actions">
+            <Link className="button primary" href="/adventure">START EXPLORING <span aria-hidden="true">↗</span></Link>
+            <Link className="button secondary" href="/route">OPEN THE TOUR MAP <span aria-hidden="true">↗</span></Link>
+            <Link className="button secondary" href="#event">THE FAN EVENT</Link>
+          </div>
+          <p className="hero-note">An independent concept prototype · Choose your own pace</p>
         </div>
-        <p className="hero-note">An independent concept prototype · Choose your own pace</p>
-        <div className="hero-sticker not-a-toy-wordmark" aria-label="NOT A TOY"><span>NOT A TOY</span></div>
+        <aside className="hero-sidecar" aria-label="Featured NOT A TOY imagery and Bandcamp Friday">
+          <img className="hero-photo" src="/not-a-toy-film.webp" alt="NOT A TOY portraits arranged in a dark film-strip collage" />
+          <BandcampFridayHero />
+        </aside>
       </section>
 
       <section className="pilot-feature" id="pilot" aria-labelledby="pilot-title">
@@ -96,7 +100,6 @@ export default function Home() {
               <Link href="/route#north-america">EXPLORE US STOPS ↗</Link>
             </div>
           </div>
-          <Link className="map-label" href="/route">OPEN THE TOUR MAP ↗</Link>
         </div>
       </section>
 
