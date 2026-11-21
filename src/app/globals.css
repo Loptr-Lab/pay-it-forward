@@ -188,3 +188,14 @@
 .adventure-builder-section .danger-mobile-copy p{font-size:.76rem;line-height:1.5;margin:2px 0 0;max-width:38ch;}
 @media(max-width:900px){.adventure-builder-section{padding-top:44px;}.adventure-builder-section .danger-mobile{right:auto;top:auto;max-width:560px;margin-inline:auto;}}
 @media(max-width:600px){.adventure-builder-section{padding-top:36px;}.adventure-builder-section .danger-mobile{position:relative;top:auto;right:auto;max-width:100%;margin:0 auto 8px;grid-template-columns:58px minmax(0,1fr) 8px;gap:10px;padding:12px 14px;}.adventure-builder-section .danger-mobile-avatar{width:52px;height:48px;}.adventure-builder-section .danger-mobile-copy{align-items:center;text-align:center;}.adventure-builder-section .danger-mobile-label{font-size:.52rem;}.adventure-builder-section .danger-mobile-copy strong{font-size:.68rem;}.adventure-builder-section .danger-mobile-copy p{font-size:.66rem;line-height:1.45;}}
+
+
+/* DANGER MOBILE — two-column title/companion balance correction */
+.adventure-builder-section .danger-mobile{display:grid;grid-template-columns:88px minmax(0,1fr);align-items:center;justify-items:stretch;gap:18px;max-width:560px;width:100%;margin:0 auto 8px;padding:16px 22px;text-align:left;}
+.adventure-builder-section .danger-mobile-avatar{grid-column:1;justify-self:center;align-self:center;width:72px;height:66px;}
+.adventure-builder-section .danger-mobile-copy{grid-column:2;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;min-width:0;width:100%;text-align:left;gap:4px;}
+.adventure-builder-section .danger-mobile-label{font-size:.62rem;line-height:1.4;letter-spacing:.09em;margin:0;white-space:normal;}
+.adventure-builder-section .danger-mobile-copy strong{font-size:.78rem;line-height:1.35;letter-spacing:.08em;}
+.adventure-builder-section .danger-mobile-copy p{font-size:.76rem;line-height:1.5;margin:2px 0 0;max-width:38ch;}
+.adventure-builder-section .danger-mobile-status{position:absolute;top:12px;right:12px;}
+@media(max-width:600px){.adventure-builder-section .danger-mobile{grid-template-columns:58px minmax(0,1fr);gap:12px;padding:14px 16px;max-width:100%;}.adventure-builder-section .danger-mobile-avatar{width:52px;height:48px;}.adventure-builder-section .danger-mobile-copy{align-items:flex-start;text-align:left;}.adventure-builder-section .danger-mobile-label{font-size:.52rem;}.adventure-builder-section .danger-mobile-copy strong{font-size:.68rem;}.adventure-builder-section .danger-mobile-copy p{font-size:.66rem;line-height:1.45;}}
