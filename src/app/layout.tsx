@@ -3,6 +3,8 @@ import "./globals.css";
 import Script from "next/script";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://loptr-lab.github.io/pay-it-forward/"),
+  alternates: { canonical: "/" },
   title: "PLAY IT FORWARD — Fan Adventure",
   description: "Discover music, explore, create, and connect through an accessible fan adventure.",
 };
