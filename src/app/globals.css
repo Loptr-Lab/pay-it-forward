@@ -171,3 +171,8 @@
 @media(max-width:900px){.adventure-builder-section{padding-top:160px}.adventure-builder-section .danger-mobile{right:6vw;top:22px;max-width:340px}}
 @media(max-width:600px){.adventure-builder-section{padding-top:36px}.adventure-builder-section .danger-mobile{position:relative;top:auto;right:auto;max-width:none;margin-bottom:20px;grid-template-columns:64px minmax(0,1fr) 8px}.adventure-builder-section .danger-mobile-avatar{width:58px;height:52px}.danger-mobile-avatar .danger-antenna{left:25px}.danger-mobile-avatar .danger-eye{top:15px;width:9px;height:12px}.danger-mobile-avatar .danger-eye-left{left:11px}.danger-mobile-avatar .danger-eye-right{right:11px}.danger-mobile-avatar .danger-mouth{bottom:7px;left:20px;width:17px}.danger-mobile-avatar .danger-bolt{width:11px;height:12px;bottom:-10px}.danger-mobile-avatar .danger-bolt-left{left:9px}.danger-mobile-avatar .danger-bolt-right{right:9px}.danger-mobile-label{font-size:.48rem}.danger-mobile-copy strong{font-size:.65rem}.danger-mobile-copy p{font-size:.62rem}}
 @media(prefers-reduced-motion:reduce){.adventure-builder-section .danger-mobile-avatar,.adventure-builder-section .danger-mobile-status,.danger-mobile-avatar .danger-antenna::after,.danger-mobile-avatar .danger-eye{animation:none!important}}
+
+/* Reusable Side Quest template selector */
+.adventure-builder-section .builder-template-field{grid-column:1/-1;border:1px solid #526b4a;padding:12px;background:#0b120d;}
+.adventure-builder-section .builder-template-description{color:#9fb292;font-size:.72rem;font-weight:400;line-height:1.5;}
+@media(max-width:600px){.adventure-builder-section .builder-template-field{grid-column:auto;}}
