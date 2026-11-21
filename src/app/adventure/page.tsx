@@ -1,5 +1,9 @@
 import Link from "next/link";
 import AdventureBuilder from "../components/AdventureBuilder";
+import Breadcrumbs from "../components/Breadcrumbs";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = { title: "Tour Adventure | PLAY IT FORWARD", description: "Build a self-paced NOT A TOY tour adventure with music discovery, art, food, comics, and venue travel.", alternates: { canonical: "https://loptr-lab.github.io/pay-it-forward/adventure/" } };
 
 const quests = [
   { tag: "01 · LISTEN", title: "SET THE SCENE", body: "Pick three tracks from FILTHY YUCK! or the NOT A TOY catalog. Build a pre-show playlist that starts where you are and ends at full concert energy.", action: "Make your setlist", prompt: "What track would you play as the opening credits to tonight?", link: "https://music.apple.com/us/album/filthy-yuck/6803206084", linkLabel: "OPEN THE ALBUM ↗" },
@@ -11,33 +15,11 @@ const quests = [
   { tag: "06 · SHOW DAY", title: "YOUR NIGHT, YOUR PACE", body: "Choose a meetup point, check the venue's own access information, plan your transport and leave room for rest. Arrive early, arrive at doors, or skip a prompt. The adventure works either way.", action: "Make a low-stress plan", prompt: "Tickets, spending, venue participation and every activity are optional.", link: "/route", linkLabel: "CHOOSE YOUR TOUR CITY ↗" },
 ];
 
-function Breadcrumbs({ current, path }: { current: string; path: string }) {
-  const items = [
-    { name: "Home", url: "https://loptr-lab.github.io/pay-it-forward/" },
-    { name: current, url: `https://loptr-lab.github.io/pay-it-forward/${path}/` },
-  ];
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: items.map((item, index) => ({
-      "@type": "ListItem",
-      position: index + 1,
-      name: item.name,
-      item: item.url,
-    })),
-  };
-  return (
-    <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
-    </>
-  );
-}
-
 export default function AdventurePage() {
   return <main className="experience-page">
-    <header className="experience-nav"><Link href="/" className="wordmark">PIF<span>✳</span></Link><nav><Link href="/adventure">Adventure</Link><Link href="/music/devour">Music stories</Link><Link href="/route">Tour map</Link><Link href="/">Home</Link></nav></header>
-    <Breadcrumbs current="Adventure" path="adventure" />
-    <section className="experience-hero adventure-hero"><p className="eyebrow">NOT A TOY · PRE-SHOW ADVENTURE</p><h1>GET AMPED.<br/><em>YOUR WAY.</em></h1><p className="experience-lede">The concert starts before the doors. Build a soundtrack, find a clue in the city, discover something new and make the night yours.</p><div className="hero-actions"><a className="button primary" href="#quests">CHOOSE YOUR QUEST ↓</a><Link className="button secondary" href="/route">BUILD A CITY ROUTE ↗</Link></div><p className="disclaimer">An independent fan concept. Not an official artist activity. No ticket, purchase, account, posting or participation required.</p></section>
+    <header className="experience-nav"><Link href="/" className="wordmark">PIF<span>✳</span></Link><nav><Link href="/adventure">Adventure</Link><Link href="/music/devour">Music stories</Link><Link href="/route/">Tour map</Link><Link href="/">Home</Link></nav></header>
+    <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Adventure", href: "/adventure/" }]} />
+    <section className="experience-hero adventure-hero"><p className="eyebrow">NOT A TOY · PRE-SHOW ADVENTURE</p><h1>GET AMPED.<br/><em>YOUR WAY.</em></h1><p className="experience-lede">The concert starts before the doors. Build a soundtrack, find a clue in the city, discover something new and make the night yours.</p><div className="hero-actions"><a className="button primary" href="#quests">CHOOSE YOUR QUEST ↓</a><Link className="button secondary" href="/route/">BUILD A CITY ROUTE ↗</Link></div><p className="disclaimer">An independent fan concept. Not an official artist activity. No ticket, purchase, account, posting or participation required.</p></section>
 
     <AdventureBuilder />
 
@@ -48,7 +30,7 @@ export default function AdventurePage() {
 
     <section className="quest-intro" id="quests"><p className="eyebrow">PICK ONE · OR MAKE YOUR OWN</p><h2>THE PRE-SHOW<br/>SIDE QUESTS.</h2><p>There is no sequence and no score. Start anywhere. Do one activity on the way to the show, do all six at home, or simply listen.</p></section>
     <section className="quest-grid">{quests.map((q,i)=><article className="quest-card" key={q.tag}><div className="quest-card-head"><span>{q.tag}</span><span className="quest-number">0{i+1}</span></div><h3>{q.title}</h3><p>{q.body}</p><div className="quest-prompt"><strong>{q.action}</strong><span>{q.prompt}</span><a className="quest-link" href={q.link} target={q.link.startsWith("/") ? undefined : "_blank"} rel={q.link.startsWith("/") ? undefined : "noreferrer"}>{q.linkLabel}</a></div></article>)}</section>
-    <div className="adventure-info-row"><section className="quest-intro"><p className="eyebrow">07 · EAT</p><h2>LOCAL FLAVOR.<br/>YOUR BUDGET.</h2><p>Find a neighborhood café, food stall, bakery, diner, or local favorite near your route. Check menus and hours; keep it flexible. Bring your own snack or eat wherever feels right.</p><Link className="button secondary" href="/route">FIND FOOD BY CITY ↗</Link></section><section className="quest-intro"><p className="eyebrow">08 · GET THERE</p><h2>HOW DO YOU<br/>GET TO THE VENUE?</h2><p>Check public transit first—bus, train, metro, or tram—then compare walking, rideshare, taxi, bike, or driving. Check accessibility, service changes, and the last ride home before showtime.</p><Link className="button secondary" href="/route">PLAN VENUE TRANSPORT ↗</Link></section></div><section className="music-thread" id="discover"><div><p className="eyebrow">MUSIC THREAD</p><h2>FILTHY YUCK!<br/><em>ON REPEAT.</em></h2><p>Start with the new album. Choose a track, follow a feeling, then branch out into a local artist or a song someone recommends.</p><a className="button primary" href="https://music.apple.com/us/album/filthy-yuck/6803206084" target="_blank" rel="noreferrer">LISTEN TO THE ALBUM ↗</a></div><div className="music-thread-art"><img src="https://api.arktide.com/api/v1/public/credits/art/AcWs0NtS5WAce5fezvcfqGbI89H7sxcprqYHidDH-iLYohSSR4GPitcpHEf9rEfGX-5jvV4p3zF_Fovtk2jO-oMo6m-N3SCTgs5birR6JlpT" alt="FILTHY YUCK! album artwork"/></div></section>
+    <div className="adventure-info-row"><section className="quest-intro"><p className="eyebrow">07 · EAT</p><h2>LOCAL FLAVOR.<br/>YOUR BUDGET.</h2><p>Find a neighborhood café, food stall, bakery, diner, or local favorite near your route. Check menus and hours; keep it flexible. Bring your own snack or eat wherever feels right.</p><Link className="button secondary" href="/route/">FIND FOOD BY CITY ↗</Link></section><section className="quest-intro"><p className="eyebrow">08 · GET THERE</p><h2>HOW DO YOU<br/>GET TO THE VENUE?</h2><p>Check public transit first—bus, train, metro, or tram—then compare walking, rideshare, taxi, bike, or driving. Check accessibility, service changes, and the last ride home before showtime.</p><Link className="button secondary" href="/route/">PLAN VENUE TRANSPORT ↗</Link></section></div><section className="music-thread" id="discover"><div><p className="eyebrow">MUSIC THREAD</p><h2>FILTHY YUCK!<br/><em>ON REPEAT.</em></h2><p>Start with the new album. Choose a track, follow a feeling, then branch out into a local artist or a song someone recommends.</p><a className="button primary" href="https://music.apple.com/us/album/filthy-yuck/6803206084" target="_blank" rel="noreferrer">LISTEN TO THE ALBUM ↗</a></div><div className="music-thread-art"><img src="https://api.arktide.com/api/v1/public/credits/art/AcWs0NtS5WAce5fezvcfqGbI89H7sxcprqYHidDH-iLYohSSR4GPitcpHEf9rEfGX-5jvV4p3zF_Fovtk2jO-oMo6m-N3SCTgs5birR6JlpT" alt="FILTHY YUCK! album artwork"/></div></section>
 
     <section className="bandcamp-friday" id="bandcamp-friday"><p className="eyebrow">BANDCAMP FRIDAY · PLAY IT FORWARD</p><h2>SUPPORT THE MUSIC.<br/><em>DIRECTLY.</em></h2><p>When Bandcamp Friday rolls around, explore NOT A TOY's Bandcamp catalog and support the artists directly. Buying is optional—listening and sharing the link count, too.</p><a className="button primary" href="https://notatoy.bandcamp.com/album/not-a-toy" target="_blank" rel="noreferrer">VISIT NOT A TOY ON BANDCAMP ↗</a></section>
     <section className="press-library" id="press"><p className="eyebrow">FROM THE PRESS · INTERVIEWS · REVIEWS</p><h2>READ THE<br/><em>CREATIVE STORY.</em></h2><p className="press-intro">NOT A TOY's world extends beyond the tracks. Explore interviews, album reviews and stories about the collective's music, tattoos, art and DIY approach.</p><div className="press-grid">
@@ -61,7 +43,7 @@ export default function AdventurePage() {
       <a className="press-card" href="https://www.frontrowamplified.com/podcast-episodes/2020/interview-with-not-a-toy" target="_blank" rel="noreferrer"><span>PODCAST · 2020</span><h3>Creative workflow and the NOT A TOY project</h3><p>Interview with Benji Spoliansky on their process and sound.</p><b>LISTEN TO THE INTERVIEW ↗</b></a>
       <a className="press-card" href="https://www.hazzemedia.com/post/not-a-toy-latest-single-gutter-kid-future-goals" target="_blank" rel="noreferrer"><span>INTERVIEW</span><h3>Gutter Kid & future goals</h3><p>Exploring the group's genre-blending ambitions and future creative plans.</p><b>READ THE INTERVIEW ↗</b></a>
     </div><p className="press-note">Links lead to independent publications. PLAY IT FORWARD is not affiliated with these outlets.</p><div className="press-contact" id="press-contact"><p className="eyebrow">PRESS · MEDIA · INTERVIEW INQUIRIES</p><h3>GET IN TOUCH WITH NOT A TOY</h3><p>For press requests, interviews, coverage, or artist-related inquiries, use the band’s official channels or management contact listed by Fearless Records. We could not verify a publicly listed press email, so we are not publishing an unconfirmed address.</p><div className="hero-actions"><a className="button primary" href="https://fearlessrecords.com/artists/not-a-toy/" target="_blank" rel="noreferrer">OFFICIAL ARTIST / MANAGEMENT INFO ↗</a><a className="button secondary" href="https://www.instagram.com/notatoy/" target="_blank" rel="noreferrer">NOT A TOY SOCIAL ↗</a></div><p className="press-note">PLAY IT FORWARD is an independent fan concept and is not an official representative or press contact for NOT A TOY.</p></div></section>
-    <section className="adventure-map-cta"><p className="eyebrow">MAKE THE CITY PART OF IT</p><h2>YOUR ROUTE.<br/><em>YOUR RULES.</em></h2><p>Choose a record store, a mural, a coffee stop or a quiet reset. Explore local places around the show, make your own map and skip anything that doesn't fit your day.</p><Link className="button primary" href="/route">EXPLORE CITY ROUTES ↗</Link></section>
+    <section className="adventure-map-cta"><p className="eyebrow">MAKE THE CITY PART OF IT</p><h2>YOUR ROUTE.<br/><em>YOUR RULES.</em></h2><p>Choose a record store, a mural, a coffee stop or a quiet reset. Explore local places around the show, make your own map and skip anything that doesn't fit your day.</p><Link className="button primary" href="/route/">EXPLORE CITY ROUTES ↗</Link></section>
     <footer className="experience-footer"><span>PLAY IT FORWARD ✳</span><span>FAN-LED · ACCESSIBLE · SELF-PACED</span><Link href="/">HOME ↑</Link></footer>
   </main>;
 }
