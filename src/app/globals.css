@@ -199,3 +199,16 @@
 .adventure-builder-section .danger-mobile-copy p{font-size:.76rem;line-height:1.5;margin:2px 0 0;max-width:38ch;}
 .adventure-builder-section .danger-mobile-status{position:absolute;top:12px;right:12px;}
 @media(max-width:600px){.adventure-builder-section .danger-mobile{grid-template-columns:58px minmax(0,1fr);gap:12px;padding:14px 16px;max-width:100%;}.adventure-builder-section .danger-mobile-avatar{width:52px;height:48px;}.adventure-builder-section .danger-mobile-copy{align-items:flex-start;text-align:left;}.adventure-builder-section .danger-mobile-label{font-size:.52rem;}.adventure-builder-section .danger-mobile-copy strong{font-size:.68rem;}.adventure-builder-section .danger-mobile-copy p{font-size:.66rem;line-height:1.45;}}
+
+
+/* Adventure Builder: intentional intro + companion header, form below */
+.adventure-builder-section{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:clamp(28px,6vw,88px);row-gap:32px;align-items:center;padding-top:64px;}
+.adventure-builder-section .builder-intro{grid-column:1;grid-row:1;max-width:unset;align-self:center;text-align:left;}
+.adventure-builder-section .builder-intro h2,.adventure-builder-section .builder-intro>p:not(.eyebrow){text-align:left;}
+.adventure-builder-section .danger-mobile{grid-column:2;grid-row:1;position:relative;inset:auto;justify-self:center;align-self:center;width:min(100%,440px);max-width:440px;margin:0;padding:18px 20px;display:grid;grid-template-columns:88px minmax(0,1fr);gap:18px;align-items:center;text-align:left;}
+.adventure-builder-section .danger-mobile-avatar{grid-column:1;justify-self:center;align-self:center;}
+.adventure-builder-section .danger-mobile-copy{grid-column:2;align-items:flex-start;text-align:left;min-width:0;}
+.adventure-builder-section .danger-mobile-status{position:absolute;top:12px;right:12px;}
+.adventure-builder-section .builder-panel{grid-column:1/-1;grid-row:2;width:100%;}
+@media(max-width:800px){.adventure-builder-section{grid-template-columns:minmax(0,1fr);row-gap:24px;padding-top:44px;}.adventure-builder-section .builder-intro{grid-column:1;grid-row:1;}.adventure-builder-section .danger-mobile{grid-column:1;grid-row:2;justify-self:center;max-width:560px;width:100%;}.adventure-builder-section .builder-panel{grid-column:1;grid-row:3;}}
+@media(max-width:600px){.adventure-builder-section{padding:36px 6vw;}.adventure-builder-section .danger-mobile{grid-template-columns:58px minmax(0,1fr);gap:12px;padding:14px 16px;}.adventure-builder-section .danger-mobile-avatar{width:52px;height:48px;}}
