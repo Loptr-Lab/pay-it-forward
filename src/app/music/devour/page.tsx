@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Breadcrumbs from "../../components/Breadcrumbs";
 
 const site = "https://loptr-lab.github.io/pay-it-forward";
 const pageUrl = `${site}/music/devour/`;
 
 export const metadata: Metadata = {
   title: "Devour — VOILÀ × NOT A TOY | PLAY IT FORWARD",
-  description: "Discover Devour, the theatrical lyric film and collaboration by VOILÀ and NOT A TOY. Explore VOILÀ on Bandcamp, then follow a curated path into NOT A TOY's discography.",
+  description: "Watch DEVOUR, the theatrical lyric film by VOILÀ and NOT A TOY. Explore VOILÀ, then follow a curated path into NOT A TOY's music.",
   alternates: { canonical: pageUrl },
   openGraph: {
     title: "Devour — VOILÀ × NOT A TOY",
@@ -38,27 +39,6 @@ const services = [
   { name: "Tidal", href: "https://listen.tidal.com/search?q=NOT%20A%20TOY" },
 ];
 
-function Breadcrumbs() {
-  const items = [
-    { name: "Home", url: `${site}/` },
-    { name: "Music Discovery", url: `${site}/#next-track` },
-    { name: "Devour", url: pageUrl },
-  ];
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: items.map((item, index) => ({
-      "@type": "ListItem",
-      position: index + 1,
-      name: item.name,
-      item: item.url,
-    })),
-  };
-  return <>
-    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
-  </>;
-}
-
 export default function DevourPage() {
   const articleData = {
     "@context": "https://schema.org",
@@ -75,7 +55,7 @@ export default function DevourPage() {
   };
   return <main className="experience-page music-story-page">
     <header className="experience-nav"><Link href="/" className="wordmark">PIF<span>✳</span></Link><nav><Link href="/adventure">Adventure</Link><Link href="/#next-track">Music discovery</Link><Link href="/route">Tour map</Link></nav></header>
-    <Breadcrumbs />
+    <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Music Discovery", href: "/#next-track" }, { label: "Devour", href: pageUrl }]} />
     <article>
       <header className="music-story-hero">
         <p className="eyebrow">PLAY IT FORWARD · MUSIC DISCOVERY</p>
