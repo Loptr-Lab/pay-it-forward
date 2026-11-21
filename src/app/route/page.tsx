@@ -70,7 +70,7 @@ export default function RoutePage() {
     <main className="experience-page">
       <header className="experience-nav">
         <Link href="/" className="wordmark">PIF<span>✳</span></Link>
-        <nav><Link href="/adventure">Adventure</Link><Link href="/route">Tour map</Link><Link href="/">Home</Link></nav>
+        <nav><Link href="/adventure/">Adventure</Link><Link href="/route/">Tour map</Link><Link href="/">Home</Link></nav>
       </header>
       <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Tour Map", href: "/route/" }]} />
       <section className="experience-hero route-hero">
@@ -98,7 +98,7 @@ export default function RoutePage() {
         <p className="eyebrow">CITY QUEST</p>
         <h2>FOLLOW A SOUND.<br/><em>NOT A CHECKLIST.</em></h2>
         <p>Pick one city and one thing to explore. Map searches are centered around the venue area. No GPS tracking, check-ins, uploads, or spending required.</p>
-        <Link className="button primary" href="/adventure">BACK TO THE QUESTS ↗</Link>
+        <Link className="button primary" href="/adventure/">BACK TO THE QUESTS ↗</Link>
       </section>
       <footer className="experience-footer"><span>PLAY IT FORWARD ✳</span><span>FAN-LED · ACCESSIBLE · SELF-PACED</span><Link href="/">HOME ↑</Link></footer>
     </main>
