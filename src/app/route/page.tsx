@@ -1,4 +1,8 @@
 import Link from "next/link";
+import Breadcrumbs from "../components/Breadcrumbs";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = { title: "NOT A TOY Tour Map | PLAY IT FORWARD", description: "Explore tour cities for local music, art, tattoo culture, food, quiet places, and public transit to venues.", alternates: { canonical: "https://loptr-lab.github.io/pay-it-forward/route/" } };
 
 type TourStop = {
   region: "EUROPE" | "NORTH AMERICA";
@@ -58,28 +62,6 @@ function StopCard({ stop }: { stop: TourStop }) {
   );
 }
 
-function Breadcrumbs({ current, path }: { current: string; path: string }) {
-  const items = [
-    { name: "Home", url: "https://loptr-lab.github.io/pay-it-forward/" },
-    { name: current, url: `https://loptr-lab.github.io/pay-it-forward/${path}/` },
-  ];
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: items.map((item, index) => ({
-      "@type": "ListItem",
-      position: index + 1,
-      name: item.name,
-      item: item.url,
-    })),
-  };
-  return (
-    <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
-    </>
-  );
-}
-
 export default function RoutePage() {
   const europe = tourStops.filter((stop) => stop.region === "EUROPE");
   const northAmerica = tourStops.filter((stop) => stop.region === "NORTH AMERICA");
@@ -90,7 +72,7 @@ export default function RoutePage() {
         <Link href="/" className="wordmark">PIF<span>✳</span></Link>
         <nav><Link href="/adventure">Adventure</Link><Link href="/route">Tour map</Link><Link href="/">Home</Link></nav>
       </header>
-      <Breadcrumbs current="Tour Map" path="route" />
+      <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Tour Map", href: "/route/" }]} />
       <section className="experience-hero route-hero">
         <p className="eyebrow">NOT A TOY · TOUR PILOT MAP</p>
         <h1>THE TOUR.<br/><em>THE MAP.</em></h1>
