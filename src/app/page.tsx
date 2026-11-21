@@ -16,10 +16,10 @@ export default function Home() {
       <header className="topbar">
         <Link className="wordmark" href="/" aria-label="Play It Forward home">PIF<span>✳</span></Link>
         <nav aria-label="Main navigation">
-          <Link href="/adventure">Adventure</Link>
+          <Link href="/adventure/">Adventure</Link>
           <Link href="#discover">Discover</Link>
           <Link href="#event">Fan event</Link>
-          <Link href="/route">Tour map</Link>
+          <Link href="/route/">Tour map</Link>
         </nav>
       </header>
 
@@ -30,8 +30,8 @@ export default function Home() {
           <h1 id="hero-title">PLAY IT<br /><em>FORWARD.</em></h1>
           <p className="hero-copy">Music is a map. The city is a playground. The next discovery is yours.</p>
           <div className="hero-actions">
-            <Link className="button primary" href="/adventure">START EXPLORING <span aria-hidden="true">↗</span></Link>
-            <Link className="button secondary" href="/route">OPEN THE TOUR MAP <span aria-hidden="true">↗</span></Link>
+            <Link className="button primary" href="/adventure/">START EXPLORING <span aria-hidden="true">↗</span></Link>
+            <Link className="button secondary" href="/route/">OPEN THE TOUR MAP <span aria-hidden="true">↗</span></Link>
             <Link className="button secondary" href="#event">THE FAN EVENT</Link>
           </div>
           <p className="hero-note">An independent concept prototype · Choose your own pace</p>
@@ -70,7 +70,7 @@ export default function Home() {
         <p className="eyebrow">FEATURE PRESENTATION · MUSIC DISCOVERY</p>
         <h2 id="next-track-title">THE NEXT TRACK<br/><em>IS OUT THERE.</em></h2>
         <p>Follow a collaboration beyond the credits. Discover a new artist, trace the sound back through their catalog, and build a listening path of your own.</p>
-        <Link className="button primary" href="/music/devour">EXPLORE DEVOUR · VOILÀ × NOT A TOY ↗</Link>
+        <Link className="button primary" href="/music/devour/">EXPLORE DEVOUR · VOILÀ × NOT A TOY ↗</Link>
       </section>
 
       <section className="intro section" id="adventure">
@@ -94,7 +94,7 @@ export default function Home() {
           <p className="eyebrow">FOLLOW THE SOUND</p>
           <h2>THE TOUR<br />IS THE MAP.</h2>
           <p>Every city holds a story. Build your own tour-day adventure with optional discoveries, creative prompts, and places to explore.</p>
-          <Link className="text-link" href="/route">Explore the tour map ↗</Link>
+          <Link className="text-link" href="/route/">Explore the tour map ↗</Link>
         </div>
         <div className="tour-map-overview">
           <p className="eyebrow">NOT A TOY · TOUR PILOT</p>
@@ -130,7 +130,7 @@ export default function Home() {
           <p className="eyebrow">FEATURED COLLABORATION · MUSIC STORY</p>
           <h2 id="music-feature-title">VOILÀ × NOT A TOY<br/><em>DEVOUR.</em></h2>
           <p>A theatrical lyric film inspired by sirens, mythology, and the pull of the deep. Start with the collaboration, then follow a focused path into NOT A TOY's discography.</p>
-          <Link className="button primary" href="/music/devour">WATCH · EXPLORE · LISTEN ↗</Link>
+          <Link className="button primary" href="/music/devour/">WATCH · EXPLORE · LISTEN ↗</Link>
         </div>
         <div className="music-feature-art">
           <a href="https://youtu.be/QS9RtfARHBc" target="_blank" rel="noreferrer" aria-label="Watch the Devour lyric film on YouTube">
