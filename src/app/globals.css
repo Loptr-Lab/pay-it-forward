@@ -191,7 +191,7 @@
 
 
 /* DANGER MOBILE — two-column title/companion balance correction */
-.adventure-builder-section .danger-mobile{display:grid;grid-template-columns:88px minmax(0,1fr);align-items:center;justify-items:stretch;gap:18px;max-width:560px;width:100%;margin:0 auto 8px;padding:16px 22px;text-align:left;}
+.adventure-builder-section .danger-mobile{grid-column:1/-1;justify-self:center;display:grid;grid-template-columns:88px minmax(0,1fr);align-items:center;justify-items:stretch;gap:18px;max-width:560px;width:100%;margin:0 auto 8px;padding:16px 22px;text-align:left;}
 .adventure-builder-section .danger-mobile-avatar{grid-column:1;justify-self:center;align-self:center;width:72px;height:66px;}
 .adventure-builder-section .danger-mobile-copy{grid-column:2;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;min-width:0;width:100%;text-align:left;gap:4px;}
 .adventure-builder-section .danger-mobile-label{font-size:.62rem;line-height:1.4;letter-spacing:.09em;margin:0;white-space:normal;}
