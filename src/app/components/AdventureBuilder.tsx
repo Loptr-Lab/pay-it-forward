@@ -36,7 +36,11 @@ export default function AdventureBuilder() {
     catch { setCopied(false); }
   }
   return (
-    <section className="adventure-builder-section" id="make-an-adventure" aria-labelledby="builder-title">
+    <section className="adventure-builder-section" id="make-an-adventure" aria-labelledby="builder-title">\n        <div className="danger-mobile" role="status" aria-live="polite">
+          <div className="danger-mobile-avatar" aria-hidden="true"><span className="danger-antenna"/><span className="danger-eye danger-eye-left"/><span className="danger-eye danger-eye-right"/><span className="danger-mouth"/><span className="danger-bolt danger-bolt-left"/><span className="danger-bolt danger-bolt-right"/></div>
+          <div className="danger-mobile-copy"><span className="danger-mobile-label">DANGER MOBILE // COMPANION MODULE</span><strong>{copied ? "QUEST ACQUIRED" : (artist || location || interests) ? "SIGNAL LOCKED" : "QUEST SYSTEM ONLINE"}</strong><p>{sidekickMessage}</p></div>
+          <span className="danger-mobile-status" aria-hidden="true">●</span>
+        </div>
       <div className="builder-intro">
         <p className="eyebrow">PLAY IT FORWARD · MAKE IT YOURS</p>
         <h2 id="builder-title">BUILD AN<br/><em>ADVENTURE.</em></h2>
