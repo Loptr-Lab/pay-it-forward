@@ -4,9 +4,9 @@ import BandcampFridayHero from "./components/BandcampFridayHero";
 const heroPhotoSrc = `${process.env.GITHUB_PAGES ? "/pay-it-forward" : ""}/not-a-toy-film.webp`;
 
 const adventures = [
-  { number: "01", title: "THE TOUR", text: "Follow the music. Find a city. Make the night your own.", href: "/route" },
-  { number: "02", title: "CITY QUEST", text: "Explore with music in your headphones and curiosity in your pocket.", href: "/adventure" },
-  { number: "03", title: "DISCOVER", text: "Find a sound you have never heard. Play it forward.", href: "/adventure#discover" },
+  { number: "01", title: "THE TOUR", text: "Follow the music. Find a city. Make the night your own.", href: "/route/" },
+  { number: "02", title: "CITY QUEST", text: "Explore with music in your headphones and curiosity in your pocket.", href: "/adventure/" },
+  { number: "03", title: "DISCOVER", text: "Find a sound you have never heard. Play it forward.", href: "/adventure/#discover" },
   { number: "04", title: "THE FAN EVENT", text: "A proposed Bandcamp Friday adventure for music lovers.", href: "#event" },
 ];
 
@@ -102,12 +102,12 @@ export default function Home() {
             <div className="tour-map-region">
               <strong>EUROPE</strong>
               <span>Manchester · London · Cologne · Berlin · Hamburg · Utrecht</span>
-              <Link href="/route#europe">EXPLORE EUROPE STOPS ↗</Link>
+              <Link href="/route/#europe">EXPLORE EUROPE STOPS ↗</Link>
             </div>
             <div className="tour-map-region">
               <strong>NORTH AMERICA</strong>
               <span>Los Angeles · Denver</span>
-              <Link href="/route#north-america">EXPLORE US STOPS ↗</Link>
+              <Link href="/route/#north-america">EXPLORE US STOPS ↗</Link>
             </div>
           </div>
         </div>
