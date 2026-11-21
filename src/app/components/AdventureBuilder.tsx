@@ -18,7 +18,7 @@ export default function AdventureBuilder() {
   const [budget, setBudget] = useState("free or low-cost");
   const [company, setCompany] = useState("solo or open invitation");
   const [accessNeeds, setAccessNeeds] = useState("");
-  const [copied, setCopied] = useState(false);
+  const [copied, setCopied] = useState(false);\n  const sidekickMessage = copied ? "QUEST DATA STOLEN. GO MAKE TROUBLE." : (artist || location || interests) ? "SIGNAL LOCKED. LET’S FIND SOMETHING WEIRD." : "WHAT’S THE PLAN, HUMAN? GIVE ME A PLACE OR A FEELING.";
   const prompt = [
     "Build a PLAY IT FORWARD adventure around independent music and discovery.",
     "Artist: " + (artist || "Choose an independent artist"),
@@ -42,7 +42,7 @@ export default function AdventureBuilder() {
         <h2 id="builder-title">BUILD AN<br/><em>ADVENTURE.</em></h2>
         <p>Start with an artist, a place, or a feeling. Make a plan for exploring at your own pace. Nothing is sent or posted.</p>
       </div>
-      <div className="builder-panel">
+      <div className="builder-panel">\n        <div className="danger-mobile" role="status" aria-live="polite">\n          <div className="danger-mobile-avatar" aria-hidden="true"><span className="danger-antenna"/><span className="danger-eye danger-eye-left"/><span className="danger-eye danger-eye-right"/><span className="danger-mouth"/></div>\n          <div className="danger-mobile-copy"><span className="danger-mobile-label">DANGER MOBILE // COMPANION MODULE</span><strong>{copied ? "QUEST ACQUIRED" : (artist || location || interests) ? "SIGNAL LOCKED" : "QUEST SYSTEM ONLINE"}</strong><p>{sidekickMessage}</p></div>\n          <span className="danger-mobile-status" aria-hidden="true">●</span>\n        </div>
         <div className="builder-fields">
           <label className="builder-field">Artist or band<input value={artist} onChange={(e) => setArtist(e.target.value)} placeholder="Artist name (optional)" /></label>
           <label className="builder-field">City or region<input value={location} onChange={(e) => setLocation(e.target.value)} placeholder="City, neighborhood, or leave blank" /></label>
