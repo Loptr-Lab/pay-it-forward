@@ -54,7 +54,7 @@ export default function DevourPage() {
     inAlbum: { "@type": "MusicAlbum", name: "The Wilt to Live (Part II)", byArtist: { "@type": "MusicGroup", name: "VOILÀ" } },
   };
   return <main className="experience-page music-story-page">
-    <header className="experience-nav"><Link href="/" className="wordmark">PIF<span>✳</span></Link><nav><Link href="/adventure">Adventure</Link><Link href="/#next-track">Music discovery</Link><Link href="/route">Tour map</Link></nav></header>
+    <header className="experience-nav"><Link href="/" className="wordmark">PIF<span>✳</span></Link><nav><Link href="/adventure/">Adventure</Link><Link href="/#next-track">Music discovery</Link><Link href="/route/">Tour map</Link></nav></header>
     <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Music Discovery", href: "/#next-track" }, { label: "Devour", href: pageUrl }]} />
     <article>
       <header className="music-story-hero">
@@ -110,8 +110,8 @@ export default function DevourPage() {
         <p className="eyebrow">YOUR MUSIC QUEST</p>
         <h2>WHAT DOES THE<br/><em>SONG BECOME?</em></h2>
         <p>Make a connection between the song and something outside your headphones: a myth, an image, a film, a place near you, or another artist. Share a recommendation if you want—or keep it to yourself.</p>
-        <Link className="button primary" href="/route">EXPLORE THE CITY THROUGH MUSIC ↗</Link>
-        <Link className="button secondary" href="/adventure">RETURN TO THE ADVENTURE ↗</Link>
+        <Link className="button primary" href="/route/">EXPLORE THE CITY THROUGH MUSIC ↗</Link>
+        <Link className="button secondary" href="/adventure/">RETURN TO THE ADVENTURE ↗</Link>
       </section>
     </article>
     <footer className="experience-footer"><span>PLAY IT FORWARD ✳</span><span>DISCOVERY · ACCESSIBLE · SELF-PACED</span><Link href="/">HOME ↑</Link></footer>
