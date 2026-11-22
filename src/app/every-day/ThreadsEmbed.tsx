@@ -19,7 +19,7 @@ export default function ThreadsEmbed({ url, title }: { url: string; title: strin
       .then((data) => {
         if (!active || !data.html) throw new Error("Missing embed markup");
         // Keep provider's embed markup, but remove its script tag; load the script separately.
-        const markup = data.html.replace(/<script[^>]*>[\\s\\S]*?<\\/script>/gi, "");
+        const markup = data.html.replace(/<script[^>]*>[\s\S]*?<\/script>/gi, "");
         setHtml(markup);
       })
       .catch(() => { if (active) setFailed(true); });
