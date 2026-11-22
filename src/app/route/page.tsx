@@ -77,12 +77,12 @@ export default function RoutePage() {
         <p className="eyebrow">NOT A TOY · TOUR PILOT MAP</p>
         <h1>THE TOUR.<br/><em>THE MAP.</em></h1>
         <p className="experience-lede">The tour overview is your starting point. Open a city to find music, art, tattoo culture, food, a quiet reset, or a way to get to the venue.</p>
-        <p className="disclaimer">Dates and venues cross-checked against the artist's tour listing. Confirm event details, venue address, accessibility, transit service and hours with official sources before travelling.</p>
+        <p className="disclaimer">Dates and venues cross-checked against the artist&apos;s tour listing. Confirm event details, venue address, accessibility, transit service and hours with official sources before travelling.</p>
         <div className="hero-actions">
           <a className="button primary" href="#europe">EUROPE STOPS ↓</a>
           <a className="button secondary" href="#north-america">NORTH AMERICA ↓</a>
         </div>
-        <p><a className="text-link" href="https://concord.com/artist/not-a-toy/" target="_blank" rel="noreferrer">CHECK THE ARTIST'S TOUR LISTING ↗</a></p>
+        <p><a className="text-link" href="https://concord.com/artist/not-a-toy/" target="_blank" rel="noreferrer">CHECK THE ARTIST&apos;S TOUR LISTING ↗</a></p>
         <p><Link className="text-link" href="/tour-side-quests/">GLASGOW FIRST: VERIFIED COMIC + STREET-ART SIDE QUEST ↗</Link></p>
       </section>
       <section className="route-stops" id="europe">
