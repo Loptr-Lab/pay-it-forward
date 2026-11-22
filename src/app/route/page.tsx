@@ -70,7 +70,7 @@ export default function RoutePage() {
     <main className="experience-page">
       <header className="experience-nav">
         <Link href="/" className="wordmark">PIF<span>✳</span></Link>
-        <nav><Link href="/adventure/">Adventure</Link><Link href="/route/">Tour map</Link><Link href="/">Home</Link></nav>
+        <nav aria-label="Visitor pathways"><Link href="/adventure/">Fan adventure</Link><Link href="/tour-side-quests/">Tour side quests</Link><Link href="/every-day/#makers">Production</Link><Link href="/">Home</Link></nav>
       </header>
       <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Tour Map", href: "/route/" }]} />
       <section className="experience-hero route-hero">
