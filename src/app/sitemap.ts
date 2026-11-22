@@ -15,5 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/music/devour/`, lastModified: new Date("2026-11-22"), changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/filthy-yuck/`, lastModified: new Date("2026-11-22"), changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/every-day/`, lastModified: new Date("2026-11-22"), changeFrequency: "monthly", priority: 0.8 },
+    { url: `${base}/privacy/`, lastModified: new Date("2026-11-22"), changeFrequency: "yearly", priority: 0.3 },
+    { url: `${base}/disclosures/`, lastModified: new Date("2026-11-22"), changeFrequency: "yearly", priority: 0.3 },
   ];
 }
