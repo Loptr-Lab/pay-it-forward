@@ -34,7 +34,7 @@ export default function TourResiliencePage() {
       <h1>THE TOUR.<br/><em>PLAN B.</em></h1>
       <p className="experience-lede">Tour schedules are human systems—not just pins on a map. Resilience means helping the crew, artist, fans and local creators adapt when travel, production, health or timing changes.</p>
       <p className="disclaimer">This is a planning framework, not a live travel-monitoring service or a statement that any listed routing is impossible. Dates are based on the current public tour schedule; routing feasibility must be verified by authorized tour staff.</p>
-      <div className="hero-actions"><Link className="button primary" href="/route/">VIEW TOUR MAP ↗</Link><Link className="button secondary" href="/tour-side-quests/">CITY SIDE QUESTS ↗</Link></div>
+      <div className="hero-actions"><Link className="button primary" href="/route/">VIEW TOUR MAP ↗</Link><Link className="button secondary" href="/tour-side-quests/">CITY SIDE QUESTS ↗</Link><Link className="button secondary" href="/field-notes/from-plan-b-to-plan-a/">FROM PLAN B TO PLAN A ↗</Link></div>
     </section>
 
     <section className="route-stops">
