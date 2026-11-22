@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Breadcrumbs from "../../components/Breadcrumbs";
-import SiteDirectoryFooter from ../../components/SiteDirectoryFooter;
+import SiteDirectoryFooter from "../../components/SiteDirectoryFooter";
 
 const site = "https://loptr-lab.github.io/pay-it-forward";
 const pageUrl = `${site}/music/devour/`;
@@ -115,7 +115,7 @@ export default function DevourPage() {
         <Link className="button secondary" href="/adventure/">RETURN TO THE ADVENTURE ↗</Link>
       </section>
     </article>
-    <SiteDirectoryFooter tagline="INDEPENDENT · ACCESSIBLE · SELF-PACED />
+    <SiteDirectoryFooter tagline="INDEPENDENT · ACCESSIBLE · SELF-PACED" />
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleData) }} />
   </main>;
 }
