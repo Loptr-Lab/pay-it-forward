@@ -1,6 +1,6 @@
 export const dynamic = "force-static";
 const site = "https://loptr-lab.github.io/pay-it-forward";
-const entries = [
+const entries = [\n  {title:"From Plan B to Plan A",path:"/field-notes/from-plan-b-to-plan-a/",description:"Fan-powered city and venue discovery, tour resilience, and the proposed Bandsintown integration."},
   {title:"After the Momentum",path:"/field-notes/after-the-momentum/",description:"Independent artist touring, audience infrastructure, and a case discussion prompted by Token / Never Too Different."},
   {title:"The Touring Gap",path:"/field-notes/touring-gap/",description:"Touring affordability and alternative audience-building approaches."},
   {title:"The Fan Relationship",path:"/field-notes/fan-relationship/",description:"Audience metrics, consent, privacy, and direct fan relationships."},
