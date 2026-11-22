@@ -12,6 +12,7 @@ const adventures = [
   { number: "05", title: "PILOT LAB · FAN PATH", text: "Explore the Sick Sick Soul pilot and the next NOT A TOY story test as a fan.", href: "/every-day/#fans" },
   { number: "06", title: "PILOT LAB · PRODUCTION", text: "See the developer, interactive narrative, and production pathway behind the experiments.", href: "/every-day/#makers" },
   { number: "07", title: "TOUR SIDE QUESTS", text: "Turn the NOT A TOY tour into a city adventure. Start with Glasgow and FILTHY YUCK!", href: "/tour-side-quests/" },
+  { number: "08", title: "YOUR WEEK ON AIR", text: "Make a little radio show from the music you want to pass along.", href: "/radio/" },
 ];
 
 export default function Home() {
@@ -24,6 +25,7 @@ export default function Home() {
           <Link href="/tour-side-quests/">Tour side quests</Link>
           <Link href="/every-day/#makers">Production</Link>
           <Link href="/every-day/#pilots">Creator sustainability</Link>
+          <Link href="/radio/">Your Week on Air</Link>
         </nav>
       </header>
 
@@ -86,6 +88,7 @@ export default function Home() {
         <h2 id="next-track-title">THE NEXT TRACK<br/><em>IS OUT THERE.</em></h2>
         <p>Follow a collaboration beyond the credits. Discover a new artist, trace the sound back through their catalog, and build a listening path of your own.</p>
         <Link className="button primary" href="/music/devour/">EXPLORE DEVOUR · VOILÀ × NOT A TOY ↗</Link>
+        <Link className="button secondary" href="/radio/">MAKE YOUR WEEKLY RADIO SHOW ↗</Link>
       </section>
 
       <section className="intro section" id="adventure">
