@@ -29,6 +29,12 @@ The fan opt-in article (dated October 6, 2026) documents:
 
 The docs describe hosted Bandsintown CTA destinations. They do **not** establish a public API for Play It Forward to retrieve individual fan contact records or export opt-in lists. Do not build around that assumption.
 
+## Illustrative touring context (editor-supplied; not independently verified)
+
+A social-story video supplied for editorial review describes a 22-show United States run, two music videos filmed on the road, and recording during a ten-hour drive home. This is useful qualitative context for explaining the operational workload behind touring momentum; it is not a verified itinerary, booking record, or third-party endorsement.
+
+A separate supplied Spotify screenshot shows 100,010,324 all-time streams and 5,101,835 streams in the displayed last-28-days view. The visible track/title artwork does not clearly establish Token as the credited artist. Do not publish or attribute those figures to Token until the underlying Spotify artist/track source is confirmed. Streaming totals must remain distinct from city-level fan intent, RSVPs, ticket transactions, and attendance.
+
 ## Product responsibility split
 
 | Play It Forward | Bandsintown | Artist / booking team |
