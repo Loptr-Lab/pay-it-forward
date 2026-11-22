@@ -4,6 +4,7 @@ const groups = [
   { title: "EXPLORE", links: [
     { label: "Home", href: "/" },
     { label: "Fan Adventure", href: "/adventure/" },
+    { label: "Radio · Your Week on Air", href: "/radio/" },
     { label: "Tour Map", href: "/route/" },
     { label: "Tour Side Quests", href: "/tour-side-quests/" },
     { label: "Cultural Rabbit Hole", href: "/culture/" },
@@ -12,7 +13,7 @@ const groups = [
     { label: "DEVOUR · VOILÀ × NOT A TOY", href: "/music/devour/" },
     { label: "FILTHY YUCK! Interactive Story", href: "/filthy-yuck/" },
     { label: "Every Day · Creator & Sustainability", href: "/every-day/" },
-    { label: "Field Notes · Independent Music", href: "/field-notes/after-the-momentum/" },
+    { label: "Field Notes · Independent Music", href: "/field-notes/" },
   ]},
   { title: "PILOT & PROCESS", links: [
     { label: "Fan Adventure & Pilot", href: "/adventure/#quests" },
