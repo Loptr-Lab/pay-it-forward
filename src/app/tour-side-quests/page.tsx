@@ -29,7 +29,7 @@ const maps = (q: string) => `https://www.google.com/maps/search/?api=1&query=${e
 
 export default function TourSideQuestsPage() {
   return <main className="experience-page">
-    <header className="experience-nav"><Link href="/" className="wordmark">PIF<span>✳</span></Link><nav><Link href="/adventure/">Adventure</Link><Link href="/route/">Tour map</Link><Link href="/">Home</Link></nav></header>
+    <header className="experience-nav"><Link href="/" className="wordmark">PIF<span>✳</span></Link><nav aria-label="Visitor pathways"><Link href="/adventure/">Fan adventure</Link><Link href="/tour-side-quests/">Tour side quests</Link><Link href="/every-day/#makers">Production</Link><Link href="/">Home</Link></nav></header>
     <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Tour Map", href: "/route/" }, { label: "Side Quests", href: "/tour-side-quests/" }]} />
     <section className="experience-hero">
       <p className="eyebrow">NOT A TOY · FILTHY YUCK! · PLAY IT FORWARD</p>
@@ -43,7 +43,7 @@ export default function TourSideQuestsPage() {
       <p className="eyebrow">VERIFIED CITY QUEST · NOV 23, 2026</p>
       <h2>GLASGOW.</h2>
       <p className="route-note">The November 23 listing is Voilà + NOT A TOY + Austin Giorgio at The Garage, 490 Sauchiehall Street. These are optional nearby cultural stops; check opening hours and travel details before heading out.</p>
-      <p className="route-note"><strong>Access note:</strong> The Garage's main entrance to the show hall includes stairs (40 in total after security). The venue lists a limited-access wheelchair entrance on Renfrew Street; contact its access team in advance for instructions and arrangements. <a href="https://garageglasgow.co.uk/accessibility/" target="_blank" rel="noreferrer">Official accessibility information ↗</a></p>
+      <p className="route-note"><strong>Access note:</strong> The Garage&apos;s main entrance to the show hall includes stairs (40 in total after security). The venue lists a limited-access wheelchair entrance on Renfrew Street; contact its access team in advance for instructions and arrangements. <a href="https://garageglasgow.co.uk/accessibility/" target="_blank" rel="noreferrer">Official accessibility information ↗</a></p>
       <div className="route-cards">
         <article className="route-card">
           <span className="route-num">01 · COMICS / COLLECTIBLES</span><h3>Forbidden Planet Glasgow</h3>
