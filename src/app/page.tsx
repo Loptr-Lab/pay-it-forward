@@ -26,6 +26,7 @@ export default function Home() {
           <Link href="/every-day/#makers">Production</Link>
           <Link href="/every-day/#pilots">Creator sustainability</Link>
           <Link href="/radio/">Your Week on Air</Link>
+          <Link href="/field-notes/">Field Notes</Link>
         </nav>
       </header>
 
