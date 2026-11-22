@@ -28,13 +28,13 @@ const steps = [
 export default function TourResiliencePage() {
   return <main className="experience-page">
     <header className="experience-nav"><Link href="/" className="wordmark">PIF<span>✳</span></Link><nav aria-label="Visitor pathways"><Link href="/adventure/">Fan adventure</Link><Link href="/route/">Tour map</Link><Link href="/tour-side-quests/">Side quests</Link><Link href="/every-day/#makers">Production</Link><Link href="/">Home</Link></nav></header>
-    <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Tour Map", href: "/route/" }, { label: "Tour Resilience", href: "/tour-resilience/" }]} />
+    <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Tour Map", href: "/route/" }, { label: "Plan B Tour", href: "/tour-resilience/" }]} />
     <section className="experience-hero">
       <p className="eyebrow">PLAY IT FORWARD · TOUR OPERATIONS + FAN EXPERIENCE</p>
       <h1>THE TOUR.<br/><em>PLAN B.</em></h1>
       <p className="experience-lede">Tour schedules are human systems—not just pins on a map. Resilience means helping the crew, artist, fans and local creators adapt when travel, production, health or timing changes.</p>
       <p className="disclaimer">This is a planning framework, not a live travel-monitoring service or a statement that any listed routing is impossible. Dates are based on the current public tour schedule; routing feasibility must be verified by authorized tour staff.</p>
-      <div className="hero-actions"><Link className="button primary" href="/route/">VIEW TOUR MAP ↗</Link><Link className="button secondary" href="/tour-side-quests/">CITY SIDE QUESTS ↗</Link></div>
+      <div className="hero-actions"><Link className="button primary" href="/route/">VIEW TOUR MAP ↗</Link><Link className="button secondary" href="/tour-side-quests/">CITY SIDE QUESTS ↗</Link><Link className="button secondary" href="/adventure/#make-an-adventure">BUILD YOUR ADVENTURE ↗</Link></div>
     </section>
 
     <section className="route-stops">
@@ -83,7 +83,7 @@ export default function TourResiliencePage() {
       <div className="discovery-prompt"><span>BUILD-IN-PUBLIC CHECKPOINT</span><strong>What are we trying? What did we learn? What is open for collaboration?</strong><p>Each update should include a dated status, evidence or source, decision, next action, and a specific invitation. Link to the relevant project page or issue so the public record is useful—not a stream of vague announcements.</p></div>
 
       <p className="eyebrow">PROPOSED FAN INTERFACE · BUILD YOUR ADVENTURE</p><h2>IF THE TOUR PLAN<br/>GETS STUCK, FIND<br/>YOUR OWN STORY.</h2>
-      <p className="route-note">Yes—but keep it a lightweight, self-paced adventure builder, not a travel booking engine or emergency dispatch tool. It should help someone turn their situation into options, especially if they have limited time, money, mobility or energy. The interface can be useful even when the show changes or the person is not attending.</p>
+      <p className="route-note">If a show, connection or travel plan changes, use the existing Build Your Adventure tool to turn your city, time, budget, interests and practical needs into an alternative plan. It is a lightweight, self-paced prompt builder—not a travel booking engine or emergency dispatch tool—and works even if you are not attending the show.</p><div className="hero-actions"><Link className="button primary" href="/adventure/#make-an-adventure">BUILD AN ALTERNATIVE PLAN ↗</Link><Link className="button secondary" href="/route/">CHOOSE A TOUR CITY ↗</Link></div>
       <div className="route-cards">
         <article className="route-card"><h3>Start with your situation</h3><p>City or neighborhood, available time, budget (including free), interests, accessibility needs, energy level and whether the show is happening, delayed or uncertain. Avoid collecting precise location or sensitive details unless truly necessary.</p></article>
         <article className="route-card"><h3>Choose an adventure</h3><p>Offer self-guided paths such as music history, street art, games/comics, local food, quiet/low-sensory spaces, free community events or a short walk. Make options conditional on verified hours and availability.</p></article>
