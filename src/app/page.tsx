@@ -54,7 +54,7 @@ export default function Home() {
           <p className="eyebrow">FEATURED PILOT · LIVE MUSIC × FAN ADVENTURE</p>
           <h2 id="pilot-title">NOT A TOY<br /><em>ON TOUR.</em></h2>
           <p className="pilot-lede">The music is the starting point. The city becomes part of the experience.</p>
-          <p>PLAY IT FORWARD is exploring a fan-led companion to NOT A TOY’s current tour: a self-paced adventure built around the band's world, new music, local discovery, and accessible prompts—without requiring a ticket, account, purchase, or official venue participation.</p>
+          <p>PLAY IT FORWARD is exploring a fan-led companion to NOT A TOY’s current tour: a self-paced adventure built around the band&apos;s world, new music, local discovery, and accessible prompts—without requiring a ticket, account, purchase, or official venue participation.</p>
           <div className="pilot-album-detail">
             <strong>NEW ALBUM</strong>
             <span>FILTHY YUCK! · 17 tracks · October 16, 2026</span>
@@ -132,7 +132,7 @@ export default function Home() {
         <div className="music-feature-copy">
           <p className="eyebrow">FEATURED COLLABORATION · MUSIC STORY</p>
           <h2 id="music-feature-title">VOILÀ × NOT A TOY<br/><em>DEVOUR.</em></h2>
-          <p>A theatrical lyric film inspired by sirens, mythology, and the pull of the deep. Start with the collaboration, then follow a focused path into NOT A TOY's discography.</p>
+          <p>A theatrical lyric film inspired by sirens, mythology, and the pull of the deep. Start with the collaboration, then follow a focused path into NOT A TOY&apos;s discography.</p>
           <Link className="button primary" href="/music/devour/">WATCH · EXPLORE · LISTEN ↗</Link>
         </div>
         <div className="music-feature-art">
