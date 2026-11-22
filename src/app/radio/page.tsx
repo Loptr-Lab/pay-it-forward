@@ -49,6 +49,7 @@ export default function WeekOnAirPage() {
       const parsed = new URL(value);
       return parsed.protocol === "https:" || parsed.protocol === "http:";
     } catch (error) {
+      void error;
       return false;
     }
   }
