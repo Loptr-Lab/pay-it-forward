@@ -8,7 +8,8 @@ const adventures = [
   { number: "02", title: "CITY QUEST", text: "Explore with music in your headphones and curiosity in your pocket.", href: "/adventure/" },
   { number: "03", title: "DISCOVER", text: "Find a sound you have never heard. Play it forward.", href: "/adventure/#discover" },
   { number: "04", title: "THE FAN EVENT", text: "A proposed Bandcamp Friday adventure for music lovers.", href: "#event" },
-  { number: "05", title: "HELLO, EVERY DAY", text: "A creative challenge about making, owning, and passing value forward.", href: "/every-day/" },
+  { number: "05", title: "PILOT LAB · FAN PATH", text: "Explore the Sick Sick Soul pilot and the next NOT A TOY story test as a fan.", href: "/every-day/#fans" },
+  { number: "06", title: "PILOT LAB · PRODUCTION", text: "See the developer, interactive narrative, and production pathway behind the experiments.", href: "/every-day/#makers" },
 ];
 
 export default function Home() {
