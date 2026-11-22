@@ -305,3 +305,7 @@
 .radio-boundary p,.radio-small { line-height:1.65; }
 .radio-small { color:#aaa; font-size:.85rem; }
 @media(max-width:600px) { .radio-track-fields { display:grid; grid-template-columns:1fr; } .radio-actions { flex-direction:column; } .radio-actions .button { width:100%; } }
+
+
+/* Bandcamp discovery links — compact brand-forward treatment */
+.bandcamp-brand-link{display:inline-flex;align-items:center;gap:10px;margin-top:18px;padding:10px 14px;border:1px solid #1da0c3;background:#111;color:#fff;text-decoration:none;transition:transform .2s,border-color .2s}.bandcamp-brand-link:hover{transform:translateY(-2px);border-color:#9fe8f5}.bandcamp-mark{display:inline-flex;align-items:center;justify-content:center;background:#1da0c3;color:#fff;font-weight:900;font-size:1rem;letter-spacing:-.08em;width:28px;height:28px;border-radius:3px;font-family:Arial,sans-serif}.bandcamp-wordmark{font-weight:900;letter-spacing:-.04em;font-size:1.1rem}.bandcamp-link-label{font-size:.65rem;font-weight:800;letter-spacing:.08em;color:#9fe8f5;border-left:1px solid #ffffff40;padding-left:10px}.bandcamp-mark-small{width:20px;height:20px;font-size:.75rem;vertical-align:middle;margin-right:4px}.bandcamp-artist-link{display:inline-flex;align-items:center;gap:8px}@media(max-width:600px){.bandcamp-brand-link{flex-wrap:wrap}.bandcamp-link-label{flex-basis:100%;border-left:0;padding-left:0}}
