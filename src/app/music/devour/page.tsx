@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Breadcrumbs from "../../components/Breadcrumbs";
+import SiteDirectoryFooter from ../../components/SiteDirectoryFooter;
 
 const site = "https://loptr-lab.github.io/pay-it-forward";
 const pageUrl = `${site}/music/devour/`;
@@ -55,7 +56,7 @@ export default function DevourPage() {
   };
   return <main className="experience-page music-story-page">
     <header className="experience-nav"><Link href="/" className="wordmark">PIF<span>✳</span></Link><nav><Link href="/adventure/">Adventure</Link><Link href="/#next-track">Music discovery</Link><Link href="/route/">Tour map</Link></nav></header>
-    <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Music Discovery", href: "/#next-track" }, { label: "Devour", href: pageUrl }]} />
+    <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Music Discovery", href: "/#next-track" }, { label: "DEVOUR", href: pageUrl }]} />
     <article>
       <header className="music-story-hero">
         <p className="eyebrow">PLAY IT FORWARD · MUSIC DISCOVERY</p>
@@ -114,7 +115,7 @@ export default function DevourPage() {
         <Link className="button secondary" href="/adventure/">RETURN TO THE ADVENTURE ↗</Link>
       </section>
     </article>
-    <footer className="experience-footer"><span>PLAY IT FORWARD ✳</span><span>DISCOVERY · ACCESSIBLE · SELF-PACED</span><Link href="/">HOME ↑</Link></footer>
+    <SiteDirectoryFooter tagline="INDEPENDENT · ACCESSIBLE · SELF-PACED />
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleData) }} />
   </main>;
 }
