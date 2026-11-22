@@ -11,7 +11,7 @@ const adventures = [
   { number: "04", title: "THE FAN EVENT", text: "A proposed Bandcamp Friday adventure for music lovers.", href: "#event" },
   { number: "05", title: "PILOT LAB · FAN PATH", text: "Explore the Sick Sick Soul pilot and the next NOT A TOY story test as a fan.", href: "/every-day/#fans" },
   { number: "06", title: "PILOT LAB · PRODUCTION", text: "See the developer, interactive narrative, and production pathway behind the experiments.", href: "/every-day/#makers" },
-  { number: "07", title: "TOUR SIDE QUESTS", text: "Turn the NOT A TOY tour into a city adventure. Start with Glasgow and FILTHY YUCK!", href: "/tour-side-quests/" },
+  { number: "07", title: "TOUR SIDE QUESTS", text: "Turn the NOT A TOY tour into a city adventure. Start with Glasgow and FILTHY YUCK!", href: "/tour-side-quests/" },\n  { number: "08", title: "BUILD THE NEXT TOUR", text: "Explore how fan interest could help artists test cities and venues before routing.", href: "/field-notes/from-plan-b-to-plan-a/" },
 ];
 
 export default function Home() {
