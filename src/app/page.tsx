@@ -8,6 +8,7 @@ const adventures = [
   { number: "02", title: "CITY QUEST", text: "Explore with music in your headphones and curiosity in your pocket.", href: "/adventure/" },
   { number: "03", title: "DISCOVER", text: "Find a sound you have never heard. Play it forward.", href: "/adventure/#discover" },
   { number: "04", title: "THE FAN EVENT", text: "A proposed Bandcamp Friday adventure for music lovers.", href: "#event" },
+  { number: "05", title: "HELLO, EVERY DAY", text: "A creative challenge about making, owning, and passing value forward.", href: "/every-day/" },
 ];
 
 export default function Home() {
@@ -144,7 +145,7 @@ export default function Home() {
         <h2>PLAY IT<br /><em>FORWARD.</em></h2>
         <p className="event-date">BANDCAMP FRIDAY · DECEMBER 4, 2026</p>
         <p>Discover music. Create something. Support artists if you choose. Connect with fans. A self-paced digital adventure celebrating independent music.</p>
-        <a className="button primary" href="https://bandcamp.com/" target="_blank" rel="noreferrer">DISCOVER MUSIC ↗</a>
+        <div className="hero-actions"><a className="button primary" href="https://bandcamp.com/" target="_blank" rel="noreferrer">DISCOVER MUSIC ↗</a><Link className="button secondary" href="/every-day/">GOODBYE BANDCAMP FRIDAY? HELLO, EVERY DAY. ↗</Link></div>
         <p className="disclaimer">Independent concept. Not affiliated with or endorsed by NOT A TOY, Songkick, or Bandcamp. Event and partnerships are proposed.</p>
       </section>
 
