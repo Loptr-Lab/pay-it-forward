@@ -32,3 +32,30 @@ This project is deployed as a GitHub Pages static site. Do not add server-only A
 **Breadcrumb:** Play It Forward → Your Week on Air → [PIXIE Creator OS / Digital Jockey Studio](https://ibloud.github.io/pixie-creator-os/digital-jockey.html) → [Digital Jockey Network architecture](https://github.com/ibloud/pixie-creator-os/blob/main/docs/digital-jockey-network.md).
 
 Play It Forward is the audience-facing reference experience. PIXIE Creator OS provides the creator-side workspace and local prompt generator for people who want to build a similar station, listening club, or digital-jockey project. These remain separate apps and data stores; the link is a product breadcrumb, not an account or data integration.
+
+
+## Capability disclosure — works / planned / needed
+
+### Works now
+
+- A person manually enters a show title, DJ note, track title, artist, and optional external listening link.
+- The show is encoded in the URL fragment, not uploaded to the application server. Anyone with the resulting link can read the show.
+- Shared shows are read-only. Listening links open external services; Play It Forward does not host or play the audio.
+- A creator can follow the breadcrumb to PIXIE Creator OS and use its local project-prompt generator to plan a separate radio/community project.
+
+### Planned — not currently available
+
+- Apple Music account authorization or automatic listening-history import.
+- DJ/station accounts, persistent profiles and archives, follows, feeds, discovery, recommendations, submissions, comments, and moderation.
+- AT Protocol authentication/publishing or cross-app identity.
+- Audio hosting, live broadcasts, or scheduled programming.
+
+### Needed before those features can ship
+
+- **Apple Music:** developer identifier/token, MusicKit setup, explicit opt-in, secure token handling, API capability validation, and privacy/retention/export/delete controls. The current recently played endpoint cannot establish a timestamped exact seven-day listening history.
+- **Social features:** product decisions for identity, visibility, ownership, deletion, blocking/reporting, moderation and community rules; backend/database/hosting; security and abuse controls.
+- **AT Protocol:** review authentication, PDS and existing Lexicons, then implement a narrowly scoped adapter with authorization, record ownership, moderation, and deletion tests.
+- **Broadcasting:** rights and licensing review, provider permissions, hosting/distribution architecture, and operational moderation before any audio is hosted or rebroadcast.
+- **Release quality:** acceptance criteria, keyboard/screen-reader/mobile checks, consent and denial tests, privacy leakage tests, recovery/export, monitoring, and rollback.
+
+A manual tracklist is not evidence of a play event. A share link is not private storage. External listening links are not permission to rebroadcast. Do not add private listening history to a public show without a separate, explicit user action.
