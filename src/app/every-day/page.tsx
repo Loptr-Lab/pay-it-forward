@@ -1,0 +1,26 @@
+import Link from "next/link";
+
+export default function EveryDayPage() {
+  return <main className="experience-page">
+    <header className="experience-nav"><Link href="/" className="wordmark">PIF<span>✳</span></Link><nav><Link href="/adventure/">Adventure</Link><Link href="/route/">Tour map</Link><Link href="/">Home</Link></nav></header>
+    <section className="experience-hero">
+      <p className="eyebrow">PLAY IT FORWARD · CREATIVE ECONOMICS</p>
+      <h1>GOODBYE<br/><em>BANDCAMP FRIDAY?</em></h1>
+      <p className="experience-lede">HELLO, EVERY DAY.</p>
+      <p className="experience-lede">Bandcamp Friday showed what direct support can do. But a creative life shouldn't depend on one promotional day, a fee waiver, a platform, or a gatekeeper.</p>
+      <p>Make something. Find your people. Own your work. Build your future. Play it forward.</p>
+      <div className="hero-actions"><Link className="button primary" href="#challenge">TAKE THE CREATIVE CHALLENGE ↓</Link><Link className="button secondary" href="/adventure/">EXPLORE THE FAN ADVENTURE ↗</Link></div>
+      <p className="disclaimer">An independent creative challenge. This is not a claim that Bandcamp Friday harms Bandcamp or is ending.</p>
+    </section>
+    <section className="quest-intro" id="challenge"><p className="eyebrow">THREE SMALL EXPERIMENTS · NO PURCHASE REQUIRED</p><h2>DON'T WAIT FOR<br/>THE NEXT FRIDAY.</h2><p>Choose one experiment. Use what you already have. Document what changed. Share only if you want.</p></section>
+    <section className="quest-grid">
+      <article className="quest-card"><div className="quest-card-head"><span>01 · MAKE</span><span className="quest-number">01</span></div><h3>TURN WHAT YOU HAVE INTO SOMETHING NEW.</h3><p>Use footage, sketches, photos, demos, notes, or unfinished work you already own or have permission to use. Re-cut it, remix the idea, tell a different story, or make a tiny new thing.</p><div className="quest-prompt"><strong>Creative prompt</strong><span>What could you make in one hour without buying anything?</span></div></article>
+      <article className="quest-card"><div className="quest-card-head"><span>02 · OWN</span><span className="quest-number">02</span></div><h3>KNOW WHAT YOU MADE—and WHAT YOU USED.</h3><p>Keep a simple record of the original assets, collaborators, permissions, tools, prompts, and decisions. Make the ownership and provenance story clear before you publish, sell, or share.</p><div className="quest-prompt"><strong>Creative prompt</strong><span>Make a one-page “made by me / used by me / permission checked” note for your experiment.</span></div></article>
+      <article className="quest-card"><div className="quest-card-head"><span>03 · PLAY IT FORWARD</span><span className="quest-number">03</span></div><h3>PASS VALUE DIRECTLY.</h3><p>Recommend an independent artist, buy directly if you can, share an official link, trade skills, credit a collaborator, or help someone find an audience. No spending is required.</p><div className="quest-prompt"><strong>Creative prompt</strong><span>Who helped you make, learn, or discover something? Pass one useful thing forward.</span></div></article>
+    </section>
+    <section className="quest-intro"><p className="eyebrow">THE ECONOMICS CHECK</p><h2>WHO CAPTURES<br/>THE VALUE?</h2><p>Before and after your experiment, record the time, money spent, output, reuse potential, audience response, and what you learned. AI can extract value from creative work—or help creators reduce costs, build skills, and keep more value. Measure the difference rather than assuming.</p><div className="discovery-prompt"><span>YOUR FIVE-MINUTE REVIEW</span><strong>What did it cost? What did you make? Who owns it? Who benefited? What would you repeat?</strong></div></section>
+    <section className="adventure-map-cta"><p className="eyebrow">GO DEEPER · AI ADVENTURE SCHOOL</p><h2>TURN THE EXPERIMENT<br/><em>INTO A SKILL.</em></h2><p>Follow the practical learning pathway in the Training repo: creative AI experiments, footage-to-adventure workflows, rights and provenance, and creative economics. The lessons are designed to help you test tools—not surrender your creative decisions to them.</p><div className="hero-actions"><a className="button primary" href="https://loptr-lab.github.io/training/ai-engineering/applied-projects/play-it-forward/">EXPLORE AI ADVENTURE SCHOOL ↗</a><a className="button secondary" href="https://loptr-lab.github.io/training/ai-engineering/">AI ENGINEERING COURSE ↗</a></div></section>
+    <section className="bandcamp-friday"><p className="eyebrow">THE POINT ISN'T A FRIDAY</p><h2>MAKE IT<br/><em>EVERY DAY.</em></h2><p>Bandcamp Friday reminded us what direct support can do. Don't wait for a waiver, a perfect camera, permission from a gatekeeper, or the next promotion. Make work, own it, find your audience, and build a sustainable creative practice.</p><a className="button primary" href="https://notatoy.bandcamp.com/album/not-a-toy" target="_blank" rel="noreferrer">SUPPORT NOT A TOY DIRECTLY ↗</a></section>
+    <footer className="experience-footer"><span>PLAY IT FORWARD ✳</span><span>MAKE · OWN · PASS IT ON</span><Link href="/">HOME ↑</Link></footer>
+  </main>;
+}
