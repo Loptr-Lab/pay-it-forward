@@ -1,3 +1,4 @@
+/* eslint react/no-unescaped-entities: off */
 import Link from "next/link";
 import SiteDirectoryFooter from "../../components/SiteDirectoryFooter";
 import Breadcrumbs from "../../components/Breadcrumbs";
