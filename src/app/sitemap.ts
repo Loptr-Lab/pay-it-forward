@@ -10,6 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/adventure/`, lastModified: new Date("2026-11-20"), changeFrequency: "weekly", priority: 0.9 },
     { url: `${base}/culture/`, lastModified: new Date("2026-11-22"), changeFrequency: "weekly", priority: 0.8 },
     { url: `${base}/route/`, lastModified: new Date("2026-11-20"), changeFrequency: "weekly", priority: 0.8 },
+    { url: `${base}/tour-resilience/`, lastModified: new Date("2026-11-22"), changeFrequency: "weekly", priority: 0.7 },
     { url: `${base}/music/devour/`, lastModified: new Date("2026-11-20"), changeFrequency: "monthly", priority: 0.8 },
   ];
 }
