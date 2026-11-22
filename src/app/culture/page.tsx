@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Breadcrumbs from "../components/Breadcrumbs";
+import SiteDirectoryFooter from ../components/SiteDirectoryFooter;
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -30,7 +31,7 @@ const platforms = [
 export default function CulturePage() {
   return <main className="experience-page">
     <header className="experience-nav"><Link href="/" className="wordmark">PIF<span>✳</span></Link><nav aria-label="Visitor pathways"><Link href="/adventure/">Fan adventure</Link><Link href="/tour-side-quests/">Tour side quests</Link><Link href="/culture/">Cultural rabbit hole</Link><Link href="/every-day/#makers">Production</Link><Link href="/">Home</Link></nav></header>
-    <Breadcrumbs items={[{label:"Home",href:"/"},{label:"Adventure",href:"/adventure/"},{label:"Cultural Rabbit Hole",href:"/culture/"}]} />
+    <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Cultural Rabbit Hole", href: "/culture/" }]} />
     <section className="experience-hero">
       <p className="eyebrow">NOT A TOY · FILTHY YUCK! · PLAY IT FORWARD</p>
       <h1>THE CULTURAL<br/><em>RABBIT HOLE.</em></h1>
@@ -43,6 +44,6 @@ export default function CulturePage() {
     <section className="quest-intro"><p className="eyebrow">THE THEMES</p><h2>FICTION.<br/>REALITY.<br/><em>NO CLEAN EXIT.</em></h2><p>Cyberpunk and dystopia often ask who benefits from technology, who gets access, and who pays the price. Punk and underground art have long explored power, inequality, absurdity, and the people outside the polished mainstream. This page connects those conversations without flattening them into a sales pitch.</p></section>
     <section className="route-stops"><p className="eyebrow">PUBLICATION & PLATFORM DISCOVERY</p><h2>FOLLOW THE PEOPLE<br/>COVERING THE CULTURE.</h2><p className="route-note">These are relevant editorial platforms to explore—not a claim that a particular writer has covered NOT A TOY, GTA VI, or Altered Carbon. Individual writers, recent articles, Bluesky posts, and professional contact channels will be researched and verified before outreach.</p><div className="route-cards">{platforms.map(([name,desc,url])=><article className="route-card" key={name}><span className="route-num">MEDIA / CREATOR DISCOVERY</span><h3>{name}</h3><p>{desc}</p><a className="text-link" href={url} target="_blank" rel="noreferrer">VISIT PUBLICATION ↗</a></article>)}</div></section>
     <section className="adventure-map-cta"><p className="eyebrow">FOLLOW THE RABBIT HOLE · THEN FIND THE SHOW</p><h2>FROM THE SCREEN<br/><em>TO THE REAL WORLD.</em></h2><p>Explore the NOT A TOY press library, discover FILTHY YUCK!, listen to the music, or make a city side quest part of your concert day.</p><div className="hero-actions"><Link className="button primary" href="/adventure/#press">EXISTING PRESS & VIDEO ↗</Link><Link className="button secondary" href="/tour-side-quests/">TOUR SIDE QUESTS ↗</Link><Link className="button secondary" href="/filthy-yuck/">FILTHY YUCK! ↗</Link></div></section>
-    <footer className="experience-footer"><span>PLAY IT FORWARD ✳</span><span>INDEPENDENT · EDITORIAL DISCOVERY</span><Link href="/">HOME ↑</Link></footer>
+    <SiteDirectoryFooter tagline="INDEPENDENT · ACCESSIBLE · SELF-PACED />
   </main>;
 }
