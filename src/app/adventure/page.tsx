@@ -4,7 +4,7 @@ import Breadcrumbs from "../components/Breadcrumbs";
 import SiteDirectoryFooter from "../components/SiteDirectoryFooter";
 import type { Metadata } from "next";
 
-export const metadata: Metadata = { title: "Tour Adventure | PLAY IT FORWARD", description: "Build a self-paced NOT A TOY tour adventure with music discovery, art, food, comics, and venue travel.", alternates: { canonical: "https://loptr-lab.github.io/pay-it-forward/adventure/" } };
+export const metadata: Metadata = { title: "Tour Adventure", description: "Build a self-paced NOT A TOY tour adventure with music discovery, art, food, comics, and venue travel.", alternates: { canonical: "https://loptr-lab.github.io/pay-it-forward/adventure/" } };
 
 const quests = [
   { tag: "01 · LISTEN", title: "SET THE SCENE", body: "Pick three tracks from FILTHY YUCK! or the NOT A TOY catalog. Build a pre-show playlist that starts where you are and ends at full concert energy.", action: "Make your setlist", prompt: "What track would you play as the opening credits to tonight?", link: "https://music.apple.com/us/album/filthy-yuck/6803206084", linkLabel: "OPEN THE ALBUM ↗" },
