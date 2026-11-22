@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Breadcrumbs from "../components/Breadcrumbs";
-import SiteDirectoryFooter from ../components/SiteDirectoryFooter;
+import SiteDirectoryFooter from "../components/SiteDirectoryFooter";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = { title: "NOT A TOY Tour Map | PLAY IT FORWARD", description: "Explore tour cities for local music, art, tattoo culture, food, quiet places, and public transit to venues.", alternates: { canonical: "https://loptr-lab.github.io/pay-it-forward/route/" } };
@@ -102,7 +102,7 @@ export default function RoutePage() {
         <p>Pick one city and one thing to explore. Map searches are centered around the venue area. No GPS tracking, check-ins, uploads, or spending required.</p>
         <Link className="button primary" href="/adventure/">BACK TO THE QUESTS ↗</Link>
       </section>
-      <SiteDirectoryFooter tagline="FAN-LED · ACCESSIBLE · SELF-PACED />
+      <SiteDirectoryFooter tagline="FAN-LED · ACCESSIBLE · SELF-PACED" />
     </main>
   );
 }
