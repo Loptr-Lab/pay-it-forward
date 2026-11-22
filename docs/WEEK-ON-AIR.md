@@ -25,3 +25,10 @@ Next integration phase:
 ## Static hosting
 
 This project is deployed as a GitHub Pages static site. Do not add server-only API assumptions without a separate backend/hosting decision. The current share links use URL fragments so show content is not sent in ordinary HTTP requests.
+
+
+## Creator-side project builder
+
+**Breadcrumb:** Play It Forward → Your Week on Air → [PIXIE Creator OS / Digital Jockey Studio](https://ibloud.github.io/pixie-creator-os/digital-jockey.html) → [Digital Jockey Network architecture](https://github.com/ibloud/pixie-creator-os/blob/main/docs/digital-jockey-network.md).
+
+Play It Forward is the audience-facing reference experience. PIXIE Creator OS provides the creator-side workspace and local prompt generator for people who want to build a similar station, listening club, or digital-jockey project. These remain separate apps and data stores; the link is a product breadcrumb, not an account or data integration.
