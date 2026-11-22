@@ -14,10 +14,10 @@ const groups = [
     { label: "Every Day · Creator & Sustainability", href: "/every-day/" },
   ]},
   { title: "PILOT & PROCESS", links: [
-    { label: "Fan Adventure & Pilot", href: "/adventure/#pilot" },
+    { label: "Fan Adventure & Pilot", href: "/adventure/#quests" },
     { label: "Production / Maker Path", href: "/every-day/#makers" },
     { label: "Creator Pilots", href: "/every-day/#pilots" },
-    { label: "Public Review", href: "/filthy-yuck/#review" },
+    { label: "Public Review", href: "/filthy-yuck/" },
   ]},
 ];
 
