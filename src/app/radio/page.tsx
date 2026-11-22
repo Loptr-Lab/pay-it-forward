@@ -43,7 +43,9 @@ export default function WeekOnAirPage() {
     return btoa(unescape(encodeURIComponent(payload)));
   }, [title, note, tracks]);
 
-  function isSafeListenUrl(value: string) { try { const url = new URL(value); return url.protocol === "https:" || url.protocol === "http:"; } catch { return false; } }\n\n  function addTrack() { setTracks((items) => [...items, { title: "", artist: "", url: "" }]); }
+  function isSafeListenUrl(value: string) { try { const url = new URL(value); return url.protocol === "https:" || url.protocol === "http:"; } catch { return false; } }
+
+  function addTrack() { setTracks((items) => [...items, { title: "", artist: "", url: "" }]); }
 
   function parseCsv(text: string): Track[] {
     const rows: string[][] = [];
@@ -89,7 +91,7 @@ export default function WeekOnAirPage() {
       setTracks(imported);
       setImportMessage(`Imported ${imported.length} tracks. Review the list before sharing.`);
     } catch {
-      setImportMessage("We couldn't read that file. Please try a UTF-8 CSV or text file.");
+      setImportMessage("We couldn't read that file. Please try a UTF-8 CSV file.");
     }
   }
 
@@ -163,8 +165,8 @@ export default function WeekOnAirPage() {
           </label>
           <div className="radio-actions">
             <button className="button secondary" type="button" onClick={openSoundiiz}>OPEN SOUNDIIZ ↗</button>
-            <label className="button secondary radio-file-button">IMPORT CSV / TEXT FILE
-              <input type="file" accept=".csv,.txt,text/csv,text/plain" onChange={(e) => importTrackFile(e.target.files?.[0])} />
+            <label className="button secondary radio-file-button">IMPORT CSV FILE
+              <input type="file" accept=".csv,text/csv" onChange={(e) => importTrackFile(e.target.files?.[0])} />
             </label>
             <button className="button secondary" type="button" onClick={exportTracklist}>EXPORT TRACKLIST CSV ↓</button>
           </div>
