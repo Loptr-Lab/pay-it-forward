@@ -16,7 +16,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/filthy-yuck/`, lastModified: new Date("2026-11-22"), changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/every-day/`, lastModified: new Date("2026-11-22"), changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/field-notes/`, lastModified: new Date("2026-11-22"), changeFrequency: "monthly", priority: 0.7 },
-    { url: `${base}/field-notes/after-the-momentum/`, lastModified: new Date("2026-11-22"), changeFrequency: "monthly", priority: 0.7 },
+    { url: `${base}/field-notes/from-plan-b-to-plan-a/`, lastModified: new Date("2026-11-22"), changeFrequency: "monthly", priority: 0.8 },\n    { url: `${base}/field-notes/after-the-momentum/`, lastModified: new Date("2026-11-22"), changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/field-notes/touring-gap/`, lastModified: new Date("2026-11-22"), changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/field-notes/fan-relationship/`, lastModified: new Date("2026-11-22"), changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/field-notes/atproto-music-discovery/`, lastModified: new Date("2026-11-22"), changeFrequency: "monthly", priority: 0.7 },
