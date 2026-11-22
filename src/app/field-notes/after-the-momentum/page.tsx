@@ -1,12 +1,12 @@
 import Link from "next/link";
-import SiteDirectoryFooter from "../components/SiteDirectoryFooter";
-import Breadcrumbs from "../components/Breadcrumbs";
+import SiteDirectoryFooter from "../../components/SiteDirectoryFooter";
+import Breadcrumbs from "../../components/Breadcrumbs";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "After the Momentum: What an Independent Tour Can Build | PLAY IT FORWARD",
   description: "Field notes on artist momentum, touring, direct audience relationships, and the next tier of independent infrastructure—using Token and Never Too Different as a discussion case, not a pitch.",
-  alternates: { canonical: "https://loptr-lab.github.io/pay-it-forward/field-notes/after-the-momentum/" },
+  openGraph: { title: "After the Momentum", description: "What an independent touring artist can build beyond the next release.", url: "https://loptr-lab.github.io/pay-it-forward/field-notes/after-the-momentum/", type: "article" },\n  twitter: { card: "summary", title: "After the Momentum", description: "Independent artist touring and audience infrastructure." },\n  alternates: { canonical: "https://loptr-lab.github.io/pay-it-forward/field-notes/after-the-momentum/" },
 };
 
 const articleUrl = "https://loptr-lab.github.io/pay-it-forward/field-notes/after-the-momentum/";
