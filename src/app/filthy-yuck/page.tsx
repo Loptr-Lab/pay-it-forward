@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import Breadcrumbs from "../components/Breadcrumbs";
+import SiteDirectoryFooter from ../components/SiteDirectoryFooter;
 import { story, storyStart } from "./story";
 
 export default function FilthyYuckPage() {
@@ -22,7 +23,7 @@ export default function FilthyYuckPage() {
 
   return <main className="experience-page fy-page">
     <header className="experience-nav"><Link href="/" className="wordmark">PIF<span>✳</span></Link><nav aria-label="Visitor pathways"><Link href="/adventure/">Fan adventure</Link><Link href="/tour-side-quests/">Tour side quests</Link><Link href="/every-day/#makers">Production</Link><Link href="/">Home</Link></nav></header>
-    <Breadcrumbs items={[{label:"Home",href:"/"},{label:"Fan Adventure",href:"/adventure/"},{label:"FILTHY YUCK!",href:"/filthy-yuck/"}]} />
+    <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Fan Adventure", href: "/adventure/" }, { label: "FILTHY YUCK! Story", href: "/filthy-yuck/" }]} />
     <section className="fy-hero">
       <p className="eyebrow">FILTHY YUCK! · INTERACTIVE COMIC SIDE QUEST</p>
       <h1>NOT A SLAVE<br/><em>TO THE MACHINE.</em></h1>
@@ -60,6 +61,6 @@ export default function FilthyYuckPage() {
         <div className="fy-facebook-placeholder"><p>Original Facebook source embed will appear here.</p><p>Source link needed to embed the correct post without guessing or substituting unrelated content.</p></div>
       </aside>
     </section>
-    <footer className="experience-footer"><span>PLAY IT FORWARD ✳</span><span>HUMAN-LED · TOOL-OPTIONAL · FAN-LED</span><Link href="/">HOME ↑</Link></footer>
+    <SiteDirectoryFooter tagline="INDEPENDENT · ACCESSIBLE · SELF-PACED />
   </main>;
 }
