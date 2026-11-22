@@ -1,7 +1,7 @@
 import Link from "next/link";
 import AdventureBuilder from "../components/AdventureBuilder";
 import Breadcrumbs from "../components/Breadcrumbs";
-import SiteDirectoryFooter from ../components/SiteDirectoryFooter;
+import SiteDirectoryFooter from "../components/SiteDirectoryFooter";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = { title: "Tour Adventure | PLAY IT FORWARD", description: "Build a self-paced NOT A TOY tour adventure with music discovery, art, food, comics, and venue travel.", alternates: { canonical: "https://loptr-lab.github.io/pay-it-forward/adventure/" } };
@@ -46,6 +46,6 @@ export default function AdventurePage() {
       <a className="press-card" href="https://www.hazzemedia.com/post/not-a-toy-latest-single-gutter-kid-future-goals" target="_blank" rel="noreferrer"><span>INTERVIEW</span><h3>Gutter Kid & future goals</h3><p>Exploring the group&apos;s genre-blending ambitions and future creative plans.</p><b>READ THE INTERVIEW ↗</b></a>
     </div><p className="press-note">Links lead to independent publications. PLAY IT FORWARD is not affiliated with these outlets.</p><div className="press-contact" id="press-contact"><p className="eyebrow">PRESS · MEDIA · INTERVIEW INQUIRIES</p><h3>GET IN TOUCH WITH NOT A TOY</h3><p>For press requests, interviews, coverage, or artist-related inquiries, use the band’s official channels or management contact listed by Fearless Records. We could not verify a publicly listed press email, so we are not publishing an unconfirmed address.</p><div className="hero-actions"><a className="button primary" href="https://fearlessrecords.com/artists/not-a-toy/" target="_blank" rel="noreferrer">OFFICIAL ARTIST / MANAGEMENT INFO ↗</a><a className="button secondary" href="https://www.instagram.com/notatoy/" target="_blank" rel="noreferrer">NOT A TOY SOCIAL ↗</a></div><p className="press-note">PLAY IT FORWARD is an independent fan concept and is not an official representative or press contact for NOT A TOY.</p></div></section>
     <section className="adventure-map-cta"><p className="eyebrow">MAKE THE CITY PART OF IT</p><h2>YOUR ROUTE.<br/><em>YOUR RULES.</em></h2><p>Choose a record store, a mural, a coffee stop or a quiet reset. Explore local places around the show, make your own map and skip anything that doesn&apos;t fit your day.</p><Link className="button primary" href="/route/">EXPLORE CITY ROUTES ↗</Link></section>
-    <SiteDirectoryFooter tagline="FAN-LED · ACCESSIBLE · SELF-PACED />
+    <SiteDirectoryFooter tagline="FAN-LED · ACCESSIBLE · SELF-PACED" />
   </main>;
 }
