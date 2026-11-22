@@ -42,7 +42,7 @@ export default function TourSideQuestsPage() {
     <section className="route-stops" id="glasgow">
       <p className="eyebrow">VERIFIED CITY QUEST · NOV 23, 2026</p>
       <h2>GLASGOW.</h2>
-      <p className="route-note">NOT A TOY is listed at The Garage on Sauchiehall Street on Monday, November 23. These are optional nearby cultural stops; check opening hours and travel details before heading out.</p>
+      <p className="route-note">The November 23 listing is Voilà + NOT A TOY + Austin Giorgio at The Garage, 490 Sauchiehall Street. These are optional nearby cultural stops; check opening hours and travel details before heading out.</p>
       <div className="route-cards">
         <article className="route-card">
           <span className="route-num">01 · COMICS / COLLECTIBLES</span><h3>Forbidden Planet Glasgow</h3>
@@ -53,11 +53,11 @@ export default function TourSideQuestsPage() {
           <p className="route-note">Listed Monday hours: 10:00–18:00. Confirm before visiting.</p>
         </article>
         <article className="route-card">
-          <span className="route-num">02 · PHOTO / STREET ART</span><h3>Greetings from Glasgow mural</h3>
-          <p className="route-address">Sauchiehall Street, by The Garage</p>
+          <span className="route-num">02 · PHOTO / STREET ART</span><h3>Glasgow Nightlife mural</h3>
+          <p className="route-address">The lane beside Lord of Fries, Sauchiehall Street</p>
           <p>A Glasgow postcard-style mural on the side of the venue. This is a natural, free photo stop before or after the show; respect venue access and pedestrian space.</p>
           <a className="text-link" href={maps("Greetings from Glasgow mural The Garage Glasgow")} target="_blank" rel="noreferrer">FIND THE MURAL ↗</a>
-          <a className="text-link" href="https://garageglasgow.co.uk/" target="_blank" rel="noreferrer">VENUE INFORMATION ↗</a>
+          <a className="text-link" href="https://garageglasgow.co.uk/accessibility/" target="_blank" rel="noreferrer">VENUE ACCESSIBILITY & ENTRY ↗</a>
         </article>
         <article className="route-card">
           <span className="route-num">03 · CITY ART</span><h3>Glasgow City Centre Mural Trail</h3>
