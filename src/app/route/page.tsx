@@ -84,6 +84,7 @@ export default function RoutePage() {
         </div>
         <p><a className="text-link" href="https://concord.com/artist/not-a-toy/" target="_blank" rel="noreferrer">CHECK THE ARTIST&apos;S TOUR LISTING ↗</a></p>
         <p><Link className="text-link" href="/tour-side-quests/">GLASGOW FIRST: VERIFIED COMIC + STREET-ART SIDE QUEST ↗</Link></p>
+        <p><Link className="text-link" href="/tour-resilience/">TOUR RESILIENCE + LOCAL CREATOR PLAN ↗</Link></p>
       </section>
       <section className="route-stops" id="europe">
         <p className="eyebrow">EUROPE · NOVEMBER–DECEMBER 2026</p>
