@@ -23,5 +23,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: base + "/field-notes/fan-participation/", lastModified: new Date("2026-11-22"), changeFrequency: "monthly", priority: 0.7 },
     { url: base + "/field-notes/from-plan-b-to-plan-a/", lastModified: new Date("2026-11-22"), changeFrequency: "monthly", priority: 0.8 },
     { url: base + "/field-notes/media-resources/", lastModified: new Date("2026-11-22"), changeFrequency: "monthly", priority: 0.6 },
+    { url: base + "/radio/", lastModified: new Date("2026-11-22"), changeFrequency: "weekly", priority: 0.7 },
   ];
 }
