@@ -47,6 +47,12 @@ export default function Home() {
       </section>
 
 
+      <section className="section" id="field-notes" style={{background:"#111118",borderTop:"1px solid var(--line)",borderBottom:"1px solid var(--line)"}}>
+        <p className="eyebrow">INDEPENDENT MUSIC · FIELD NOTES</p>
+        <h2>AFTER THE<br/><em>MOMENTUM.</em></h2>
+        <p style={{maxWidth:700,color:"var(--muted)",lineHeight:1.7}}>What does an independent artist build when the audience is already there? A case discussion about touring, audience ownership, and the next chapter of independent infrastructure.</p>
+        <Link className="button primary" href="/field-notes/after-the-momentum/">READ FIELD NOTES 001 ↗</Link>
+      </section>
       <section className="visitor-pathways section" id="visitor-pathways" aria-labelledby="visitor-pathways-title">
         <p className="eyebrow">START HERE · CHOOSE YOUR EXPERIENCE</p>
         <h2 id="visitor-pathways-title">WHAT BRINGS<br/><em>YOU HERE?</em></h2>

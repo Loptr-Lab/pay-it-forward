@@ -12,6 +12,7 @@ const groups = [
     { label: "DEVOUR · VOILÀ × NOT A TOY", href: "/music/devour/" },
     { label: "FILTHY YUCK! Interactive Story", href: "/filthy-yuck/" },
     { label: "Every Day · Creator & Sustainability", href: "/every-day/" },
+    { label: "Field Notes · Independent Music", href: "/field-notes/after-the-momentum/" },
   ]},
   { title: "PILOT & PROCESS", links: [
     { label: "Fan Adventure & Pilot", href: "/adventure/#quests" },
