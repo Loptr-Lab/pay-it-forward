@@ -19,10 +19,10 @@ export default function Home() {
       <header className="topbar">
         <Link className="wordmark" href="/" aria-label="Play It Forward home">PIF<span>✳</span></Link>
         <nav aria-label="Main navigation">
-          <Link href="/adventure/">Adventure</Link>
-          <Link href="#discover">Discover</Link>
-          <Link href="#event">Fan event</Link>
-          <Link href="/route/">Tour map</Link>
+          <Link href="/adventure/">Explore</Link>
+          <Link href="/tour-side-quests/">Tour side quests</Link>
+          <Link href="/every-day/#makers">Production</Link>
+          <Link href="/every-day/#pilots">Creator sustainability</Link>
         </nav>
       </header>
 
@@ -45,6 +45,17 @@ export default function Home() {
         </aside>
       </section>
 
+
+      <section className="visitor-pathways section" id="visitor-pathways" aria-labelledby="visitor-pathways-title">
+        <p className="eyebrow">START HERE · CHOOSE YOUR EXPERIENCE</p>
+        <h2 id="visitor-pathways-title">WHAT BRINGS<br/><em>YOU HERE?</em></h2>
+        <div className="visitor-path-grid">
+          <Link className="visitor-path-card" href="/adventure/"><span>01 · FAN / EXPLORER</span><h3>DISCOVER MUSIC<br/>AND STORIES.</h3><p>Listen, explore, follow a story, find something new. No purchase or technical work needed.</p><strong>START EXPLORING ↗</strong></Link>
+          <Link className="visitor-path-card" href="/tour-side-quests/"><span>02 · TOUR-GOING FAN</span><h3>MAKE THE CITY<br/>PART OF THE SHOW.</h3><p>Find optional side quests around tour stops. Begin with the researched Glasgow experience.</p><strong>TOUR SIDE QUESTS ↗</strong></Link>
+          <Link className="visitor-path-card" href="/every-day/#pilots"><span>03 · ARTIST / CREATOR</span><h3>EXPLORE OWNERSHIP<br/>AND SUSTAINABILITY.</h3><p>See the experiments in direct discovery, creative IP, audience participation, and ongoing support.</p><strong>CREATOR PILOTS ↗</strong></Link>
+          <Link className="visitor-path-card" href="/every-day/#makers"><span>04 · DEVELOPER / PRODUCER</span><h3>SEE HOW IT<br/>IS BUILT.</h3><p>Research, interactive narrative, AI workflows, implementation, production notes, and learning resources.</p><strong>PRODUCTION PATH ↗</strong></Link>
+        </div>
+      </section>
       <section className="pilot-feature" id="pilot" aria-labelledby="pilot-title">
         <div className="pilot-visual">
           <img className="pilot-band" src="https://i.scdn.co/image/ab6761610000e5eb357c40c391323d2f7b2c9cf2" alt="NOT A TOY band portrait" />
