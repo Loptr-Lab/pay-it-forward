@@ -29,7 +29,7 @@ const maps = (q: string) => `https://www.google.com/maps/search/?api=1&query=${e
 
 export default function TourSideQuestsPage() {
   return <main className="experience-page">
-    <header className="experience-nav"><Link href="/" className="wordmark">PIF<span>✳</span></Link><nav aria-label="Visitor pathways"><Link href="/adventure/">Fan adventure</Link><Link href="/tour-side-quests/">Tour side quests</Link><Link href="/every-day/#makers">Production</Link><Link href="/">Home</Link></nav></header>
+    <header className="experience-nav"><Link href="/" className="wordmark">PIF<span>✳</span></Link><nav aria-label="Visitor pathways"><Link href="/adventure/">Fan adventure</Link><Link href="/tour-side-quests/">Tour side quests</Link><Link href="/culture/">Cultural rabbit hole</Link><Link href="/every-day/#makers">Production</Link><Link href="/">Home</Link></nav></header>
     <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Tour Map", href: "/route/" }, { label: "Side Quests", href: "/tour-side-quests/" }]} />
     <section className="experience-hero">
       <p className="eyebrow">NOT A TOY · FILTHY YUCK! · PLAY IT FORWARD</p>
@@ -91,7 +91,7 @@ export default function TourSideQuestsPage() {
       <p className="route-note"><a className="text-link" href="https://concord.com/artist/not-a-toy/" target="_blank" rel="noreferrer">VERIFY TOUR LISTING WITH CONCORD ↗</a></p>
     </section>
 
-    <section className="route-bottom">
+    <section className="route-bottom"><p className="eyebrow">CULTURAL DISCOVERY</p><h2>FOLLOW THE<br/><em>RABBIT HOLE.</em></h2><p>Gaming, dystopian fiction, satire, underground music, and the journalism connecting them. Explore the cultural stories behind the tour.</p><Link className="button secondary" href="/culture/">EXPLORE CULTURAL MEDIA ↗</Link></section><section className="route-bottom">
       <p className="eyebrow">PLAY IT FORWARD · REAL-WORLD EXPLORATION</p>
       <h2>DISCOVER.<br/><em>EXPERIENCE.</em><br/>PASS IT ON.</h2>
       <p>The point is not to turn fans into customers at every step. Make the city, story, music, and local creative places worth exploring. Direct support remains optional.</p>
