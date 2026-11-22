@@ -5,14 +5,14 @@ const groups = [
     { label: "Home", href: "/" },
     { label: "Fan Adventure", href: "/adventure/" },
     { label: "Tour Map", href: "/route/" },
-    { label: "Tour Side Quests", href: "/tour-side-quests/" },
+    { label: "Tour Side Quests", href: "/tour-side-quests/" },\n    { label: "Plan B Tour · Resilience", href: "/tour-resilience/" },
     { label: "Cultural Rabbit Hole", href: "/culture/" },
   ]},
   { title: "MUSIC & STORIES", links: [
     { label: "DEVOUR · VOILÀ × NOT A TOY", href: "/music/devour/" },
     { label: "FILTHY YUCK! Interactive Story", href: "/filthy-yuck/" },
     { label: "Every Day · Creator & Sustainability", href: "/every-day/" },
-    { label: "Field Notes · Independent Music", href: "/field-notes/after-the-momentum/" },
+    { label: "Field Notes · Independent Music", href: "/field-notes/" },\n    { label: "From Plan B to Plan A", href: "/field-notes/from-plan-b-to-plan-a/" },
   ]},
   { title: "PILOT & PROCESS", links: [
     { label: "Fan Adventure & Pilot", href: "/adventure/#quests" },
