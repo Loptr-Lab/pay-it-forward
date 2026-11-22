@@ -43,7 +43,15 @@ export default function WeekOnAirPage() {
     return btoa(unescape(encodeURIComponent(payload)));
   }, [title, note, tracks]);
 
-  function isSafeListenUrl(value: string) { try { const url = new URL(value); return url.protocol === "https:" || url.protocol === "http:"; } catch { return false; } }
+  function isSafeListenUrl(value: string): boolean {
+    if (!value) return false;
+    try {
+      const parsed = new URL(value);
+      return parsed.protocol === "https:" || parsed.protocol === "http:";
+    } catch (error) {
+      return false;
+    }
+  }
 
   function addTrack() { setTracks((items) => [...items, { title: "", artist: "", url: "" }]); }
 
