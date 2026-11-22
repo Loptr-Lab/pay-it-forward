@@ -70,19 +70,20 @@ export default function RoutePage() {
     <main className="experience-page">
       <header className="experience-nav">
         <Link href="/" className="wordmark">PIF<span>✳</span></Link>
-        <nav><Link href="/adventure/">Adventure</Link><Link href="/route/">Tour map</Link><Link href="/">Home</Link></nav>
+        <nav aria-label="Visitor pathways"><Link href="/adventure/">Fan adventure</Link><Link href="/tour-side-quests/">Tour side quests</Link><Link href="/every-day/#makers">Production</Link><Link href="/">Home</Link></nav>
       </header>
       <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Tour Map", href: "/route/" }]} />
       <section className="experience-hero route-hero">
         <p className="eyebrow">NOT A TOY · TOUR PILOT MAP</p>
         <h1>THE TOUR.<br/><em>THE MAP.</em></h1>
         <p className="experience-lede">The tour overview is your starting point. Open a city to find music, art, tattoo culture, food, a quiet reset, or a way to get to the venue.</p>
-        <p className="disclaimer">Dates and venues cross-checked against the artist's tour listing. Confirm event details, venue address, accessibility, transit service and hours with official sources before travelling.</p>
+        <p className="disclaimer">Dates and venues cross-checked against the artist&apos;s tour listing. Confirm event details, venue address, accessibility, transit service and hours with official sources before travelling.</p>
         <div className="hero-actions">
           <a className="button primary" href="#europe">EUROPE STOPS ↓</a>
           <a className="button secondary" href="#north-america">NORTH AMERICA ↓</a>
         </div>
-        <p><a className="text-link" href="https://concord.com/artist/not-a-toy/" target="_blank" rel="noreferrer">CHECK THE ARTIST'S TOUR LISTING ↗</a></p>
+        <p><a className="text-link" href="https://concord.com/artist/not-a-toy/" target="_blank" rel="noreferrer">CHECK THE ARTIST&apos;S TOUR LISTING ↗</a></p>
+        <p><Link className="text-link" href="/tour-side-quests/">GLASGOW FIRST: VERIFIED COMIC + STREET-ART SIDE QUEST ↗</Link></p>
       </section>
       <section className="route-stops" id="europe">
         <p className="eyebrow">EUROPE · NOVEMBER–DECEMBER 2026</p>

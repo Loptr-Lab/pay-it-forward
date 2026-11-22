@@ -8,6 +8,9 @@ const adventures = [
   { number: "02", title: "CITY QUEST", text: "Explore with music in your headphones and curiosity in your pocket.", href: "/adventure/" },
   { number: "03", title: "DISCOVER", text: "Find a sound you have never heard. Play it forward.", href: "/adventure/#discover" },
   { number: "04", title: "THE FAN EVENT", text: "A proposed Bandcamp Friday adventure for music lovers.", href: "#event" },
+  { number: "05", title: "PILOT LAB · FAN PATH", text: "Explore the Sick Sick Soul pilot and the next NOT A TOY story test as a fan.", href: "/every-day/#fans" },
+  { number: "06", title: "PILOT LAB · PRODUCTION", text: "See the developer, interactive narrative, and production pathway behind the experiments.", href: "/every-day/#makers" },
+  { number: "07", title: "TOUR SIDE QUESTS", text: "Turn the NOT A TOY tour into a city adventure. Start with Glasgow and FILTHY YUCK!", href: "/tour-side-quests/" },
 ];
 
 export default function Home() {
@@ -16,10 +19,10 @@ export default function Home() {
       <header className="topbar">
         <Link className="wordmark" href="/" aria-label="Play It Forward home">PIF<span>✳</span></Link>
         <nav aria-label="Main navigation">
-          <Link href="/adventure/">Adventure</Link>
-          <Link href="#discover">Discover</Link>
-          <Link href="#event">Fan event</Link>
-          <Link href="/route/">Tour map</Link>
+          <Link href="/adventure/">Explore</Link>
+          <Link href="/tour-side-quests/">Tour side quests</Link>
+          <Link href="/every-day/#makers">Production</Link>
+          <Link href="/every-day/#pilots">Creator sustainability</Link>
         </nav>
       </header>
 
@@ -42,6 +45,17 @@ export default function Home() {
         </aside>
       </section>
 
+
+      <section className="visitor-pathways section" id="visitor-pathways" aria-labelledby="visitor-pathways-title">
+        <p className="eyebrow">START HERE · CHOOSE YOUR EXPERIENCE</p>
+        <h2 id="visitor-pathways-title">WHAT BRINGS<br/><em>YOU HERE?</em></h2>
+        <div className="visitor-path-grid">
+          <Link className="visitor-path-card" href="/adventure/"><span>01 · FAN / EXPLORER</span><h3>DISCOVER MUSIC<br/>AND STORIES.</h3><p>Listen, explore, follow a story, find something new. No purchase or technical work needed.</p><strong>START EXPLORING ↗</strong></Link>
+          <Link className="visitor-path-card" href="/tour-side-quests/"><span>02 · TOUR-GOING FAN</span><h3>MAKE THE CITY<br/>PART OF THE SHOW.</h3><p>Find optional side quests around tour stops. Begin with the researched Glasgow experience.</p><strong>TOUR SIDE QUESTS ↗</strong></Link>
+          <Link className="visitor-path-card" href="/every-day/#pilots"><span>03 · ARTIST / CREATOR</span><h3>EXPLORE OWNERSHIP<br/>AND SUSTAINABILITY.</h3><p>See the experiments in direct discovery, creative IP, audience participation, and ongoing support.</p><strong>CREATOR PILOTS ↗</strong></Link>
+          <Link className="visitor-path-card" href="/every-day/#makers"><span>04 · DEVELOPER / PRODUCER</span><h3>SEE HOW IT<br/>IS BUILT.</h3><p>Research, interactive narrative, AI workflows, implementation, production notes, and learning resources.</p><strong>PRODUCTION PATH ↗</strong></Link>
+        </div>
+      </section>
       <section className="pilot-feature" id="pilot" aria-labelledby="pilot-title">
         <div className="pilot-visual">
           <img className="pilot-band" src="https://i.scdn.co/image/ab6761610000e5eb357c40c391323d2f7b2c9cf2" alt="NOT A TOY band portrait" />
@@ -51,7 +65,7 @@ export default function Home() {
           <p className="eyebrow">FEATURED PILOT · LIVE MUSIC × FAN ADVENTURE</p>
           <h2 id="pilot-title">NOT A TOY<br /><em>ON TOUR.</em></h2>
           <p className="pilot-lede">The music is the starting point. The city becomes part of the experience.</p>
-          <p>PLAY IT FORWARD is exploring a fan-led companion to NOT A TOY’s current tour: a self-paced adventure built around the band's world, new music, local discovery, and accessible prompts—without requiring a ticket, account, purchase, or official venue participation.</p>
+          <p>PLAY IT FORWARD is exploring a fan-led companion to NOT A TOY’s current tour: a self-paced adventure built around the band&apos;s world, new music, local discovery, and accessible prompts—without requiring a ticket, account, purchase, or official venue participation.</p>
           <div className="pilot-album-detail">
             <strong>NEW ALBUM</strong>
             <span>FILTHY YUCK! · 17 tracks · October 16, 2026</span>
@@ -129,7 +143,7 @@ export default function Home() {
         <div className="music-feature-copy">
           <p className="eyebrow">FEATURED COLLABORATION · MUSIC STORY</p>
           <h2 id="music-feature-title">VOILÀ × NOT A TOY<br/><em>DEVOUR.</em></h2>
-          <p>A theatrical lyric film inspired by sirens, mythology, and the pull of the deep. Start with the collaboration, then follow a focused path into NOT A TOY's discography.</p>
+          <p>A theatrical lyric film inspired by sirens, mythology, and the pull of the deep. Start with the collaboration, then follow a focused path into NOT A TOY&apos;s discography.</p>
           <Link className="button primary" href="/music/devour/">WATCH · EXPLORE · LISTEN ↗</Link>
         </div>
         <div className="music-feature-art">
@@ -144,7 +158,7 @@ export default function Home() {
         <h2>PLAY IT<br /><em>FORWARD.</em></h2>
         <p className="event-date">BANDCAMP FRIDAY · DECEMBER 4, 2026</p>
         <p>Discover music. Create something. Support artists if you choose. Connect with fans. A self-paced digital adventure celebrating independent music.</p>
-        <a className="button primary" href="https://bandcamp.com/" target="_blank" rel="noreferrer">DISCOVER MUSIC ↗</a>
+        <div className="hero-actions"><a className="button primary" href="https://bandcamp.com/" target="_blank" rel="noreferrer">DISCOVER MUSIC ↗</a><Link className="button secondary" href="/every-day/">GOODBYE BANDCAMP FRIDAY? HELLO, EVERY DAY. ↗</Link></div>
         <p className="disclaimer">Independent concept. Not affiliated with or endorsed by NOT A TOY, Songkick, or Bandcamp. Event and partnerships are proposed.</p>
       </section>
 

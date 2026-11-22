@@ -62,7 +62,7 @@ export default function DevourPage() {
         <h1>DEVOUR.<br/><em>FOLLOW THE SOUND.</em></h1>
         <p className="experience-lede">VOILÀ × NOT A TOY · THEATRICAL LYRIC FILM</p>
         <p className="music-story-release">RELEASED NOVEMBER 20, 2026</p>
-        <p className="music-story-intro">A siren's song, a ship heading into the deep, and a collaboration that opens a door into another artist's world. Start with the film—then follow a focused listening route through NOT A TOY.</p>
+        <p className="music-story-intro">A siren&apos;s song, a ship heading into the deep, and a collaboration that opens a door into another artist&apos;s world. Start with the film—then follow a focused listening route through NOT A TOY.</p>
       </header>
       <section className="music-story-video" aria-labelledby="film-title">
         <h2 id="film-title">THE THEATRICAL LYRIC FILM</h2>
@@ -71,15 +71,15 @@ export default function DevourPage() {
       </section>
       <section className="music-story-editorial">
         <p className="eyebrow">THE STORY · MYTH · VISUALS</p>
-        <h2>THE SIREN'S<br/><em>CALL.</em></h2>
+        <h2>THE SIREN&apos;S<br/><em>CALL.</em></h2>
         <p>The song draws on the Sirens of Greek mythology and the story of Odysseus: a voice so compelling that ordinary restraint cannot keep a sailor from the danger ahead. Here, the metaphor turns into a willing surrender to an irresistible, all-consuming attraction.</p>
         <div className="music-story-themes">
           <section><h3>THE MAST</h3><p>A symbol of attempted resistance—knowing the danger, yet discovering that willpower may not be enough.</p></section>
           <section><h3>THE DEEP</h3><p>Ocean imagery becomes emotional submersion: losing the surface, the breath, and the sense of distance from the pull.</p></section>
           <section><h3>THE TIDE</h3><p>The moon and sea suggest an attraction that feels like a force of nature, moving beyond simple choice.</p></section>
-          <section><h3>THE SHIP</h3><p>The captain's fatalistic devotion frames a relationship as a voyage that may not survive—but is pursued anyway.</p></section>
+          <section><h3>THE SHIP</h3><p>The captain&apos;s fatalistic devotion frames a relationship as a voyage that may not survive—but is pursued anyway.</p></section>
         </div>
-        <p className="music-story-visual-note"><strong>Visual language:</strong> the lyric film combines black-and-white maritime imagery—sailors, sirens, and a sinking vessel—with striking neon-green and crimson kinetic typography. Its theatrical contrast makes the song's mythology tangible.</p>
+        <p className="music-story-visual-note"><strong>Visual language:</strong> the lyric film combines black-and-white maritime imagery—sailors, sirens, and a sinking vessel—with striking neon-green and crimson kinetic typography. Its theatrical contrast makes the song&apos;s mythology tangible.</p>
       </section>
       <section className="music-story-collab">
         <p className="eyebrow">FOLLOW THE COLLABORATION</p>
@@ -93,7 +93,7 @@ export default function DevourPage() {
       <section className="music-story-playlist" aria-labelledby="playlist-title">
         <p className="eyebrow">CURATED LISTENING ROUTE · NOT A TOY</p>
         <h2 id="playlist-title">START HERE.<br/><em>KEEP GOING.</em></h2>
-        <p className="playlist-note">A focused ten-track path designed to move from the collaboration through current releases, then back into the band's earlier catalog. This is a playlist blueprint—not an already-created playlist on any service. Use the service links below to find and save the tracks in this order.</p>
+        <p className="playlist-note">A focused ten-track path designed to move from the collaboration through current releases, then back into the band&apos;s earlier catalog. This is a playlist blueprint—not an already-created playlist on any service. Use the service links below to find and save the tracks in this order.</p>
         <div className="playlist-services" aria-label="Find NOT A TOY on streaming services">
           {services.map(service => <a key={service.name} href={service.href} target="_blank" rel="noreferrer">{service.name} ↗</a>)}
         </div>
