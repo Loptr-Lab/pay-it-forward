@@ -83,6 +83,7 @@ export default function RoutePage() {
           <a className="button secondary" href="#north-america">NORTH AMERICA ↓</a>
         </div>
         <p><a className="text-link" href="https://concord.com/artist/not-a-toy/" target="_blank" rel="noreferrer">CHECK THE ARTIST'S TOUR LISTING ↗</a></p>
+        <p><Link className="text-link" href="/tour-side-quests/">GLASGOW FIRST: VERIFIED COMIC + STREET-ART SIDE QUEST ↗</Link></p>
       </section>
       <section className="route-stops" id="europe">
         <p className="eyebrow">EUROPE · NOVEMBER–DECEMBER 2026</p>
