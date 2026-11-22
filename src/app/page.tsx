@@ -139,7 +139,7 @@ export default function Home() {
           <span>YOUR FIRST QUEST</span>
           <strong>Find a song from an artist you have never heard before.</strong>
           <p>What surprised you? What will you remember?</p>
-          <a href="https://bandcamp.com/" target="_blank" rel="noreferrer" className="text-link">Explore Bandcamp ↗</a>
+          <a href="https://bandcamp.com/" target="_blank" rel="noreferrer" className="bandcamp-brand-link"><span className="bandcamp-mark" aria-hidden="true">bc</span><span className="bandcamp-wordmark">Bandcamp</span><span className="bandcamp-link-label">EXPLORE MUSIC ↗</span></a>
         </div>
       </section>
 
@@ -162,7 +162,7 @@ export default function Home() {
         <h2>PLAY IT<br /><em>FORWARD.</em></h2>
         <p className="event-date">BANDCAMP FRIDAY · DECEMBER 4, 2026</p>
         <p>Discover music. Create something. Support artists if you choose. Connect with fans. A self-paced digital adventure celebrating independent music.</p>
-        <div className="hero-actions"><a className="button primary" href="https://bandcamp.com/" target="_blank" rel="noreferrer">DISCOVER MUSIC ↗</a><Link className="button secondary" href="/every-day/">GOODBYE BANDCAMP FRIDAY? HELLO, EVERY DAY. ↗</Link></div>
+        <div className="hero-actions"><a className="button primary" href="https://bandcamp.com/" target="_blank" rel="noreferrer"><span className="bandcamp-mark bandcamp-mark-small" aria-hidden="true">bc</span> DISCOVER MUSIC ON BANDCAMP ↗</a><Link className="button secondary" href="/every-day/">GOODBYE BANDCAMP FRIDAY? HELLO, EVERY DAY. ↗</Link></div>
         <p className="disclaimer">Independent concept. Not affiliated with or endorsed by NOT A TOY, Songkick, or Bandcamp. Event and partnerships are proposed.</p>
       </section>
 
