@@ -28,6 +28,14 @@ export default function SiteDirectoryFooter({ tagline = "INDEPENDENT · FAN-LED 
     <nav className="footer-directory" aria-label="Site directory">
       {groups.map(group => <section key={group.title}><h2>{group.title}</h2><ul>{group.links.map(link => <li key={link.href}><Link href={link.href}>{link.label}</Link></li>)}</ul></section>)}
     </nav>
-    <div className="footer-meta"><Link href="/#hero-title">BACK TO TOP ↑</Link><Link href="/">HOME</Link><a href="https://github.com/Loptr-Lab/pay-it-forward" target="_blank" rel="noreferrer">SOURCE &amp; PROJECT ↗</a></div>
+    <nav className="footer-legal" aria-label="Legal and project information">
+      <h2>LEGAL &amp; TRANSPARENCY</h2>
+      <Link href="/privacy/">Privacy &amp; Data</Link>
+      <Link href="/disclosures/">Project &amp; AI Disclosure</Link>
+      <a href="https://50ways.loptrlab.com/AI-DISCLOSURE.html" target="_blank" rel="noreferrer">AI Disclosure Framework ↗</a>
+      <a href="https://github.com/ibloud/ibloud.github.io/blob/main/MISSION.md" target="_blank" rel="noreferrer">Mission &amp; Participation Principles ↗</a>
+      <a href="https://github.com/Loptr-Lab/pay-it-forward/blob/main/LICENSE" target="_blank" rel="noreferrer">Code License ↗</a>
+    </nav>
+    <div className="footer-meta"><Link href="/sitemap.xml">XML SITEMAP ↗</Link><Link href="/#hero-title">BACK TO TOP ↑</Link><Link href="/">HOME</Link><a href="https://github.com/Loptr-Lab/pay-it-forward" target="_blank" rel="noreferrer">SOURCE &amp; PROJECT ↗</a></div>
   </footer>;
 }
