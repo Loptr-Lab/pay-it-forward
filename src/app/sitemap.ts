@@ -13,6 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/tour-side-quests/`, lastModified: new Date("2026-11-22"), changeFrequency: "weekly", priority: 0.9 },
     { url: `${base}/culture/`, lastModified: new Date("2026-11-22"), changeFrequency: "weekly", priority: 0.8 },
     { url: `${base}/music/devour/`, lastModified: new Date("2026-11-22"), changeFrequency: "monthly", priority: 0.8 },
+    { url: `${base}/radio/`, lastModified: new Date("2026-11-22"), changeFrequency: "weekly", priority: 0.8 },
     { url: `${base}/filthy-yuck/`, lastModified: new Date("2026-11-22"), changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/every-day/`, lastModified: new Date("2026-11-22"), changeFrequency: "monthly", priority: 0.8 },
   ];
