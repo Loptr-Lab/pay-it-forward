@@ -43,6 +43,7 @@ export default function TourSideQuestsPage() {
       <p className="eyebrow">VERIFIED CITY QUEST · NOV 23, 2026</p>
       <h2>GLASGOW.</h2>
       <p className="route-note">The November 23 listing is Voilà + NOT A TOY + Austin Giorgio at The Garage, 490 Sauchiehall Street. These are optional nearby cultural stops; check opening hours and travel details before heading out.</p>
+      <p className="route-note"><strong>Access note:</strong> The Garage's main entrance to the show hall includes stairs (40 in total after security). The venue lists a limited-access wheelchair entrance on Renfrew Street; contact its access team in advance for instructions and arrangements. <a href="https://garageglasgow.co.uk/accessibility/" target="_blank" rel="noreferrer">Official accessibility information ↗</a></p>
       <div className="route-cards">
         <article className="route-card">
           <span className="route-num">01 · COMICS / COLLECTIBLES</span><h3>Forbidden Planet Glasgow</h3>
