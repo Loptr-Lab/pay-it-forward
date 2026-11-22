@@ -25,7 +25,15 @@ jobs:
         run: npm install
       - name: Lint
         run: npm run lint
-      - name: Build GitHub Pages site
+      - name: Build static export
         run: npm run build
         env:
           GITHUB_PAGES: "true"
+      - name: Verify generated SEO and RSS assets
+        run: |
+          test -f out/sitemap.xml
+          test -f out/robots.txt
+          test -f out/field-notes/feed.xml
+          grep -q '<rss version="2.0"' out/field-notes/feed.xml
+          grep -q 'field-notes/media-resources' out/sitemap.xml
+          grep -q 'field-notes/atproto-music-discovery' out/sitemap.xml
