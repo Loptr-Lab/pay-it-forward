@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Breadcrumbs from "../components/Breadcrumbs";
+import SiteDirectoryFooter from "../components/SiteDirectoryFooter";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -30,7 +31,7 @@ const maps = (q: string) => `https://www.google.com/maps/search/?api=1&query=${e
 export default function TourSideQuestsPage() {
   return <main className="experience-page">
     <header className="experience-nav"><Link href="/" className="wordmark">PIF<span>✳</span></Link><nav aria-label="Visitor pathways"><Link href="/adventure/">Fan adventure</Link><Link href="/tour-side-quests/">Tour side quests</Link><Link href="/culture/">Cultural rabbit hole</Link><Link href="/every-day/#makers">Production</Link><Link href="/">Home</Link></nav></header>
-    <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Tour Map", href: "/route/" }, { label: "Side Quests", href: "/tour-side-quests/" }]} />
+    <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Tour Map", href: "/route/" }, { label: "Tour Side Quests", href: "/tour-side-quests/" }]} />
     <section className="experience-hero">
       <p className="eyebrow">NOT A TOY · FILTHY YUCK! · PLAY IT FORWARD</p>
       <h1>THE SHOW.<br/><em>THE SIDE QUEST.</em></h1>
@@ -97,6 +98,6 @@ export default function TourSideQuestsPage() {
       <p>The point is not to turn fans into customers at every step. Make the city, story, music, and local creative places worth exploring. Direct support remains optional.</p>
       <Link className="button primary" href="/every-day/">WHY PLAY IT FORWARD? ↗</Link>
     </section>
-    <footer className="experience-footer"><span>PLAY IT FORWARD ✳</span><span>INDEPENDENT · FAN-LED · NO PURCHASE REQUIRED</span><Link href="/">HOME ↑</Link></footer>
+    <SiteDirectoryFooter tagline="FAN-LED · ACCESSIBLE · SELF-PACED" />
   </main>;
 }

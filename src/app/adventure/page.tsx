@@ -1,6 +1,7 @@
 import Link from "next/link";
 import AdventureBuilder from "../components/AdventureBuilder";
 import Breadcrumbs from "../components/Breadcrumbs";
+import SiteDirectoryFooter from "../components/SiteDirectoryFooter";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = { title: "Tour Adventure | PLAY IT FORWARD", description: "Build a self-paced NOT A TOY tour adventure with music discovery, art, food, comics, and venue travel.", alternates: { canonical: "https://loptr-lab.github.io/pay-it-forward/adventure/" } };
@@ -18,7 +19,7 @@ const quests = [
 export default function AdventurePage() {
   return <main className="experience-page">
     <header className="experience-nav"><Link href="/" className="wordmark">PIF<span>✳</span></Link><nav aria-label="Visitor pathways"><Link href="/adventure/">Fan adventure</Link><Link href="/tour-side-quests/">Tour side quests</Link><Link href="/culture/">Cultural rabbit hole</Link><Link href="/every-day/#makers">Production</Link><Link href="/every-day/#pilots">Creator pilots</Link><Link href="/">Home</Link></nav></header>
-    <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Adventure", href: "/adventure/" }]} />
+    <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Fan Adventure", href: "/adventure/" }]} />
     <section className="experience-hero adventure-hero"><p className="eyebrow">NOT A TOY · PRE-SHOW ADVENTURE</p><h1>GET AMPED.<br/><em>YOUR WAY.</em></h1><p className="experience-lede">The concert starts before the doors. Build a soundtrack, find a clue in the city, discover something new and make the night yours.</p><div className="hero-actions"><a className="button primary" href="#quests">CHOOSE YOUR QUEST ↓</a><Link className="button secondary" href="/route/">BUILD A CITY ROUTE ↗</Link></div><p className="disclaimer">An independent fan concept. Not an official artist activity. No ticket, purchase, account, posting or participation required.</p></section>
 
     <AdventureBuilder />
@@ -45,6 +46,6 @@ export default function AdventurePage() {
       <a className="press-card" href="https://www.hazzemedia.com/post/not-a-toy-latest-single-gutter-kid-future-goals" target="_blank" rel="noreferrer"><span>INTERVIEW</span><h3>Gutter Kid & future goals</h3><p>Exploring the group&apos;s genre-blending ambitions and future creative plans.</p><b>READ THE INTERVIEW ↗</b></a>
     </div><p className="press-note">Links lead to independent publications. PLAY IT FORWARD is not affiliated with these outlets.</p><div className="press-contact" id="press-contact"><p className="eyebrow">PRESS · MEDIA · INTERVIEW INQUIRIES</p><h3>GET IN TOUCH WITH NOT A TOY</h3><p>For press requests, interviews, coverage, or artist-related inquiries, use the band’s official channels or management contact listed by Fearless Records. We could not verify a publicly listed press email, so we are not publishing an unconfirmed address.</p><div className="hero-actions"><a className="button primary" href="https://fearlessrecords.com/artists/not-a-toy/" target="_blank" rel="noreferrer">OFFICIAL ARTIST / MANAGEMENT INFO ↗</a><a className="button secondary" href="https://www.instagram.com/notatoy/" target="_blank" rel="noreferrer">NOT A TOY SOCIAL ↗</a></div><p className="press-note">PLAY IT FORWARD is an independent fan concept and is not an official representative or press contact for NOT A TOY.</p></div></section>
     <section className="adventure-map-cta"><p className="eyebrow">MAKE THE CITY PART OF IT</p><h2>YOUR ROUTE.<br/><em>YOUR RULES.</em></h2><p>Choose a record store, a mural, a coffee stop or a quiet reset. Explore local places around the show, make your own map and skip anything that doesn&apos;t fit your day.</p><Link className="button primary" href="/route/">EXPLORE CITY ROUTES ↗</Link></section>
-    <footer className="experience-footer"><span>PLAY IT FORWARD ✳</span><span>FAN-LED · ACCESSIBLE · SELF-PACED</span><Link href="/">HOME ↑</Link></footer>
+    <SiteDirectoryFooter tagline="FAN-LED · ACCESSIBLE · SELF-PACED" />
   </main>;
 }

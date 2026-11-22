@@ -1,11 +1,12 @@
 import Link from "next/link";
 import Breadcrumbs from "../components/Breadcrumbs";
+import SiteDirectoryFooter from "../components/SiteDirectoryFooter";
 import ThreadsEmbed from "./ThreadsEmbed";
 
 export default function EveryDayPage() {
   return <main className="experience-page">
     <header className="experience-nav"><Link href="/" className="wordmark">PIF<span>✳</span></Link><nav aria-label="Play It Forward pathways"><Link href="/adventure/">Fan adventure</Link><Link href="/tour-side-quests/">Tour side quests</Link><Link href="#fans">For fans</Link><Link href="#makers">Production</Link><Link href="/">Home</Link></nav></header>
-    <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Play It Forward", href: "/every-day/" }]} />
+    <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Creator Sustainability", href: "/every-day/" }]} />
     <section className="experience-hero">
       <p className="eyebrow">PLAY IT FORWARD · CREATIVE ECONOMICS · PILOT SERIES</p>
       <h1>GOODBYE<br/><em>BANDCAMP FRIDAY?</em></h1>
@@ -28,6 +29,6 @@ export default function EveryDayPage() {
       <article className="quest-card"><div className="quest-card-head"><span>03 · PLAY IT FORWARD</span><span className="quest-number">03</span></div><h3>PASS VALUE DIRECTLY.</h3><p>Recommend an independent artist, buy directly if you can, share an official link, trade skills, credit a collaborator, or help someone find an audience. No spending is required.</p><div className="quest-prompt"><strong>Creative prompt</strong><span>Who helped you make, learn, or discover something? Pass one useful thing forward.</span></div></article>
     </section>
     <section className="quest-intro"><p className="eyebrow">THE ECONOMICS CHECK</p><h2>WHO CAPTURES<br/>THE VALUE?</h2><p>Before and after your experiment, record time, money spent, output, reuse potential, audience response, and what you learned. Measure the difference rather than assuming.</p><div className="discovery-prompt"><span>YOUR FIVE-MINUTE REVIEW</span><strong>What did it cost? What did you make? Who owns it? Who benefited? What would you repeat?</strong></div></section>
-    <footer className="experience-footer"><span>PLAY IT FORWARD ✳</span><span>FANS · DEVELOPERS · PRODUCTION</span><Link href="/">HOME ↑</Link></footer>
+    <SiteDirectoryFooter tagline="INDEPENDENT · ACCESSIBLE · SELF-PACED" />
   </main>;
 }
