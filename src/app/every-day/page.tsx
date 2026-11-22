@@ -1,8 +1,10 @@
 import Link from "next/link";
+import Breadcrumbs from "../components/Breadcrumbs";
 
 export default function EveryDayPage() {
   return <main className="experience-page">
     <header className="experience-nav"><Link href="/" className="wordmark">PIF<span>✳</span></Link><nav aria-label="Play It Forward pathways"><Link href="/adventure/">Fan adventure</Link><Link href="/tour-side-quests/">Tour side quests</Link><Link href="#fans">For fans</Link><Link href="#makers">Production</Link><Link href="/">Home</Link></nav></header>
+    <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Play It Forward", href: "/every-day/" }]} />
     <section className="experience-hero">
       <p className="eyebrow">PLAY IT FORWARD · CREATIVE ECONOMICS · PILOT SERIES</p>
       <h1>GOODBYE<br/><em>BANDCAMP FRIDAY?</em></h1>
