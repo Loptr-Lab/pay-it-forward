@@ -3,7 +3,7 @@ import Breadcrumbs from "../components/Breadcrumbs";
 import SiteDirectoryFooter from "../components/SiteDirectoryFooter";
 import type { Metadata } from "next";
 
-export const metadata: Metadata = { title: "NOT A TOY Tour Map | PLAY IT FORWARD", description: "Explore tour cities for local music, art, tattoo culture, food, quiet places, and public transit to venues.", alternates: { canonical: "https://loptr-lab.github.io/pay-it-forward/route/" } };
+export const metadata: Metadata = { title: "NOT A TOY Tour Map", description: "Explore tour cities for local music, art, tattoo culture, food, quiet places, and public transit to venues.", alternates: { canonical: "https://loptr-lab.github.io/pay-it-forward/route/" } };
 
 type TourStop = {
   region: "EUROPE" | "NORTH AMERICA";
