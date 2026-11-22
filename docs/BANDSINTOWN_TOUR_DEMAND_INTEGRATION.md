@@ -2,6 +2,10 @@
 
 **Status:** Proposed integration; documentation and product boundaries recorded. No live Bandsintown connection is enabled.
 
+## Editorial evidence handling
+
+Time-sensitive Instagram Stories and other social posts must follow the [Social Story Evidence and Preservation Policy](SOCIAL_STORY_EVIDENCE_POLICY.md). Public availability during a Story's active window does not grant access to a private archive or permission to republish media. Record source, capture time, access method, attribution, and verification status.
+
 ## Purpose
 
 Connect Play It Forward's fan participation tools with Bandsintown's existing artist/event and fan opt-in infrastructure. The goal is to help artists understand where fans would like to see them, then provide an authorized path to follow the artist and receive updates.
