@@ -1,5 +1,6 @@
 import Link from "next/link";
 import BandcampFridayHero from "./components/BandcampFridayHero";
+import SiteDirectoryFooter from "./components/SiteDirectoryFooter";
 
 const heroPhotoSrc = `${process.env.GITHUB_PAGES ? "/pay-it-forward" : ""}/not-a-toy-film.webp`;
 
@@ -162,11 +163,7 @@ export default function Home() {
         <p className="disclaimer">Independent concept. Not affiliated with or endorsed by NOT A TOY, Songkick, or Bandcamp. Event and partnerships are proposed.</p>
       </section>
 
-      <footer>
-        <span>PLAY IT FORWARD ✳</span>
-        <span>ACCESSIBLE · SELF-PACED · FAN-LED</span>
-        <a href="#hero-title">BACK TO TOP ↑</a>
-      </footer>
+      <SiteDirectoryFooter tagline="ACCESSIBLE · SELF-PACED · FAN-LED" />
     </main>
   );
 }
