@@ -43,7 +43,7 @@ export default function WeekOnAirPage() {
     return btoa(unescape(encodeURIComponent(payload)));
   }, [title, note, tracks]);
 
-  function addTrack() { setTracks((items) => [...items, { title: "", artist: "", url: "" }]); }
+  function isSafeListenUrl(value: string) { try { const url = new URL(value); return url.protocol === "https:" || url.protocol === "http:"; } catch { return false; } }\n\n  function addTrack() { setTracks((items) => [...items, { title: "", artist: "", url: "" }]); }
 
   function parseCsv(text: string): Track[] {
     const rows: string[][] = [];
@@ -55,8 +55,8 @@ export default function WeekOnAirPage() {
       if (char === '"' && quoted && text[i + 1] === '"') { cell += '"'; i++; }
       else if (char === '"') quoted = !quoted;
       else if (char === "," && !quoted) { row.push(cell.trim()); cell = ""; }
-      else if ((char === "\\n" || char === "\\r") && !quoted) {
-        if (char === "\\r" && text[i + 1] === "\\n") i++;
+      else if ((char === "\n" || char === "\r") && !quoted) {
+        if (char === "\r" && text[i + 1] === "\n") i++;
         row.push(cell.trim()); cell = "";
         if (row.some(Boolean)) rows.push(row);
         row = [];
@@ -95,7 +95,7 @@ export default function WeekOnAirPage() {
 
   function exportTracklist() {
     const quote = (value: string) => '"' + value.replace(/"/g, '""') + '"';
-    const csv = ["title,artist,url", ...tracks.map((track) => [track.title, track.artist, track.url].map(quote).join(","))].join("\\n");
+    const csv = ["title,artist,url", ...tracks.map((track) => [track.title, track.artist, track.url].map(quote).join(","))].join("\n");
     const blob = new Blob([csv], { type: "text/csv;charset=utf-8" });
     const objectUrl = URL.createObjectURL(blob);
     const link = document.createElement("a");
@@ -179,7 +179,7 @@ export default function WeekOnAirPage() {
               <label>TRACK<input value={track.title} readOnly={readOnly} placeholder="Song title" onChange={(e) => updateTrack(index, "title", e.target.value)}/></label>
               <label>ARTIST<input value={track.artist} readOnly={readOnly} placeholder="Artist name" onChange={(e) => updateTrack(index, "artist", e.target.value)}/></label>
               <label>APPLE MUSIC / LISTEN LINK<input value={track.url} readOnly={readOnly} placeholder="https://music.apple.com/…" onChange={(e) => updateTrack(index, "url", e.target.value)}/></label>
-              {track.url && <a className="radio-listen-link" href={track.url} target="_blank" rel="noreferrer">OPEN TRACK ↗</a>}
+              {isSafeListenUrl(track.url) && <a className="radio-listen-link" href={track.url} target="_blank" rel="noreferrer">OPEN TRACK ↗</a>}
             </div>
           </li>)}
         </ol>
