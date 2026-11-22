@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Breadcrumbs from "../components/Breadcrumbs";
-import SiteDirectoryFooter from ../components/SiteDirectoryFooter;
+import SiteDirectoryFooter from "../components/SiteDirectoryFooter";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -98,6 +98,6 @@ export default function TourSideQuestsPage() {
       <p>The point is not to turn fans into customers at every step. Make the city, story, music, and local creative places worth exploring. Direct support remains optional.</p>
       <Link className="button primary" href="/every-day/">WHY PLAY IT FORWARD? ↗</Link>
     </section>
-    <SiteDirectoryFooter tagline="FAN-LED · ACCESSIBLE · SELF-PACED />
+    <SiteDirectoryFooter tagline="FAN-LED · ACCESSIBLE · SELF-PACED" />
   </main>;
 }
