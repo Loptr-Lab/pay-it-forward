@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import Breadcrumbs from "../components/Breadcrumbs";
-import SiteDirectoryFooter from ../components/SiteDirectoryFooter;
+import SiteDirectoryFooter from "../components/SiteDirectoryFooter";
 import { story, storyStart } from "./story";
 
 export default function FilthyYuckPage() {
@@ -61,6 +61,6 @@ export default function FilthyYuckPage() {
         <div className="fy-facebook-placeholder"><p>Original Facebook source embed will appear here.</p><p>Source link needed to embed the correct post without guessing or substituting unrelated content.</p></div>
       </aside>
     </section>
-    <SiteDirectoryFooter tagline="INDEPENDENT · ACCESSIBLE · SELF-PACED />
+    <SiteDirectoryFooter tagline="INDEPENDENT · ACCESSIBLE · SELF-PACED" />
   </main>;
 }
