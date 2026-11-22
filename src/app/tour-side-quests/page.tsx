@@ -55,8 +55,8 @@ export default function TourSideQuestsPage() {
         <article className="route-card">
           <span className="route-num">02 · PHOTO / STREET ART</span><h3>Glasgow Nightlife mural</h3>
           <p className="route-address">The lane beside Lord of Fries, Sauchiehall Street</p>
-          <p>A Glasgow postcard-style mural on the side of the venue. This is a natural, free photo stop before or after the show; respect venue access and pedestrian space.</p>
-          <a className="text-link" href={maps("Greetings from Glasgow mural The Garage Glasgow")} target="_blank" rel="noreferrer">FIND THE MURAL ↗</a>
+          <p>A street mural in the lane by the G2 entrance, near Lord of Fries. It is a free photo stop before or after the show; respect venue access and pedestrian space.</p>
+          <a className="text-link" href={maps("Glasgow Nightlife mural The Garage G2 lane Lord of Fries")} target="_blank" rel="noreferrer">FIND THE MURAL ↗</a>
           <a className="text-link" href="https://garageglasgow.co.uk/accessibility/" target="_blank" rel="noreferrer">VENUE ACCESSIBILITY & ENTRY ↗</a>
         </article>
         <article className="route-card">
