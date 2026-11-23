@@ -1,6 +1,7 @@
 export const dynamic = "force-static";
 const site = "https://loptr-lab.github.io/pay-it-forward";
 const entries = [
+{title:"The War of Art Shouldn't Be the Artist's Business Model",path:"/field-notes/war-of-art/",description:"Creative autonomy, external resistance, and infrastructure that supports artists rather than becoming another source of friction."},
 {title:"The Release Window Shouldn't Decide Whether Music Exists on Vinyl",path:"/field-notes/day-date-vinyl/",description:"EVEN Day & Date Vinyl changes manufacturing timing and inventory risk. What it could unlock for artists—and what still needs testing."},
 {title:"A Number I Lost, A Mission I Found",path:"/field-notes/one-billion-mission/",description:"A lost signup email from Chris Do’s 1 Billion Mission becomes a lens for creative education, ownership, independence, and infrastructure."},
 {title:"Your PDS, Your Terms",path:"/field-notes/your-pds-your-terms/",description:"A people-first path to hosting an AT Protocol identity, moving from another PDS, and making infrastructure choices without sponsorship."},
