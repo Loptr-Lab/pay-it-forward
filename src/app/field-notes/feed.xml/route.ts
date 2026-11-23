@@ -1,6 +1,7 @@
 export const dynamic = "force-static";
 const site = "https://loptr-lab.github.io/pay-it-forward";
 const entries = [
+{title:"A Number I Lost, A Mission I Found",path:"/field-notes/one-billion-mission/",description:"A lost signup email from Chris Do’s 1 Billion Mission becomes a lens for creative education, ownership, independence, and infrastructure."},
 {title:"Your PDS, Your Terms",path:"/field-notes/your-pds-your-terms/",description:"A people-first path to hosting an AT Protocol identity, moving from another PDS, and making infrastructure choices without sponsorship."},
 {title:"The Catalog Is Not Dead",path:"/field-notes/catalog-is-not-dead/",description:"Catalog music, memory, direct support, and audience reactivation."},
 {title:"What an Artist Actually Buys From a Label",path:"/field-notes/label-services-and-creative-freedom/",description:"Artist economics, rights, administration, and creative autonomy."},
