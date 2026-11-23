@@ -1,6 +1,7 @@
 export const dynamic = "force-static";
 const site = "https://loptr-lab.github.io/pay-it-forward";
 const entries = [
+  {title:"The Reaction Economy",path:"/field-notes/reaction-economy/",description:"Creator alliances, Content ID friction, and a proposed permission program for music discovery."},
   {title:"From Plan B to Plan A",path:"/field-notes/from-plan-b-to-plan-a/",description:"How Plan B Tour, Build Your Adventure, venue voting, and Bandsintown fan opt-ins could help artists plan more resilient tours."},
   {title:"After the Momentum",path:"/field-notes/after-the-momentum/",description:"Independent artist touring, audience infrastructure, and a case discussion prompted by Token / Never Too Different."},
   {title:"The Touring Gap",path:"/field-notes/touring-gap/",description:"Touring affordability and alternative audience-building approaches."},
