@@ -1,6 +1,7 @@
 export const dynamic = "force-static";
 const site = "https://loptr-lab.github.io/pay-it-forward";
 const entries = [
+{title:"The Release Window Shouldn't Decide Whether Music Exists on Vinyl",path:"/field-notes/day-date-vinyl/",description:"EVEN Day & Date Vinyl changes manufacturing timing and inventory risk. What it could unlock for artists—and what still needs testing."},
 {title:"A Number I Lost, A Mission I Found",path:"/field-notes/one-billion-mission/",description:"A lost signup email from Chris Do’s 1 Billion Mission becomes a lens for creative education, ownership, independence, and infrastructure."},
 {title:"Your PDS, Your Terms",path:"/field-notes/your-pds-your-terms/",description:"A people-first path to hosting an AT Protocol identity, moving from another PDS, and making infrastructure choices without sponsorship."},
 {title:"The Catalog Is Not Dead",path:"/field-notes/catalog-is-not-dead/",description:"Catalog music, memory, direct support, and audience reactivation."},
@@ -16,21 +17,4 @@ const entries = [
 {title:"Media Pitch Resources",path:"/field-notes/media-resources/",description:"Public editorial contacts, submission guidelines, and primary research resources."}
 ];
 const escapeXml=(value:string)=>value.replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll('"',"&quot;").replaceAll("'","&apos;");
-export function GET(){
-  const pubDate = "Mon, 23 Nov 2026 12:00:00 GMT";
-  const items = entries.map(entry => `<item><title>${escapeXml(entry.title)}</title><link>${site}${entry.path}</link><description>${escapeXml(entry.description)}</description><guid isPermaLink="true">${site}${entry.path}</guid><pubDate>${pubDate}</pubDate></item>`).join("");
-  const xml = `<?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-<channel>
-<title>PLAY IT FORWARD · Field Notes</title>
-<link>${site}/field-notes/</link>
-<description>Independent music, touring, artist sustainability, culture, audience participation, and creative infrastructure.</description>
-<language>en-us</language>
-<atom:link href="${site}/field-notes/feed.xml" rel="self" type="application/rss+xml"/>
-<lastBuildDate>${pubDate}</lastBuildDate>
-<generator>Play It Forward static publishing</generator>
-${items}
-</channel>
-</rss>`;
-  return new Response(xml,{headers:{"Content-Type":"application/rss+xml; charset=utf-8","Cache-Control":"public, max-age=3600"}});
-}
+export function GET(){const pubDate="Mon, 23 Nov 2026 12:00:00 GMT";const items=entries.map(entry=>"<item><title>"+escapeXml(entry.title)+"</title><link>"+site+entry.path+"</link><description>"+escapeXml(entry.description)+"</description><guid isPermaLink=\"true\">"+site+entry.path+"</guid><pubDate>"+pubDate+"</pubDate></item>").join("");const xml="<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<rss version=\"2.0\" xmlns:atom=\"http://www.w3.org/2005/Atom\">\n<channel>\n<title>PLAY IT FORWARD · Field Notes</title>\n<link>"+site+"/field-notes/</link>\n<description>Independent music, touring, artist sustainability, culture, audience participation, and creative infrastructure.</description>\n<language>en-us</language>\n<atom:link href=\""+site+"/field-notes/feed.xml\" rel=\"self\" type=\"application/rss+xml\"/>\n<lastBuildDate>"+pubDate+"</lastBuildDate>\n<generator>Play It Forward static publishing</generator>\n"+items+"\n</channel>\n</rss>";return new Response(xml,{headers:{"Content-Type":"application/rss+xml; charset=utf-8","Cache-Control":"public, max-age=3600"}});}
