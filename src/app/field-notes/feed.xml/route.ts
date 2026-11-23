@@ -15,4 +15,21 @@ const entries = [
 {title:"Media Pitch Resources",path:"/field-notes/media-resources/",description:"Public editorial contacts, submission guidelines, and primary research resources."}
 ];
 const escapeXml=(value:string)=>value.replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll('"',"&quot;").replaceAll("'","&apos;");
-export function GET(){const pubDate="Mon, 23 Nov 2026 12:00:00 GMT";const items=entries.map(entry=>"<item><title>"+escapeXml(entry.title)+"</title><link>"+site+entry.path+"</link><description>"+escapeXml(entry.description)+"</description><guid isPermaLink=\"true\">"+site+entry.path+"</guid><pubDate>"+pubDate+"</pubDate></item>").join("");const xml="<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<rss version=\"2.0\" xmlns:atom=\"http://www.w3.org/2005/Atom">\n<channel>\n<title>PLAY IT FORWARD · Field Notes</title>\n<link>"+site+"/field-notes/</link>\n<description>Independent music, touring, artist sustainability, culture, audience participation, and creative infrastructure.</description>\n<language>en-us</language>\n<atom:link href=\""+site+"/field-notes/feed.xml\" rel=\"self\" type=\"application/rss+xml\"/>\n<lastBuildDate>"+pubDate+"</lastBuildDate>\n<generator>Play It Forward static publishing</generator>\n"+items+"\n</channel>\n</rss>";return new Response(xml,{headers:{"Content-Type":"application/rss+xml; charset=utf-8","Cache-Control":"public, max-age=3600"}});}
+export function GET(){
+  const pubDate = "Mon, 23 Nov 2026 12:00:00 GMT";
+  const items = entries.map(entry => `<item><title>${escapeXml(entry.title)}</title><link>${site}${entry.path}</link><description>${escapeXml(entry.description)}</description><guid isPermaLink="true">${site}${entry.path}</guid><pubDate>${pubDate}</pubDate></item>`).join("");
+  const xml = `<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+<title>PLAY IT FORWARD · Field Notes</title>
+<link>${site}/field-notes/</link>
+<description>Independent music, touring, artist sustainability, culture, audience participation, and creative infrastructure.</description>
+<language>en-us</language>
+<atom:link href="${site}/field-notes/feed.xml" rel="self" type="application/rss+xml"/>
+<lastBuildDate>${pubDate}</lastBuildDate>
+<generator>Play It Forward static publishing</generator>
+${items}
+</channel>
+</rss>`;
+  return new Response(xml,{headers:{"Content-Type":"application/rss+xml; charset=utf-8","Cache-Control":"public, max-age=3600"}});
+}
