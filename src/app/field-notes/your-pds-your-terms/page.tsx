@@ -58,7 +58,7 @@ export default function Page() {
 
       <h2>Read the source; help improve it</h2>
       <ul>
-        <li><a href="https://github.com/ibloud/atmosphere-field-guide">Atmosphere field guide and implementation repository</a> — source, code and the public deployment.</li>
+        <li><a href="https://github.com/ibloud/pixie-device-stewardship/tree/main/tools/atmosphere-guide/pds-kit">Atmosphere field guide and implementation repository</a> — source, code and the public deployment.</li>
         <li><a href="https://atproto.com/guides/self-hosting">Official AT Protocol self-hosting guide</a> — PDS deployment fundamentals.</li>
         <li><a href="https://atproto.com/guides/account-migration">Official account migration guide</a> — migration stages and technical details.</li>
         <li><a href="https://atproto.com/guides/account-recovery">Official account recovery guide</a> — identity recovery and rotation keys.</li>
