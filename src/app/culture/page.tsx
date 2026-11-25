@@ -10,6 +10,7 @@ export const metadata: Metadata = {
 };
 
 const sources = [
+  { category: "STORY LAB · OBSERVER QUEST", title: "The Unwritten Sister", description: "Trace dated music releases and visual storytelling, distinguish public evidence from interpretation, and return to an original story.", href: "/culture/unwritten-sister/", label: "BEGIN THE QUEST" },
   { category: "GAMES · CULTURE", title: "Grand Theft Auto VI", description: "A cultural event whose conversation reaches beyond gaming: satire, spectacle, social media, music, crime, consumerism, and the world around us.", href: "https://www.rockstargames.com/VI", label: "OFFICIAL GAME SITE" },
   { category: "SCI-FI · DYSTOPIA", title: "Altered Carbon: brutal moments & moral questions", description: "GameSpot Universe's scene-by-scene discussion offers a model for accessible retrospective journalism: memorable moments, brutality, and the ethical questions beneath the spectacle.", href: "https://www.youtube.com/watch?v=-DbH9aMJ954", label: "WATCH THE VIDEO" },
   { category: "UNDERGROUND · MUSIC", title: "NOT A TOY: interviews, reviews & profiles", description: "Explore existing coverage of the collective's music, creative process, art, touring, and independent approach.", href: "/adventure/#press", label: "EXPLORE EXISTING PRESS" },
