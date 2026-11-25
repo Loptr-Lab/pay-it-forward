@@ -19,6 +19,7 @@ const questTemplates = [
   ["local-flavor", "Local Flavor", "Create a food and neighborhood adventure near the route or venue, with options for different budgets and dietary needs; verify menus and hours."],
   ["analog-discovery", "Analog Discovery", "Explore comic shops, zines, vintage stores, toys, collectibles, bookstores, and independent culture."],
   ["pass-it-forward", "Pass It Forward", "Make a discovery loop that supports independent artists and local businesses, and offers an optional low-pressure way to share a discovery."],
+  ["one-way-to-leave", "50 Ways to Leave Another", "Write a branching adventure about one distinct choice to leave. Begin with a verified real-world breadcrumb and provide an equivalent virtual route. Use a deliberate clue to cross into fiction. Give any unfinished detour a clear way back. Let the player leave freely and choose what comes next. Link shops and music as optional discoveries. If Story Finder supplied a source, record its link and distinguish verified material, intentional clues, and reader interpretation. Keep the archive count open until sources are reviewed."],
   ["show-day", "Show Day, Your Pace", "Plan a flexible show-day route with transit, access information, rest breaks, nearby food, and optional activities. No ticket or attendance required."],
 ];
 
@@ -46,6 +47,9 @@ export default function AdventureBuilder() {
     "Who might join: " + company,
     "Accessibility and practical needs: " + (accessNeeds || "Offer accessible alternatives and note details that need verification"),
     "",
+    ...(template === "one-way-to-leave" ? [
+      "Provide an Ink outline with named knots for the real starting place, clue, threshold, junction, optional detour and exit. Give each choice a destination. Describe the exit in one sentence and sketch a transit-style map legend for the real route, fictional transfer and optional branch.",
+    ] : []),
     "Create a welcoming, achievable plan with optional steps. Suggest relevant local experiences, such as music, record shops, art, food, comics, parks, transit, or a show, when they fit. Provide direct artist-support links and practical transport/access information. Do not invent venues, events, affiliations, hours, prices, or facts; flag details that need verification. No ticket, purchase, account, posting, or existing friend group should be required. Include a title, step-by-step adventure, optional invitation, reflection prompt, and one idea to pass it forward."
   ].join("\n");
   async function copyPrompt() {
