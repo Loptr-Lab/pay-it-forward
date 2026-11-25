@@ -35,8 +35,8 @@ export default function PilotPage() {
     <section className="fy-hero">
       <p className="eyebrow">50 Ways to Leave Another · Play It Forward pilot</p>
       <h1>The Exit Is Still Free</h1>
-      <p className="experience-lede">Start in Room #5. Follow the clues. Decide when to leave.</p>
-      <p>Room #5 and the Secret Garden come from a real stay. The portal and everything beyond it are fiction. Play the full route here, or use the <Link href="/tour-resilience/london/">London side quest</Link> to explore the area in person. No booking, purchase or venue access is needed to finish.</p>
+      <p className="experience-lede">Start with the narrator’s field notes. Follow the key to Room #5. Decide when to leave.</p>
+      <p>Room #5 and the Secret Garden come from a real stay. The mark on the key, the sigil and the realm beyond it belong to the fictional treatment. Play the full route here, or use the <Link href="/tour-resilience/london/">London side quest</Link> to explore the area in person. No booking, purchase or venue access is needed to finish.</p>
     </section>
     <Pilot start={start} scenes={scenes} />
   </main>;

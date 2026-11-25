@@ -1,19 +1,24 @@
--> room
+-> frame
+
+=== frame ===
+Put me in the frame too
+I built a portfolio through Handshake. Those exercises became part of Loptr Lab Training. For Violet’s project, I went to London to see what it takes to cover a show at my own pace. PIXIE lays two cards beside each other. One is a booking. The other says no-show. I remember getting there. “Put me in the frame too,” I tell her. Then I show her the key.
+* [Start with the key to Room #5.] -> room
 
 === room ===
 The Wolf’s Tavern · Room #5
-The brass key says 5. You turn it over. Someone has scratched a little rail junction into the back. One line ends at the garden.
+My room at the Wolf’s Tavern was Number 5. I remember the garden. In this telling, someone has scratched a little rail junction into the back of the key. One line ends at the garden.
 * [Follow the mark to the Secret Garden.] -> garden
 
 === garden ===
 The Secret Garden
-You find the same mark at the turn in the path. No arrow this time. What looked like a scratch on the key looks like a sigil here. The brass warms in your hand.
+At the turn in the path, the mark from the key appears again. No arrow this time. PIXIE has the two records side by side. I have the key. The next move is yours.
 * [Touch the sigil.] -> junction
 * [Go back to Room #5.] -> room
 
 === junction ===
 Daddy’s Little Mortis · Obsidian Realm
-The garden path becomes a rail line. Every departure board is running a Black Friday countdown. One promises “BECOME YOURSELF. OFFER ENDS AT MIDNIGHT.” Below it, somebody has painted a small arrow toward the exit.
+You touch the sigil. The garden path becomes a rail line. Every departure board is running a Black Friday countdown. One promises “BECOME YOURSELF. OFFER ENDS AT MIDNIGHT.” Below it, somebody has painted a small arrow toward the exit.
 * [Read the label in The Rebel’s window.] -> rebel
 * [Explore Inpatient Corridors.] -> corridors
 * [Take the exit while the clock is still running.] -> exit
