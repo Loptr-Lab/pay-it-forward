@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { PostShowLinks } from "../components/TourStatus";
 import AdventureBuilder from "../components/AdventureBuilder";
 import Breadcrumbs from "../components/Breadcrumbs";
 import SiteDirectoryFooter from "../components/SiteDirectoryFooter";
@@ -23,6 +24,7 @@ export default function AdventurePage() {
     <section className="experience-hero adventure-hero"><p className="eyebrow">NOT A TOY · PRE-SHOW ADVENTURE</p><h1>GET AMPED.<br/><em>YOUR WAY.</em></h1><p className="experience-lede">The concert starts before the doors. Build a soundtrack, find a clue in the city, discover something new and make the night yours.</p><div className="hero-actions"><a className="button primary" href="#quests">CHOOSE YOUR QUEST ↓</a><Link className="button secondary" href="/route/">BUILD A CITY ROUTE ↗</Link></div><p className="disclaimer">An independent fan concept. Not an official artist activity. No ticket, purchase, account, posting or participation required.</p></section>
 
     <AdventureBuilder />
+    <section className="adventure-map-cta" id="post-show"><p className="eyebrow">POST-SHOW · FAN PARTICIPATION</p><h2>THE SHOW IS OVER.<br/><em>THE ADVENTURE ISN&apos;T.</em></h2><p>Attended Glasgow, Manchester, or another stop? Preserve a permitted moment or share the music that stayed with you. You can also make a playlist without attending.</p><PostShowLinks /></section>
 
 <section className="filthy-yuck-home" aria-labelledby="filthy-yuck-home-title">
         <div className="filthy-yuck-copy"><p className="eyebrow">PRE-SHOW SIDE QUEST · COMICS & PLAY</p><h2 id="filthy-yuck-home-title">FILTHY YUCK!<br/><em>COMIC SHOP DETOUR.</em></h2><p>Find comic shops, toy stores, cosplay inspiration, and photo-worthy places near your venue—then explore the FILTHY YUCK! comic.</p><Link className="button primary" href="/adventure/#filthy-yuck">TAKE THE SIDE QUEST ↗</Link><a className="filthy-yuck-store-link" href="https://notatoymerch.myshopify.com/products/filthy-yuck-comic" target="_blank" rel="noreferrer">OFFICIAL COMIC & MERCH ↗</a></div>

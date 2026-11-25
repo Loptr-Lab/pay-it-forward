@@ -1,11 +1,12 @@
 import Link from "next/link";
 import Breadcrumbs from "../components/Breadcrumbs";
 import SiteDirectoryFooter from "../components/SiteDirectoryFooter";
+import TourStopGroups from "../components/TourStopGroups";
 import type { Metadata } from "next";
-
 export const metadata: Metadata = { title: "NOT A TOY Tour Map", description: "Explore tour cities for local music, art, tattoo culture, food, quiet places, and public transit to venues.", alternates: { canonical: "https://loptr-lab.github.io/pay-it-forward/route/" } };
 
-type TourStop = {
+
+export type TourStop = {
   region: "EUROPE" | "NORTH AMERICA";
   city: string;
   country: string;
@@ -31,41 +32,7 @@ const tourStops: TourStop[] = [
   { region: "NORTH AMERICA", city: "Denver", country: "USA", date: "FEB 13, 2027", venue: "Globe Hall", area: "Globeville" },
 ];
 
-const venueSearch = (stop: TourStop, category: string) =>
-  `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${category} near ${stop.venue}, ${stop.area}, ${stop.city}, ${stop.country}`)}`;
-
-const directions = (stop: TourStop, mode?: "transit" | "walking") => {
-  const destination = encodeURIComponent(`${stop.venue}, ${stop.area}, ${stop.city}, ${stop.country}`);
-  return `https://www.google.com/maps/dir/?api=1&destination=${destination}${mode ? `&travelmode=${mode}` : ""}`;
-};
-
-function StopCard({ stop }: { stop: TourStop }) {
-  return (
-    <article className="route-card">
-      <span className="route-num">{stop.date}</span>
-      <p className="eyebrow">{stop.region}</p>
-      <h3>{stop.city}</h3>
-      <p className="route-address">{stop.venue} · {stop.area}</p>
-      <p>Explore around the venue instead of searching the whole city. Map results are discovery links—not vetted recommendations or official tour partners.</p>
-      <a className="text-link" href={venueSearch(stop, "comic book shops comic stores manga")} target="_blank" rel="noreferrer">COMIC BOOK SHOPS ↗</a>
-      <a className="text-link" href={venueSearch(stop, "toy stores collectible toys action figures")} target="_blank" rel="noreferrer">TOY SHOPS & COLLECTIBLES ↗</a>
-      <a className="text-link" href={venueSearch(stop, "cosplay costume shops")} target="_blank" rel="noreferrer">COSPLAY & COSTUME SHOPS ↗</a>
-      <a className="text-link" href={venueSearch(stop, "parks scenic photography locations")} target="_blank" rel="noreferrer">PARKS & PHOTO SPOTS ↗</a>
-      <a className="text-link" href={venueSearch(stop, "independent record shops music venues")} target="_blank" rel="noreferrer">LOCAL MUSIC & RECORD SHOPS ↗</a>
-      <a className="text-link" href={venueSearch(stop, "street art murals galleries")} target="_blank" rel="noreferrer">ART, MURALS & GALLERIES ↗</a>
-      <a className="text-link" href={venueSearch(stop, "tattoo studios tattoo flash artists")} target="_blank" rel="noreferrer">TATTOO / FLASH ART ↗</a>
-      <a className="text-link" href={venueSearch(stop, "cafes bakeries local restaurants")} target="_blank" rel="noreferrer">FOOD & CAFÉS ↗</a>
-      <a className="text-link" href={venueSearch(stop, "parks quiet spaces")} target="_blank" rel="noreferrer">QUIET PLACES / RESET ↗</a>
-      <a className="text-link" href={directions(stop, "transit")} target="_blank" rel="noreferrer">PUBLIC TRANSIT TO VENUE ↗</a>
-      <a className="text-link" href={directions(stop, "walking")} target="_blank" rel="noreferrer">WALKING DIRECTIONS ↗</a>
-      <a className="text-link" href={directions(stop)} target="_blank" rel="noreferrer">ALL DIRECTIONS & VENUE PIN ↗</a>
-    </article>
-  );
-}
-
 export default function RoutePage() {
-  const europe = tourStops.filter((stop) => stop.region === "EUROPE");
-  const northAmerica = tourStops.filter((stop) => stop.region === "NORTH AMERICA");
 
   return (
     <main className="experience-page">
@@ -86,16 +53,7 @@ export default function RoutePage() {
         <p><a className="text-link" href="https://concord.com/artist/not-a-toy/" target="_blank" rel="noreferrer">CHECK THE ARTIST&apos;S TOUR LISTING ↗</a></p>
         <p><Link className="text-link" href="/tour-side-quests/">GLASGOW FIRST: VERIFIED COMIC + STREET-ART SIDE QUEST ↗</Link></p>
       </section>
-      <section className="route-stops" id="europe">
-        <p className="eyebrow">EUROPE · NOVEMBER–DECEMBER 2026</p>
-        <h2>CHOOSE YOUR CITY.</h2>
-        <div className="route-cards">{europe.map((stop) => <StopCard key={stop.date + stop.city} stop={stop}/>)}</div>
-      </section>
-      <section className="route-stops" id="north-america">
-        <p className="eyebrow">NORTH AMERICA · 2027</p>
-        <h2>KEEP IT MOVING.</h2>
-        <div className="route-cards">{northAmerica.map((stop) => <StopCard key={stop.city} stop={stop}/>)}</div>
-      </section>
+      <TourStopGroups stops={tourStops}/>
       <section className="route-bottom">
         <p className="eyebrow">CITY QUEST</p>
         <h2>FOLLOW A SOUND.<br/><em>NOT A CHECKLIST.</em></h2>

@@ -155,12 +155,12 @@ export default function WeekOnAirPage() {
       <header className="radio-hero">
         <p className="eyebrow">PLAY IT FORWARD · COMMUNITY RADIO</p>
         <h1>YOUR WEEK<br/><em>ON AIR.</em></h1>
-        <p className="experience-lede">A little broadcast of what moved you. Pass the listening experience forward.</p>
+        <p className="experience-lede">A little broadcast of what moved you. Build a post-show playlist or pass your weekly listening experience forward.</p>
         <p className="radio-status">WEEKLY LISTENING SHOW · MADE BY YOU</p>
       </header>
       <section className="radio-builder" aria-labelledby="radio-builder-title">
         <div className="radio-builder-heading">
-          <div><p className="eyebrow">MAKE A SHOW</p><h2 id="radio-builder-title">{readOnly ? "YOU'RE TUNED IN." : "WHAT HAVE YOU BEEN PLAYING?"}</h2></div>
+          <div><p className="eyebrow">MAKE A SHOW / BUILD A PLAYLIST</p><h2 id="radio-builder-title">{readOnly ? "YOU'RE TUNED IN." : "WHAT HAVE YOU BEEN PLAYING?"}</h2></div>
           <span className="radio-onair">● ON AIR</span>
         </div>
         <label className="radio-field">SHOW TITLE<input value={title} onChange={(e) => setTitle(e.target.value)} readOnly={readOnly} maxLength={90}/></label>
