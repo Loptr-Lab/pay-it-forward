@@ -51,6 +51,22 @@ export default function Page() {
       <p>The <a href="https://atmosphere.loptrlab.com/">Loptr Lab Atmosphere field guide</a> is where we are developing a plain-language path and reusable code for creating an identity on an artist-owned PDS and bridging from another host. The repository includes the evolving implementation, provider-neutral notes, preflight checks, migration checklist, backup and recovery guidance, and a record of the pilot's verified steps.</p>
       <p>We are using Daddy's Little Mortis as the first reference deployment because its domain has intentionally been held back for this identity. The real setup will expose the practical costs, DNS work, accessibility barriers and steps that still require human judgment.</p>
 
+      <section id="fanvids-interoperability" aria-labelledby="fanvids-title">
+        <h2 id="fanvids-title">From fan participation to digital sovereignty</h2>
+        <p>The <Link href="/adventure/#post-show">Play It Forward post-show adventure</Link> already provides an optional external FanVids handoff. FanVids describes artist-branded collection of fan-created videos, moderation, consent preferences and personal data requests in its <a href="https://www.fanvids.io/faq">FAQ</a>. These are provider descriptions, not independently tested guarantees. We do not host or republish those videos.</p>
+        <p>The Daddy's Little Mortis reference PDS remains the identity and portability pilot. FanVids is a potential interoperability case study, not a dependency of the PDS or a confirmed partner. Hosting an identity does not transfer ownership, permissions or storage control over media held by another provider.</p>
+        <h3>Questions for a potential collaboration</h3>
+        <ul>
+          <li>Could artists and fans optionally authenticate with AT Protocol OAuth and retain their DID when changing PDS providers?</li>
+          <li>Can contributors explicitly authorize a portable media reference and attribution record on their own PDS, without exposing private uploads or contact data?</li>
+          <li>Can artists and fans export their permitted media and metadata, understand reuse permissions, withdraw consent where applicable, and leave without losing access to their own records?</li>
+          <li>How would deletion, withdrawal, moderation, retention, copyright permissions and public replication be handled across services?</li>
+        </ul>
+        <p>Native AT Protocol support, export formats, media access, licensing and portable consent are unverified. A public PDS record cannot guarantee erasure from downstream copies. Keep private footage, sensitive consent details and credentials off public records. No automatic publication, data transfer, new account requirement or API connection is proposed for the current pilot.</p>
+        <p>Play It Forward owns the optional fan experience; the existing <a href="https://atmosphere.loptrlab.com/">Atmosphere field guide</a> owns identity and portability experiments; <a href="https://holdings.loptrlab.com/">PIXIE Holdings</a> is the existing rights and provider-assessment surface. Any technical trial requires documented provider capabilities, scoped authorization, rights review and a disposable test identity before real fan data is involved.</p>
+        <p>See <Link href="/field-notes/#fanvids">the FanVids participation resource</Link> and <a href="https://www.fanvids.io/terms">FanVids terms</a>. Independent research only; no sponsorship, endorsement or partnership is claimed.</p>
+      </section>
+
       <h2>People over profit—and no sponsorship</h2>
       <p><strong>This project is not sponsored.</strong> We have no paid relationship, affiliate arrangement, referral commission or promotional obligation to any hosting provider or migration-tool author mentioned in our research. We are not accepting sponsorship for this process. A commercial sponsorship would compromise the independence and people-over-profit, accessibility-first approach that Play It Forward is meant to practice.</p>
       <p>Provider links are offered as starting points for readers to compare—not endorsements. We will evaluate cost, transparent billing, privacy, accessibility, cancellation, support, portability and maintenance burden. Where we publish prices or provider experiences, we will date them and distinguish verified facts from estimates.</p>
