@@ -24,6 +24,10 @@ export default function Pilot({ start, scenes }: { start: string; scenes: Record
     <div className="fy-story-panel">
       <h2 ref={heading} tabIndex={-1}>{scene.title}</h2>
       <p>{scene.text}</p>
+      {current === "garden" && <details>
+        <summary>Ask PIXIE to repeat the clue</summary>
+        <p>The mark on the Room #5 key is the same mark in the garden. Touch the sigil to see where it leads.</p>
+      </details>}
       {current === "rebel" && <p><a className="fy-official-link" href="https://www.daddyslittlemortis.com/shop/p/glass-jar-soy-wax-candle">Visit The Rebel’s shop</a></p>}
       <div className="fy-choices">
         {scene.choices.map(({ label, next }) => <button key={label} type="button" onClick={() => move(next)}>{label}</button>)}
@@ -34,7 +38,7 @@ export default function Pilot({ start, scenes }: { start: string; scenes: Record
         <Link className="button secondary" href="/adventure/#make-an-adventure">Build your own adventure</Link>
       </div>}
       <div className="fy-story-footer">
-        <button type="button" className="fy-small-reset" onClick={() => move(start)}>Restart at Room #5</button>
+        <button type="button" className="fy-small-reset" onClick={() => move(start)}>Restart the pilot</button>
       </div>
     </div>
   </section>;
