@@ -23,6 +23,12 @@ export default function AdventurePage() {
     <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Tour Map", href: "/route/" }, { label: "Plan B Tour", href: "/tour-resilience/" }, { label: "Build Your Adventure", href: "/adventure/" }]} />
     <section className="experience-hero adventure-hero"><p className="eyebrow">NOT A TOY · PRE-SHOW ADVENTURE</p><h1>GET AMPED.<br/><em>YOUR WAY.</em></h1><p className="experience-lede">The concert starts before the doors. Build a soundtrack, find a clue in the city, discover something new and make the night yours.</p><div className="hero-actions"><a className="button primary" href="#quests">CHOOSE YOUR QUEST ↓</a><Link className="button secondary" href="/route/">BUILD A CITY ROUTE ↗</Link></div><p className="disclaimer">An independent fan concept. Not an official artist activity. No ticket, purchase, account, posting or participation required.</p></section>
 
+    <section className="adventure-map-cta">
+      <p className="eyebrow">50 Ways to Leave Another · Pilot</p>
+      <h2>The Exit Is Still Free</h2>
+      <p>Start in Room #5 at the Wolf’s Tavern and follow a clue into the Obsidian Realm.</p>
+      <Link className="button primary" href="/adventure/the-exit-is-still-free/">Play the pilot</Link>
+    </section>
     <AdventureBuilder /><section className="adventure-map-cta"><p className="eyebrow">LONDON · SECRET SIDE QUEST</p><h2>THE WOLF&apos;S GAMBIT.</h2><p>Chess, darts, independent places and a flexible transport budget.</p><Link className="button primary" href="/tour-resilience/london/">EXPLORE PLAN B ↗</Link></section>
     <section className="adventure-map-cta" id="post-show"><p className="eyebrow">POST-SHOW · FAN PARTICIPATION</p><h2>THE SHOW IS OVER.<br/><em>THE ADVENTURE ISN&apos;T.</em></h2><p>Attended Glasgow, Manchester, or another stop? Preserve a permitted moment or share the music that stayed with you. You can also make a playlist without attending.</p><PostShowLinks /></section>
 
