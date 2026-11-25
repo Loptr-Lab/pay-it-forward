@@ -87,7 +87,7 @@ export default function TourSideQuestsPage() {
       <p className="eyebrow">THE TOUR · CITY BY CITY</p><h2>CHOOSE YOUR STOP.</h2>
       <p className="route-note">Tour dates and venues below match the current Concord artist listing. Local links open map searches so visitors can verify businesses, hours, and routes. We will replace discovery searches with curated, checked city quests as each stop is researched.</p>
       <p className="route-note">This is the full tour itinerary, including past dates. <Link href="/route/#past-shows">View the date-aware archive ↗</Link>.</p><div className="route-cards">{cities.map(([city, date, venue]) => <article className="route-card" key={city + date}>
-        <span className="route-num">{date}</span><h3>{city}</h3><p className="route-address">{venue}</p><p>Explore comic shops, toys, art, and local creative places around the venue.</p>
+        <span className="route-num">{date}</span><h3>{city}</h3>{city === "London" && <Link className="text-link" href="/tour-resilience/london/">REVEAL THE WOLF&apos;S GAMBIT ↗</Link>}<p className="route-address">{venue}</p><p>Explore comic shops, toys, art, and local creative places around the venue.</p>
         <a className="text-link" href={maps(`comic shops toy shops street art near ${venue}, ${city}`)} target="_blank" rel="noreferrer">COMICS · TOYS · ART MAP ↗</a>
         <a className="text-link" href={maps(`${venue}, ${city}`)} target="_blank" rel="noreferrer">VENUE MAP ↗</a>
       </article>)}</div>

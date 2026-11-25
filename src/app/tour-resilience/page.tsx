@@ -37,7 +37,7 @@ export default function TourResiliencePage() {
       <div className="hero-actions"><Link className="button primary" href="/route/">VIEW TOUR MAP ↗</Link><Link className="button secondary" href="/tour-side-quests/">CITY SIDE QUESTS ↗</Link><Link className="button secondary" href="/adventure/#make-an-adventure">BUILD YOUR ADVENTURE ↗</Link></div>
     </section>
 
-    <section className="route-stops">
+    <section className="route-stops"><p className="eyebrow">LONDON · SECRET TRIP</p><h2>THE WOLF&apos;S GAMBIT.</h2><p>Explore Deptford, darts, chess and a budgeted public transit route using the devices you already have.</p><Link className="button primary" href="/tour-resilience/london/">REVEAL THE LONDON PLAN B ↗</Link></section><section className="route-stops">
       <p className="eyebrow">ROUTING REVIEW · ADVISORY FLAGS</p><h2>WHERE THE SCHEDULE<br/>NEEDS A HUMAN CHECK.</h2>
       <p className="route-note">Calendar spacing alone cannot establish feasibility. These flags identify transitions that deserve a routing review—not a prediction of missed flights or a claim that the tour is overbooked.</p>
       <div className="route-cards">{routePressure.map((item) => <article className="route-card" key={item.route}><span className="route-num">{item.dates}</span><p className="eyebrow">{item.flag}</p><h3>{item.route}</h3><p>{item.note}</p></article>)}</div>
