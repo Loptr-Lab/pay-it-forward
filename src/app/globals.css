@@ -323,3 +323,9 @@
 .experience-nav nav a{color:inherit;text-decoration:none}
 .experience-nav nav a:hover,.experience-nav nav a:focus-visible{color:var(--lime,#b6ef56);text-decoration:underline;text-underline-offset:4px}
 @media(max-width:600px){.radio-import{padding:1rem}.radio-import .radio-actions{align-items:stretch}.radio-import .button{width:100%;text-align:center}}
+
+/* Shared layout variants for balanced groups and connected sections. */
+.route-cards.route-cards-balanced { grid-template-columns:repeat(2,minmax(0,1fr)); }
+.discovery-prompt.discovery-prompt-wide { max-width:none; width:100%; margin:24px 0 0; }
+.route-stops.route-stops-connected { padding-top:16px; }
+@media (max-width:600px) { .route-cards.route-cards-balanced { grid-template-columns:minmax(0,1fr); } }
