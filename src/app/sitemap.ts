@@ -8,6 +8,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
  {url:base+"/route/",lastModified:new Date("2026-11-23"),changeFrequency:"weekly",priority:.9},
  {url:base+"/tour-resilience/",lastModified:new Date("2026-11-23"),changeFrequency:"weekly",priority:.7},
  {url:base+"/tour-side-quests/",lastModified:new Date("2026-11-23"),changeFrequency:"weekly",priority:.9},
+ {url:base+"/culture/unwritten-sister/",lastModified:new Date("2026-11-25"),changeFrequency:"monthly",priority:.8},
  {url:base+"/culture/",lastModified:new Date("2026-11-23"),changeFrequency:"monthly",priority:.8},
  {url:base+"/music/devour/",lastModified:new Date("2026-11-23"),changeFrequency:"monthly",priority:.8},
  {url:base+"/filthy-yuck/",lastModified:new Date("2026-11-23"),changeFrequency:"monthly",priority:.8},
