@@ -94,16 +94,16 @@ export default function TourResiliencePage() {
 
       <p className="eyebrow">LOCAL CREATOR NETWORK</p><h2>LOCAL KNOWLEDGE.<br/>NOT ONE CREATOR<br/>CHASING EVERY DATE.</h2>
       <p className="route-note">Recruit and compensate creators in each tour city for independent, reusable city storytelling. This reduces repeated long-distance travel and gives the project a local voice—even when the tour schedule changes.</p>
-      <div className="route-cards">
+      <div className="route-cards route-cards-balanced">
         <article className="route-card"><h3>City story</h3><p>Local music history, art, comics, games, neighborhood context, food, independent venues and creative communities—reported by people who live there.</p></article>
         <article className="route-card"><h3>Before / after the show</h3><p>Short optional guides with transit, accessibility notes, quiet breaks and low-cost or free discoveries. Update when conditions change.</p></article>
         <article className="route-card"><h3>Creator assignments</h3><p>Define deliverable, scope, deadline, compensation, usage, attribution and revisions before work starts. No speculative unpaid labor.</p></article>
         <article className="route-card"><h3>Creator wellbeing</h3><p>Flexible deadlines, async hand-offs, workload limits, clear cancellation fees and no obligation to attend a concert or film a performance.</p></article>
       </div>
-      <div className="discovery-prompt"><span>LOCAL CREATOR BRIEF</span><strong>Make one useful, distinct city story. It should remain valuable even if the show is delayed, moved, cancelled or the audience never attends.</strong><p>Suggested deliverables: a short original video or photo essay, a concise city guide, source links, accessibility/cost notes, creator credit, and optional follow-up. Scope and compensation are agreed in advance.</p></div>
+      <div className="discovery-prompt discovery-prompt-wide"><span>LOCAL CREATOR BRIEF</span><strong>Make one useful, distinct city story. It should remain valuable even if the show is delayed, moved, cancelled or the audience never attends.</strong><p>Suggested deliverables: a short original video or photo essay, a concise city guide, source links, accessibility/cost notes, creator credit, and optional follow-up. Scope and compensation are agreed in advance.</p></div>
     </section>
 
-    <section className="route-stops">
+    <section className="route-stops route-stops-connected">
       <p className="eyebrow">RIGHTS + TRUST</p><h2>LICENSED.<br/>ATTRIBUTED.<br/>CLEAR.</h2>
       <div className="route-cards">
         <article className="route-card"><h3>Original local work</h3><p>Creator retains ownership. PIF receives only a written, defined license for agreed platforms, term, editing, attribution and compensation.</p></article>
