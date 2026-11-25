@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Breadcrumbs from "../components/Breadcrumbs";
+import RoutingReview from "./RoutingReview";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -9,11 +10,11 @@ export const metadata: Metadata = {
 };
 
 const routePressure = [
-  { dates: "NOV 23 → 24", route: "Glasgow → Manchester", flag: "CONSECUTIVE SHOW DAYS", note: "No show-day travel buffer. Confirm the overnight, transport mode, load-in, soundcheck and crew call." },
-  { dates: "NOV 29 → 30", route: "Paris → Brussels", flag: "CONSECUTIVE SHOW DAYS", note: "Cross-border move with no calendar day between shows. Confirm transport and border/document requirements for the full party and equipment." },
-  { dates: "DEC 4 → 5", route: "Prague → Vienna", flag: "CONSECUTIVE SHOW DAYS", note: "Validate the actual travel plan, venue access and production schedule before treating the route as feasible." },
-  { dates: "DEC 7 → 10", route: "Berlin → Hamburg → Utrecht → Hamburg", flag: "FOUR CONSECUTIVE SHOW DAYS", note: "Repeated travel and performance load. Consider local crews, content hand-offs, protected rest and contingency coverage." },
-  { dates: "DEC 5 → 7", route: "Vienna → Berlin", flag: "ONE CALENDAR DAY BETWEEN", note: "A nominal buffer is not automatically recovery time. Verify travel, sleep, work calls and equipment movement." },
+  { endDate: "2026-11-24", dates: "NOV 23 → 24", route: "Glasgow → Manchester", flag: "CONSECUTIVE SHOW DAYS", note: "No show-day travel buffer. Confirm the overnight, transport mode, load-in, soundcheck and crew call." },
+  { endDate: "2026-11-30", dates: "NOV 29 → 30", route: "Paris → Brussels", flag: "CONSECUTIVE SHOW DAYS", note: "Cross-border move with no calendar day between shows. Confirm transport and border/document requirements for the full party and equipment." },
+  { endDate: "2026-12-05", dates: "DEC 4 → 5", route: "Prague → Vienna", flag: "CONSECUTIVE SHOW DAYS", note: "Validate the actual travel plan, venue access and production schedule before treating the route as feasible." },
+  { endDate: "2026-12-10", dates: "DEC 7 → 10", route: "Berlin → Hamburg → Utrecht → Hamburg", flag: "FOUR CONSECUTIVE SHOW DAYS", note: "Repeated travel and performance load. Consider local crews, content hand-offs, protected rest and contingency coverage." },
+  { endDate: "2026-12-07", dates: "DEC 5 → 7", route: "Vienna → Berlin", flag: "ONE CALENDAR DAY BETWEEN", note: "A nominal buffer is not automatically recovery time. Verify travel, sleep, work calls and equipment movement." },
 ];
 
 const steps = [
@@ -40,7 +41,7 @@ export default function TourResiliencePage() {
     <section className="route-stops"><p className="eyebrow">LONDON · SECRET TRIP</p><h2>THE WOLF&apos;S GAMBIT.</h2><p>Explore Deptford, darts, chess and a budgeted public transit route using the devices you already have.</p><Link className="button primary" href="/tour-resilience/london/">REVEAL THE LONDON PLAN B ↗</Link></section><section className="route-stops">
       <p className="eyebrow">ROUTING REVIEW · ADVISORY FLAGS</p><h2>WHERE THE SCHEDULE<br/>NEEDS A HUMAN CHECK.</h2>
       <p className="route-note">Calendar spacing alone cannot establish feasibility. These flags identify transitions that deserve a routing review—not a prediction of missed flights or a claim that the tour is overbooked.</p>
-      <div className="route-cards">{routePressure.map((item) => <article className="route-card" key={item.route}><span className="route-num">{item.dates}</span><p className="eyebrow">{item.flag}</p><h3>{item.route}</h3><p>{item.note}</p></article>)}</div>
+      <RoutingReview items={routePressure} />
     </section>
 
     <section className="route-stops">
