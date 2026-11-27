@@ -18,7 +18,7 @@ const groups = [
   ]},
   { title: "PILOT & PROCESS", links: [
     { label: "Production / Maker Path", href: "/every-day/#makers" },
-    { label: "Creator Pilots", href: "/every-day/#pilots" },
+    { label: "Music Pilots", href: "/every-day/#pilots" },
     { label: "Tour Resilience · Plan B", href: "/tour-resilience/" },
   ]},
 ];
