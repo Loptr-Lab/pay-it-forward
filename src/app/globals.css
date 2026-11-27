@@ -360,3 +360,7 @@
 @media (max-width: 600px) {
   .fy-world-links { grid-template-columns: minmax(0, 1fr); }
 }
+
+.radio-field select{width:100%;padding:.85rem;color:#f4f0e8;background:#101110;border:1px solid #555;font:inherit;letter-spacing:normal}
+.radio-actions button:disabled{opacity:.55;cursor:not-allowed}
+.radio-file-button:focus-within{outline:2px solid #b6ef56;outline-offset:3px}

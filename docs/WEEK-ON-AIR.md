@@ -59,3 +59,7 @@ Play It Forward is the audience-facing reference experience. PIXIE Creator OS pr
 - **Release quality:** acceptance criteria, keyboard/screen-reader/mobile checks, consent and denial tests, privacy leakage tests, recovery/export, monitoring, and rollback.
 
 A manual tracklist is not evidence of a play event. A share link is not private storage. External listening links are not permission to rebroadcast. Do not add private listening history to a public show without a separate, explicit user action.
+
+## Portable show pilot
+
+The curated DEVOUR route is shared from `src/app/music/catalog.ts` (ten tracks, not a full discography). Listeners can add, remove and reorder tracks, import/export CSV and full-show JSON, explicitly save/restore/delete one browser-local draft, and download or build from shared shows. No public submission system or PDS publishing is enabled. Test keyboard and VoiceOver, 320px reflow, Unicode and CSV round trips, malformed JSON, local storage denial, and recipient downloads before release. Clarity masking is marked on the builder; actual configuration still requires verification.
