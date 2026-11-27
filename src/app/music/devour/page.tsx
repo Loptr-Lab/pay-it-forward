@@ -92,6 +92,7 @@ export default function DevourPage() {
           <a href="https://voilamusic.bandcamp.com/music" target="_blank" rel="noreferrer">VOILÀ · BANDCAMP CATALOG ↗</a>
           <a href="https://www.youtube.com/@wearevoila" target="_blank" rel="noreferrer">VOILÀ · OFFICIAL YOUTUBE ↗</a><a href="https://notatoy.bandcamp.com/album/not-a-toy" target="_blank" rel="noreferrer">NOT A TOY · BANDCAMP ↗</a><a href="https://music.apple.com/us/artist/not-a-toy/1510814882" target="_blank" rel="noreferrer">NOT A TOY · APPLE MUSIC ↗</a>
         </div>
+        <details><summary>Artist catalogs and professional contacts</summary><p>VOILÀ: <a href="https://www.wearevoila.com/home">official music and merchandise</a> · <a href="https://linktr.ee/wearevoila">official channel directory</a> · <a href="https://www.itb.co.uk/artists/voila">ITB booking contact</a> (kara@itb.co.uk, published by agency). NOT A TOY: <a href="https://fearlessrecords.com/artists/not-a-toy/">Fearless Records artist page</a> · <a href="https://concord.com/artist/not-a-toy/">Concord artist and tour page</a> · <a href="https://music.apple.com/us/artist/not-a-toy/1510814882">Discography</a>. Direct booking contact not confirmed. These are public professional routes, not personal contacts.</p></details>
       </section>
       <section className="music-story-playlist" aria-labelledby="playlist-title">
         <p className="eyebrow">CURATED LISTENING ROUTE · NOT A TOY</p>
