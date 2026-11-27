@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { PostShowLinks, useTourDay, tourStatus } from "../components/TourStatus";
+import { PostShowLinks, useTourDay, tourStatus, showCardId } from "../components/TourStatus";
 import Breadcrumbs from "../components/Breadcrumbs";
 import SiteDirectoryFooter from "../components/SiteDirectoryFooter";
 
@@ -42,7 +42,7 @@ export default function TourSideQuestsPage() {
     <section className="route-stops" id="tour-cities">
       <p className="eyebrow">THE TOUR · CITY BY CITY</p><h2>CHOOSE YOUR STOP.</h2>
       <p className="route-note">Tour dates and venues below match the current Concord artist listing. Local links open map searches so visitors can verify businesses, hours, and routes. We will replace discovery searches with curated, checked city quests as each stop is researched.</p>
-      <p className="route-note">Upcoming and show-day dates only.</p>{now && active.length === 0 && <p>No upcoming dates remain on this schedule. <a href="#post-show">Explore the post-show archive.</a></p>}<div className="route-cards">{active.map(([city, date, venue]) => <article className="route-card" key={city + date}>
+      <p className="route-note">Upcoming and show-day dates only.</p>{now && active.length === 0 && <p>No upcoming dates remain on this schedule. <a href="#post-show">Explore the post-show archive.</a></p>}<div className="route-cards">{active.map(([city, date, venue]) => <article className="route-card" key={city + date} id={showCardId(city,date)}>
         <span className="route-num">{date} · {tourStatus(date,city,now) === "today" ? "SHOW DAY" : "UPCOMING"}</span><h3>{city}</h3>{city === "London" && <Link className="text-link" href="/tour-resilience/london/">REVEAL THE WOLF&apos;S GAMBIT ↗</Link>}<p className="route-address">{venue}</p><p>Explore comic shops, toys, art, and local creative places around the venue.</p>
         <a className="text-link" href={maps(`comic shops toy shops street art near ${venue}, ${city}`)} target="_blank" rel="noreferrer">COMICS · TOYS · ART MAP ↗</a>
         <a className="text-link" href={maps(`${venue}, ${city}`)} target="_blank" rel="noreferrer">VENUE MAP ↗</a>
@@ -50,7 +50,7 @@ export default function TourSideQuestsPage() {
       <p className="route-note"><a className="text-link" href="https://concord.com/artist/not-a-toy/" target="_blank" rel="noreferrer">VERIFY TOUR LISTING WITH CONCORD ↗</a></p>
     </section>
 
-    <section className="adventure-map-cta" id="post-show"><p className="eyebrow">AFTER THE SHOW</p><h2>PAST SHOWS &amp; FANVIDS.</h2><PostShowLinks /><div className="route-cards">{past.map(([city,date,venue]) => <article className="route-card" key={city+date}><span className="route-num">PAST SCHEDULED DATE · {date}</span><h3>{city}</h3><p>{venue}</p><a className="text-link" href={maps(`comic shops toy shops street art near ${venue}, ${city}`)} target="_blank" rel="noreferrer">COMICS · TOYS · ART MAP ↗</a><a className="text-link" href={maps(`${venue}, ${city}`)} target="_blank" rel="noreferrer">VENUE MAP ↗</a>{city === "Glasgow" && <a className="text-link" href="#glasgow">ARCHIVED CITY QUEST ↗</a>}{city === "London" && <Link className="text-link" href="/tour-resilience/london/">ARCHIVED SIDE QUEST · THE WOLF&apos;S GAMBIT ↗</Link>}</article>)}</div><Link className="text-link" href="/adventure/#post-show">POST-SHOW STORIES ↗</Link></section>
+    <section className="adventure-map-cta" id="post-show"><p className="eyebrow">AFTER THE SHOW</p><h2>KEEP THE PARTY GOING.</h2><PostShowLinks /><h3>Past shows · city archive</h3><div className="route-cards">{past.map(([city,date,venue]) => <article className="route-card" key={city+date} id={showCardId(city,date)}><span className="route-num">PAST SCHEDULED DATE · {date}</span><h3>{city}</h3><p>{venue}</p>{city === "Glasgow" && <p>The scheduled date has passed; a detailed performance review and song list have not been verified.</p>}{city === "Manchester" && <p>As reviewed on 25 November 2026, the community-edited setlist recorded performance times but no songs. This is not an official performance report.</p>}<a className="text-link" href={maps(`comic shops toy shops street art near ${venue}, ${city}`)} target="_blank" rel="noreferrer">COMICS · TOYS · ART MAP ↗</a><a className="text-link" href={maps(`${venue}, ${city}`)} target="_blank" rel="noreferrer">VENUE MAP ↗</a>{city === "Glasgow" && <a className="text-link" href="#glasgow">ARCHIVED CITY QUEST ↗</a>}{city === "London" && <Link className="text-link" href="/tour-resilience/london/">ARCHIVED SIDE QUEST · THE WOLF&apos;S GAMBIT ↗</Link>}</article>)}</div><p className="route-note"><strong>Discoverability snapshot · 25 November 2026:</strong> Bandsintown displayed approximately 6,900 followers and 12 upcoming shows. These are platform-wide indicators, not attendance counts or proof of impact from Play It Forward.</p><Link className="text-link" href="/route/#past-shows">TOUR MAP · PAST SHOWS ↗</Link></section>
 
     <section className="route-stops" id="glasgow">
       <p className="eyebrow">{glasgowPast ? "ARCHIVED CITY QUEST" : "CITY QUEST"} · NOV 23, 2026</p>
