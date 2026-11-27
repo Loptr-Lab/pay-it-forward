@@ -1,266 +1,47 @@
 "use client";
-
-import { useEffect, useMemo, useState } from "react";
+import { useEffect } from "react";
 import Link from "next/link";
 import Breadcrumbs from "../components/Breadcrumbs";
 import SiteDirectoryFooter from "../components/SiteDirectoryFooter";
+import { useTourDay, tourStatus, showCardId } from "../components/TourStatus";
+import { tourStops } from "../music/tour-stops";
 
-import { listeningRoutes } from "../music/catalog";
-
-type Track = { title: string; artist: string; url: string };
-const starter: Track[] = [
-  { title: "Your opening track", artist: "An artist you love", url: "" },
-  { title: "A new discovery", artist: "Someone to pass forward", url: "" },
+const artists = [
+  { name: "NOT A TOY", directory: "https://www.setlist.fm/setlists/not-a-toy-23fc64df.html", catalog: "https://notatoy.bandcamp.com/album/not-a-toy" },
+  { name: "VOILÀ", directory: "https://www.setlist.fm/setlists/voila-6bccee4a.html", catalog: "https://voilamusic.bandcamp.com/music" },
 ];
-
-type Show = { title: string; note: string; tracks: Track[] };
-const storageKey = "pif-radio-draft-v1";
-function validShow(value: unknown): Show | null {
-  if (!value || typeof value !== "object") return null;
-  const show = value as Partial<Show>;
-  if (typeof show.title !== "string" || typeof show.note !== "string" || !Array.isArray(show.tracks) || show.tracks.length > 500) return null;
-  if (!show.tracks.every(t => t && typeof t.title === "string" && typeof t.artist === "string" && typeof t.url === "string")) return null;
-  return { title: show.title.slice(0,90), note: show.note.slice(0,280), tracks: show.tracks.map(t => ({title:t.title.slice(0,500),artist:t.artist.slice(0,500),url:t.url.slice(0,4000)})) };
-}
-function decodeShow(): { title: string; note: string; tracks: Track[] } | null {
-  if (typeof window === "undefined" || !window.location.hash.startsWith("#show=")) return null;
-  try {
-    const raw = window.location.hash.slice(6);
-    if (raw.length > 60000) return null;
-    return validShow(JSON.parse(decodeURIComponent(escape(atob(raw)))));
-  } catch { return null; }
-}
-
-export default function WeekOnAirPage() {
-  const [title, setTitle] = useState("Your Week on Air");
-  const [note, setNote] = useState("A few sounds I want to pass along.");
-  const [tracks, setTracks] = useState<Track[]>(starter);
-  const [shared, setShared] = useState(false);
-  const [readOnly, setReadOnly] = useState(false);
-  const [importMessage, setImportMessage] = useState("");
-  const [catalogIndex, setCatalogIndex] = useState("0");
-  const [routeIndex, setRouteIndex] = useState("0");
-  const selectedRoute = listeningRoutes[Number(routeIndex)];
-
+export default function RadioPage() {
+  const now = useTourDay();
+  const ready = now !== null;
+  const shows = tourStops.filter(stop => ["past","today"].includes(tourStatus(stop.date,stop.city,now))).reverse();
   useEffect(() => {
-    const show = decodeShow();
-    if (show) {
-      setTitle(show.title || "Your Week on Air");
-      setNote(show.note || "");
-      setTracks(Array.isArray(show.tracks) ? show.tracks : []);
-      setReadOnly(true);
-    }
-  }, []);
-
-  const encoded = useMemo(() => {
-    const payload = JSON.stringify({ title, note, tracks });
-    return btoa(unescape(encodeURIComponent(payload)));
-  }, [title, note, tracks]);
-
-  function isSafeListenUrl(value: string): boolean {
-    if (!value) return false;
-    try {
-      const parsed = new URL(value);
-      return parsed.protocol === "https:" || parsed.protocol === "http:";
-    } catch (error) {
-      void error;
-      return false;
-    }
-  }
-
-  function addTrack() { setTracks(items => [...items, { title: "", artist: "", url: "" }]); }
-  function loadShow(show: Show) {
-    setTitle(show.title); setNote(show.note); setTracks(show.tracks); setReadOnly(false); setShared(false);
-    window.history.replaceState(null, "", window.location.pathname);
-  }
-  function saveDraft() {
-    try { localStorage.setItem(storageKey, JSON.stringify({title,note,tracks})); setImportMessage("Draft saved on this browser only."); }
-    catch { setImportMessage("Could not save locally. Download the show JSON instead."); }
-  }
-  function restoreDraft() {
-    try {
-      const show = validShow(JSON.parse(localStorage.getItem(storageKey) || "null"));
-      if (!show) { setImportMessage("No valid saved draft."); return; }
-      if (window.confirm("Replace the current show with your saved draft?")) loadShow(show);
-    } catch { setImportMessage("Could not restore the draft."); }
-  }
-  function deleteDraft() {
-    try { localStorage.removeItem(storageKey); setImportMessage("Local draft deleted."); }
-    catch { setImportMessage("Could not delete the local draft."); }
-  }
-  function download(content: string, type: string, filename: string) {
-    const url = URL.createObjectURL(new Blob([content], {type}));
-    const link = document.createElement("a"); link.href=url; link.download=filename;
-    document.body.appendChild(link); link.click(); link.remove();
-    window.setTimeout(() => URL.revokeObjectURL(url), 1000);
-  }
-  function exportShow() { download(JSON.stringify({title,note,tracks},null,2), "application/json", "play-it-forward-show.json"); }
-  async function importShow(file?: File) {
-    if (!file) return;
-    try {
-      if(file.size > 4000000) throw Error("File too large");
-      const show = validShow(JSON.parse(await file.text()));
-      if (!show) throw Error("Invalid show");
-      if (window.confirm("Replace the current show with this file?")) { loadShow(show); setImportMessage("Show imported."); }
-    } catch { setImportMessage("Could not import this show JSON."); }
-  }
-  function moveTrack(index: number, direction: number) {
-    setTracks(items => { const next = [...items]; const target = index + direction;
-      if(target >= 0 && target < next.length) [next[index],next[target]] = [next[target],next[index]];
-      return next;
-    });
-  }
-
-  function parseCsv(text: string): Track[] {
-    const rows: string[][] = [];
-    let row: string[] = [];
-    let cell = "";
-    let quoted = false;
-    for (let i = 0; i < text.length; i++) {
-      const char = text[i];
-      if (char === '"' && quoted && text[i + 1] === '"') { cell += '"'; i++; }
-      else if (char === '"') quoted = !quoted;
-      else if (char === "," && !quoted) { row.push(cell.trim()); cell = ""; }
-      else if ((char === "\n" || char === "\r") && !quoted) {
-        if (char === "\r" && text[i + 1] === "\n") i++;
-        row.push(cell.trim()); cell = "";
-        if (row.some(Boolean)) rows.push(row);
-        row = [];
-      } else cell += char;
-    }
-    row.push(cell.trim());
-    if (row.some(Boolean)) rows.push(row);
-    if (!rows.length) return [];
-    const header = rows[0].map((value) => value.toLowerCase().replace(/[^a-z]/g, ""));
-    const titleIndex = header.findIndex((value) => ["title", "track", "song", "trackname", "songtitle"].includes(value));
-    const artistIndex = header.findIndex((value) => ["artist", "artistname", "performer"].includes(value));
-    const urlIndex = header.findIndex((value) => ["url", "link", "listenlink", "trackurl"].includes(value));
-    const hasHeader = titleIndex >= 0 || artistIndex >= 0 || urlIndex >= 0;
-    const data = hasHeader ? rows.slice(1) : rows;
-    return data.map((values) => ({
-      title: values[hasHeader ? Math.max(titleIndex, 0) : 0] || "",
-      artist: values[hasHeader ? (artistIndex >= 0 ? artistIndex : 1) : 1] || "",
-      url: values[hasHeader ? (urlIndex >= 0 ? urlIndex : 2) : 2] || "",
-    })).filter((track) => track.title || track.artist || track.url);
-  }
-
-  async function importTrackFile(file?: File) {
-    if (!file) return;
-    try {
-      const imported = parseCsv(await file.text());
-      if (!imported.length) {
-        setImportMessage("No tracks found. Use a CSV with title, artist, and optional url columns.");
-        return;
-      }
-      if (!window.confirm("Replace the current tracklist with the imported CSV?")) return;
-      setTracks(imported.slice(0,500));
-      setImportMessage(`Imported ${imported.length} tracks. Review the list before sharing.`);
-    } catch {
-      setImportMessage("We couldn't read that file. Please try a UTF-8 CSV file.");
-    }
-  }
-
-  function exportTracklist() {
-    const quote = (value: string) => '"' + (/^[\s]*[=+@-]|^[\t\r\n]/.test(value) ? "'" + value : value).replace(/"/g, '""') + '"';
-    const csv = ["title,artist,url", ...tracks.map((track) => [track.title, track.artist, track.url].map(quote).join(","))].join("\n");
-    download(csv, "text/csv;charset=utf-8", "play-it-forward-tracklist.csv");
-  }
-
-  function updateTrack(index: number, key: keyof Track, value: string) {
-    setTracks((items) => items.map((item, i) => i === index ? { ...item, [key]: value } : item));
-  }
-  async function shareShow() {
-    if (encoded.length > 60000 || !validShow({title,note,tracks})) { setImportMessage("Show too large for a share link. Download JSON instead."); return; }
-    const url = new URL(window.location.href);
-    url.hash = "show=" + encoded;
-    try {
-      await navigator.clipboard.writeText(url.toString());
-      setShared(true);
-    } catch {
-      window.location.hash = "show=" + encoded;
-      setShared(false);
-    }
-  }
-  function resetShow() {
-    window.history.replaceState(null, "", window.location.pathname);
-    setTitle("Your Week on Air"); setNote("A few sounds I want to pass along.");
-    setTracks(starter); setReadOnly(false); setShared(false);
-  }
-
+    if (!ready) return;
+    const id = window.location.hash.slice(1);
+    if (id.startsWith("show-")) document.getElementById(id)?.scrollIntoView();
+  }, [ready]);
   return <main className="experience-page radio-page">
-    <header className="experience-nav"><Link href="/" className="wordmark">PIF<span>✳</span></Link><nav aria-label="Main navigation"><Link href="/adventure/">Explore</Link><Link href="/radio/">Radio</Link><Link href="/field-notes/">Field Notes</Link><Link href="/music/devour/">Music stories</Link><Link href="/route/">Tour map</Link></nav></header>
-    <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Music Discovery", href: "/#next-track" }, { label: "Your Week on Air", href: "/radio/" }]} />
+    <header className="experience-nav"><Link href="/" className="wordmark">PIF<span>✳</span></Link><nav aria-label="Main navigation"><Link href="/route/">Tour Map</Link><Link href="/route/#past-shows">Past Shows</Link><Link href="/field-notes/">Field Notes</Link></nav></header>
+    <Breadcrumbs items={[{label:"Home",href:"/"},{label:"Your Week on Air",href:"/radio/"}]}/>
     <article>
-      <header className="radio-hero">
-        <p className="eyebrow">PLAY IT FORWARD · COMMUNITY RADIO</p>
-        <h1>YOUR WEEK<br/><em>ON AIR.</em></h1>
-        <p className="experience-lede">Choose a concert setlist or a curated listening route, make it your own, then take your tracklist to your preferred music service. Pass the discovery forward.</p>
-        <p className="radio-status">WEEKLY LISTENING SHOW · MADE BY YOU</p>
-      </header>
-      <section className="radio-builder" data-clarity-mask="true" aria-labelledby="radio-builder-title">
-        <div className="radio-builder-heading">
-          <div><p className="eyebrow">MAKE A SHOW / BUILD A PLAYLIST</p><h2 id="radio-builder-title">{readOnly ? "YOU'RE TUNED IN." : "WHAT HAVE YOU BEEN PLAYING?"}</h2></div>
-          <span className="radio-onair">{readOnly ? "SHARED SHOW" : "DRAFT"}</span>
-        </div>
-        <label className="radio-field">SHOW TITLE<input value={title} onChange={(e) => setTitle(e.target.value)} readOnly={readOnly} maxLength={90}/></label>
-        <label className="radio-field">A NOTE FROM THE DJ<textarea value={note} onChange={(e) => setNote(e.target.value)} readOnly={readOnly} rows={3} maxLength={280}/></label>
-        {!readOnly && <section className="radio-import" aria-labelledby="catalog-title">
-          <h3 id="catalog-title">1 · FIND YOUR MUSIC.</h3><p>Revisit a concert using community-edited setlists. Choose a show, then add its songs below; missing song lists are not verified performances.</p><div className="radio-actions"><a className="button secondary" href="https://www.setlist.fm/setlists/not-a-toy-23fc64df.html" target="_blank" rel="noreferrer">NOT A TOY · SETLISTS ↗</a><a className="button secondary" href="https://www.setlist.fm/setlists/voila-6bccee4a.html" target="_blank" rel="noreferrer">VOILÀ · SETLISTS ↗</a><Link className="button secondary" href="/route/#post-show">AFTER THE SHOW ↗</Link></div>
-          <p>Choose a curated listening route, not a complete discography. Release discovery entries link to an EP or album; replace them with individual songs as you listen. No artist participation is implied.</p>
-          <label className="radio-field">CHOOSE A LISTENING ROUTE<select value={routeIndex} onChange={e=>{setRouteIndex(e.target.value);setCatalogIndex("0");}}>{listeningRoutes.map((route,i)=><option key={route.title} value={i}>{route.title}</option>)}</select></label><label className="radio-field">CHOOSE A TRACK OR RELEASE<select value={catalogIndex} onChange={e=>setCatalogIndex(e.target.value)}>{selectedRoute.tracks.map((t,i)=><option key={i} value={i}>{t.title} — {t.artist}</option>)}</select></label>
-          <div className="radio-actions">
-            <button className="button secondary" type="button" onClick={()=>setTracks(items=>[...items,{...selectedRoute.tracks[Number(catalogIndex)]}])}>ADD SELECTED ITEM</button>
-            <button className="button secondary" type="button" onClick={()=>{if(window.confirm("Replace the current show with the curated route?")) loadShow({title:selectedRoute.title,note:selectedRoute.note,tracks:selectedRoute.tracks.map(t=>({...t}))});}}>LOAD SELECTED ROUTE</button>
-            <Link className="button secondary" href={selectedRoute.href}>EXPLORE THE SOURCE ROUTE</Link>
-          </div>
-        </section>}
-        {!readOnly && <section className="radio-import" aria-labelledby="radio-import-title">
-          <p className="eyebrow">BRING YOUR LISTENING WITH YOU</p>
-          <h3 id="radio-import-title">IMPORT OR BUILD YOUR TRACKLIST.</h3>
-          <p>Already have a playlist or setlist tracklist? Import a CSV with title and artist columns, or restore a saved show JSON. You can also add concert songs manually below.</p>
-          <div className="radio-actions">
-            <label className="button secondary radio-file-button">IMPORT CSV FILE
-              <input type="file" accept=".csv,text/csv" onChange={(e) => importTrackFile(e.target.files?.[0])} />
-            </label>
-            <label className="button secondary radio-file-button">IMPORT SHOW JSON<input aria-label="Import show JSON" type="file" accept=".json,application/json" onChange={e=>{void importShow(e.target.files?.[0]);e.target.value="";}} /></label>
-          </div>
-          <p className="radio-import-note">CSV and JSON import/export happen in this browser only. Setlist.fm is a discovery link, not an automatic import.</p>
-          
-        </section>}
-        <div className="radio-track-heading"><h3>2 · PERSONALIZE YOUR TRACKLIST</h3><span>{tracks.length} TRACKS</span></div>
-        <ol className="radio-tracklist">
-          {tracks.map((track, index) => <li key={index}>
-            <span className="radio-track-number">{String(index + 1).padStart(2, "0")}</span>
-            <div className="radio-track-fields">
-              <label>TRACK<input value={track.title} readOnly={readOnly} placeholder="Song title" onChange={(e) => updateTrack(index, "title", e.target.value)}/></label>
-              <label>ARTIST<input value={track.artist} readOnly={readOnly} placeholder="Artist name" onChange={(e) => updateTrack(index, "artist", e.target.value)}/></label>
-              <label>LISTEN LINK (OPTIONAL)<input value={track.url} readOnly={readOnly} placeholder="https://music.apple.com/…" onChange={(e) => updateTrack(index, "url", e.target.value)}/></label>
-              {!readOnly && <div className="radio-actions"><button className="button secondary" type="button" disabled={index===0} onClick={()=>moveTrack(index,-1)} aria-label={`Move track ${index+1} up`}>MOVE UP</button><button className="button secondary" type="button" disabled={index===tracks.length-1} onClick={()=>moveTrack(index,1)} aria-label={`Move track ${index+1} down`}>MOVE DOWN</button><button className="button secondary" type="button" onClick={()=>setTracks(items=>items.filter((_,i)=>i!==index))} aria-label={`Remove track ${index+1}`}>REMOVE</button></div>}
-              {isSafeListenUrl(track.url) && <a className="radio-listen-link" href={track.url} target="_blank" rel="noreferrer">OPEN MUSIC ↗</a>}
-            </div>
-          </li>)}
-        </ol>
-        {!readOnly && <div className="radio-actions"><button className="button secondary" type="button" onClick={addTrack}>+ ADD A TRACK</button><button className="button primary" type="button" onClick={shareShow}>COPY SHARE LINK ↗</button></div>}
-        {shared && <p className="radio-confirmation" role="status">Share link copied. Anyone with the link can view this show.</p>}
-        <h3>3 · TAKE IT WITH YOU</h3><p>Download your CSV, open Soundiiz, choose Import Playlist → From File, select the CSV, review matched tracks and choose your streaming service. Remove EP or album discovery entries or replace them with individual songs first. A separate account or paid plan may be required.</p><div className="radio-actions">
-          <button className="button secondary" type="button" onClick={exportTracklist}>DOWNLOAD TRACKLIST CSV ↓</button><a className="button secondary" href="https://soundiiz.com/" target="_blank" rel="noreferrer">OPEN SOUNDIIZ ↗</a><a className="radio-listen-link" href="https://support.soundiiz.com/hc/en-us/articles/360010006793-What-is-the-CSV-format-to-import-playlists-and-favorites" target="_blank" rel="noreferrer">CSV import help ↗</a>
-          <button className="button secondary" type="button" onClick={exportShow}>DOWNLOAD FULL SHOW JSON ↓</button>
-          {readOnly ? <><button className="button secondary" type="button" onClick={()=>loadShow({title:("Inspired by: "+title).slice(0,90),note:("Source show: "+title).slice(0,280),tracks})}>BUILD FROM THIS SHOW</button><button className="button secondary" type="button" onClick={resetShow}>MAKE YOUR OWN SHOW</button></> : <>
-          <button className="button secondary" type="button" onClick={saveDraft}>SAVE DRAFT ON THIS DEVICE</button>
-          <button className="button secondary" type="button" onClick={restoreDraft}>RESTORE SAVED DRAFT</button>
-          <button className="button secondary" type="button" onClick={deleteDraft}>DELETE SAVED DRAFT</button></>}
-        </div>
-        <p className="radio-small">Saving a draft is optional and replaces the previous saved draft in this browser. Shared links are public-by-link, not encrypted. Downloads stay on your device.</p>
-        {importMessage && <p className="radio-confirmation" role="status">{importMessage}</p>}
+      <header className="radio-hero"><p className="eyebrow">PLAY IT FORWARD · CONCERT DISCOVERY</p><h1>YOUR WEEK<br/><em>ON AIR.</em></h1><p className="experience-lede">What was that song you heard at the show? Find your concert, revisit the music and take the playlist to your favorite listening service.</p></header>
+      <section className="route-stops" id="radio-builder-title">
+        <p className="eyebrow">01 · FIND YOUR CONCERT</p><h2>CHOOSE YOUR SHOW.</h2>
+        <p>These are scheduled tour dates, not confirmation that every performance took place or that a setlist exists. Setlist.fm entries are community-edited.</p>
+        {!ready ? <p role="status">Loading concert dates…</p> : shows.length===0 ? <p>No past or show-day dates yet.</p> : <div className="route-cards">{shows.map(stop=><article className="route-card" id={showCardId(stop.city,stop.date)} key={showCardId(stop.city,stop.date)}>
+          <p className="eyebrow">{stop.date} · {tourStatus(stop.date,stop.city,now)==="today"?"SHOW DAY":"PAST SCHEDULED DATE"}</p><h3>{stop.city}</h3><p>{stop.venue} · {stop.country}</p>
+          <p>Song list not verified here. Search each artist’s record for this date and venue.</p>
+          {artists.map(artist=><p key={artist.name}><a className="text-link" href={"https://www.setlist.fm/search?query="+encodeURIComponent(artist.name+" "+stop.city+" "+stop.date)} target="_blank" rel="noreferrer">FIND {artist.name} SETLIST ↗</a></p>)}
+          <Link className="text-link" href={"/route/#"+showCardId(stop.city,stop.date)}>CITY GUIDE ↗</Link>
+        </article>)}</div>}
+        <p className="route-note">Cannot find your show? Browse the artist directories: {artists.map(artist=><span key={artist.name}> <a href={artist.directory} target="_blank" rel="noreferrer">{artist.name} ↗</a> · </span>)}</p>
       </section>
-      <section className="radio-how" aria-labelledby="radio-status-details">
-        <p className="eyebrow">THE FIRST EDITION</p><h2 id="radio-status-details">YOUR TASTE.<br/><em>YOUR AIRWAVES.</em></h2>
-        <p>Add tracks you played this week, import a CSV tracklist, or use a separate playlist-transfer service before bringing a tracklist here. Give the show a title and share the link. This is a link-based show builder: the tracklist is encoded into the link and is not uploaded to a server.</p>
-        <div className="radio-boundary"><strong>WHAT WORKS NOW</strong><ul><li>Manually add, remove and reorder tracks, or start from a curated listening route.</li><li>Import CSV or full-show JSON; download CSV or JSON from both editable and shared shows. Save, restore or delete an optional local draft.</li><li>Open Soundiiz separately as an optional playlist-transfer tool; it is not a direct Play It Forward integration.</li><li>Copy a share link; anyone with the link can view the read-only show.</li><li>Open music links in the relevant listening service. This site does not host audio.</li></ul></div>
-        <p className="radio-small">No audio is hosted here. Listening links open the music service. Anyone with the share link can view the show, so share only content and notes you are comfortable making public. A tracklist is not proof of a play event or permission to rebroadcast copyrighted audio.</p>
-        <p><a className="radio-listen-link" href="https://ibloud.github.io/pixie-creator-os/digital-jockey.html">Want to build a radio project of your own? Open PIXIE Creator OS Digital Jockey Studio ↗</a></p>
+      <section className="route-stops" id="transfer"><p className="eyebrow">02 · TAKE THE MUSIC WITH YOU</p><h2>MAKE IT A PLAYLIST.</h2>
+        <p>Open a concert’s individual Setlist.fm record, check the songs and copy its URL. Follow the Soundiiz instructions for your chosen service, authorize your own account there and review the matched songs before creating the playlist.</p>
+        <div className="hero-actions"><a className="button primary" href="https://soundiiz.com/tutorial/setlist-to-spotify" target="_blank" rel="noreferrer">SPOTIFY ↗</a><a className="button secondary" href="https://soundiiz.com/tutorial/setlist-to-apple-music" target="_blank" rel="noreferrer">APPLE MUSIC ↗</a><a className="button secondary" href="https://soundiiz.com/" target="_blank" rel="noreferrer">OTHER SERVICES ↗</a></div>
+        <p className="route-note">No songs listed? Check back or contribute a firsthand correction on Setlist.fm. We do not offer a concert download without a song list. Soundiiz may require an account or paid plan; availability and matching depend on the destination service. Play It Forward does not collect credentials or store playlists.</p>
       </section>
-    </article>
-    <SiteDirectoryFooter tagline="INDEPENDENT · ACCESSIBLE · MUSIC PASSED FORWARD" />
+      <section className="route-stops"><p className="eyebrow">03 · KEEP DISCOVERING</p><h2>FOLLOW THE ARTISTS.</h2><p>These are curated release discoveries, not concert setlists.</p><div className="route-cards"><article className="route-card"><h3>DEVOUR · VOILÀ × NOT A TOY</h3><Link className="text-link" href="/music/devour/">EXPLORE THE LISTENING ROUTE ↗</Link>{artists.map(artist=><p key={artist.name}><a href={artist.catalog}>{artist.name} · Bandcamp ↗</a></p>)}</article><article className="route-card"><h3>Independent collaborations</h3><Link className="text-link" href="/field-notes/the-art-of-staying-independent/">REN · THE SKINNER BROTHERS · CHRIS WEBBY ↗</Link><p><a href="https://renmakesmusic.bandcamp.com/album/asylum">Asylum ↗</a> · <a href="https://app.grouped.com/webbysworld/">Webby’s World ↗</a></p></article></div><p><Link className="text-link" href="/route/#post-show">KEEP THE PARTY GOING ↗</Link></p></section>
+      <p className="radio-small">Independent fan discovery. No artist affiliation, audio hosting or purchase required. <a href="https://ibloud.github.io/pixie-creator-os/digital-jockey.html">For creator tools, visit PIXIE Creator OS ↗</a>.</p>
+    </article><SiteDirectoryFooter tagline="INDEPENDENT · ACCESSIBLE · MUSIC PASSED FORWARD"/>
   </main>;
 }
