@@ -39,11 +39,6 @@ export default function CulturePage() {
       <p className="experience-lede">Games, science fiction, music, satire, journalism, and the strange real world that connects them. Follow a story because it interests you—not because it is an ad.</p>
       <p className="disclaimer">Independent editorial discovery by PLAY IT FORWARD. No affiliation or endorsement by the referenced properties or publications is implied.</p>
     </section>
-    <section className="route-stops compact-section" id="stories">
-      <h2>{featured.title}</h2>
-      <p>{featured.description}</p>
-      <Link className="button primary" href={featured.href}>BEGIN THE OBSERVER QUEST ↗</Link>
-    </section>
     <div className="adventure-info-row">
       <section className="quest-intro compact-section">
         <h2>Music, games, and fiction</h2>
@@ -67,6 +62,11 @@ export default function CulturePage() {
           <li><Link className="text-link" href="/every-day/#fans">Choose an Ink adventure ↗</Link></li>
           <li><Link className="text-link" href="/tour-side-quests/">Explore tour side quests ↗</Link></li>
         </ul>
+        <div id="stories">
+          <h3>{featured.title}</h3>
+          <p>{featured.description}</p>
+          <Link className="button primary" href={featured.href}>BEGIN THE OBSERVER QUEST ↗</Link>
+        </div>
       </section>
     </div>
     <SiteDirectoryFooter tagline="INDEPENDENT · ACCESSIBLE · SELF-PACED" />
