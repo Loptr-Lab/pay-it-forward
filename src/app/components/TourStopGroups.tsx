@@ -14,7 +14,7 @@ function StopCard({ stop, past, today }: { stop: TourStop; past: boolean; today:
     <article className="route-card">
       <span className="route-num">{stop.date} · {past ? "PAST SHOW" : today ? "SHOW DAY" : "SCHEDULED"}</span>
       <p className="eyebrow">{stop.region}</p>
-      <h3>{stop.city}</h3>{stop.city === "London" && <a className="text-link" href="/pay-it-forward/tour-resilience/london/">SECRET SIDE QUEST · THE WOLF&apos;S GAMBIT ↗</a>}
+      <h3>{stop.city}</h3>{stop.city === "London" && <a className="text-link" href="/pay-it-forward/tour-resilience/london/">{past ? "ARCHIVED SIDE QUEST" : "SECRET SIDE QUEST"} · THE WOLF&apos;S GAMBIT ↗</a>}
       <p className="route-address">{stop.venue} · {stop.area}</p>
       {past && <PostShowLinks />}<p>Explore around the venue instead of searching the whole city. Map results are discovery links—not vetted recommendations or official tour partners.</p>
       <a className="text-link" href={venueSearch(stop, "comic book shops comic stores manga")} target="_blank" rel="noreferrer">COMIC BOOK SHOPS ↗</a>
