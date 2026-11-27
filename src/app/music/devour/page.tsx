@@ -8,11 +8,11 @@ const pageUrl = `${site}/music/devour/`;
 
 export const metadata: Metadata = {
   title: "Devour — VOILÀ × NOT A TOY | PLAY IT FORWARD",
-  description: "Watch DEVOUR, the theatrical lyric film by VOILÀ and NOT A TOY. Explore VOILÀ, then follow a curated path into NOT A TOY's music.",
+  description: "DEVOUR by VOILÀ and NOT A TOY illustrates how shared releases, touring and small digital touchpoints can help independent artists introduce audiences to one another.",
   alternates: { canonical: pageUrl },
   openGraph: {
     title: "Devour — VOILÀ × NOT A TOY",
-    description: "A siren's song, a cinematic lyric film, VOILÀ on Bandcamp, and a route into NOT A TOY's discography.",
+    description: "A practical music discovery example for promoters, managers and DIY artists: connect collaborations, catalogs, tour stops and fan participation.",
     url: pageUrl,
     type: "article",
   },
@@ -52,8 +52,21 @@ export default function DevourPage() {
         <h1>DEVOUR.<br/><em>FOLLOW THE SOUND.</em></h1>
         <p className="experience-lede">VOILÀ × NOT A TOY · THEATRICAL LYRIC FILM</p>
         <p className="music-story-release">RELEASED NOVEMBER 20, 2026</p>
-        <p className="music-story-intro">A siren&apos;s song, a ship heading into the deep, and a collaboration that opens a door into another artist&apos;s world. Start with the film—then follow a focused listening route through NOT A TOY.</p>
+        <p className="music-story-intro">Two artists, one shared release and a touring connection. DEVOUR illustrates how a collaboration can become a doorway into both artists&apos; worlds. This independent demonstration is for promoters, managers and DIY artists who want to turn existing creative work into lasting, reciprocal discovery.</p>
       </header>
+      <section className="music-story-editorial" aria-labelledby="growth-title">
+        <p className="eyebrow">PLAY IT FORWARD · A PRACTICAL GROWTH EXAMPLE</p>
+        <h2 id="growth-title">RAISE THE TIDE.<br/><em>TOGETHER.</em></h2>
+        <p>Growth does not have to begin with another advertising campaign. A shared song gives each audience a reason to discover the other artist. A shared tour gives that discovery a real-world setting. Thoughtful links, credits and invitations can help keep those connections alive after the show.</p>
+        <div className="music-story-themes">
+          <section><h3>01 · RELEASE</h3><p>Credit both artists and link their catalogs from the collaboration. Make the next discovery easy, in either direction.</p></section>
+          <section><h3>02 · TOUR</h3><p>Give fans one useful city guide and a way to explore the music before the concert, including the artists they have not heard yet.</p></section>
+          <section><h3>03 · AFTER THE SHOW</h3><p>Invite fans to revisit setlists, build and exchange playlists, share permitted footage, review the experience and request future cities.</p></section>
+          <section><h3>04 · LEARN</h3><p>Review permitted aggregate signals, such as catalog referrals or city interest, without confusing clicks with listening, ticket sales or confirmed demand. Use what the team learns to improve the next release or tour.</p></section>
+        </div>
+        <p className="music-story-visual-note">These are proposed organic growth practices, not a claim that either artist has adopted this workflow or that Play It Forward has produced measurable growth for them. The collaboration is the example; the implementation is independent.</p>
+        <div className="music-story-links"><Link href="/route/">EXPLORE THE TOUR ↗</Link><Link href="/route/#post-show">AFTER THE SHOW ↗</Link></div>
+      </section>
       <section className="music-story-video" aria-labelledby="film-title">
         <h2 id="film-title">THE THEATRICAL LYRIC FILM</h2>
         <div className="music-video-frame"><iframe src="https://www.youtube-nocookie.com/embed/QS9RtfARHBc" title="Devour — VOILÀ featuring NOT A TOY, official theatrical lyric film" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen /></div>
@@ -74,10 +87,10 @@ export default function DevourPage() {
       <section className="music-story-collab">
         <p className="eyebrow">FOLLOW THE COLLABORATION</p>
         <h2>DISCOVER VOILÀ.<br/><em>THEN FOLLOW THE THREAD.</em></h2>
-        <p>Explore VOILÀ&apos;s catalog and official videos, then continue below into the NOT A TOY listening route.</p>
+        <p>Start with either artist. The collaboration is a bridge, not a funnel that only benefits one band. Explore VOILÀ&apos;s catalog and official videos or discover NOT A TOY&apos;s releases, then pass a recommendation forward.</p>
         <div className="music-story-links">
           <a href="https://voilamusic.bandcamp.com/music" target="_blank" rel="noreferrer">VOILÀ · BANDCAMP CATALOG ↗</a>
-          <a href="https://www.youtube.com/@wearevoila" target="_blank" rel="noreferrer">VOILÀ · OFFICIAL YOUTUBE ↗</a>
+          <a href="https://www.youtube.com/@wearevoila" target="_blank" rel="noreferrer">VOILÀ · OFFICIAL YOUTUBE ↗</a><a href="https://notatoy.bandcamp.com/album/not-a-toy" target="_blank" rel="noreferrer">NOT A TOY · BANDCAMP ↗</a><a href="https://music.apple.com/us/artist/not-a-toy/1510814882" target="_blank" rel="noreferrer">NOT A TOY · APPLE MUSIC ↗</a>
         </div>
       </section>
       <section className="music-story-playlist" aria-labelledby="playlist-title">
@@ -95,6 +108,19 @@ export default function DevourPage() {
           <a href="https://notatoy.bandcamp.com/album/not-a-toy" target="_blank" rel="noreferrer"><strong>NOT A TOY</strong><span>2020 · debut release</span><b>OPEN BANDCAMP ↗</b></a>
           <a href="https://music.apple.com/us/artist/not-a-toy/1510814882" target="_blank" rel="noreferrer"><strong>FULL DISCOGRAPHY</strong><span>Singles, EPs, albums and videos</span><b>EXPLORE ↗</b></a>
         </div>
+      </section>
+      <section className="music-story-editorial" aria-labelledby="tech-team-title">
+        <p className="eyebrow">FOR PROMOTERS · MANAGERS · DIY ARTISTS</p>
+        <h2 id="tech-team-title">TECH SUPPORT.<br/><em>PART OF THE TEAM.</em></h2>
+        <p>Good technology support connects the work artists already do. It should reduce administrative friction, protect creative ownership and make participation accessible, rather than demand more content or replace the people making it.</p>
+        <div className="music-story-themes">
+          <section><h3>PROMOTERS</h3><p>Maintain accurate event links and city information, accessible visitor journeys and clear handoffs to official ticketing and show-request services.</p></section>
+          <section><h3>MANAGERS</h3><p>Coordinate reciprocal credits, release links, permissions and consent; review meaningful aggregate signals with the artists and booking team.</p></section>
+          <section><h3>DIY ARTISTS</h3><p>Keep a portable catalog, reuse a simple release and tour template, and give listeners a way to share music without surrendering their personal data.</p></section>
+          <section><h3>TECH SUPPORT</h3><p>Keep links, shared data, accessibility, exports and deployments working. Verify what is live, document rights and integration limits, and avoid unnecessary paid services or duplicate systems.</p></section>
+        </div>
+        <p>Start small: a shared release, accurate links, a reusable listening route and one post-show destination. No streaming API credentials are required for these steps.</p>
+        <div className="music-story-links"><Link href="/radio/#radio-builder-title">TRY THE PORTABLE RADIO BUILDER ↗</Link><Link href="/field-notes/from-plan-b-to-plan-a/">READ THE TOUR DEMAND FIELD NOTES ↗</Link></div>
       </section>
       <section className="music-story-quest">
         <p className="eyebrow">YOUR MUSIC QUEST</p>
