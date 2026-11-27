@@ -51,14 +51,14 @@ export default function RoutePage() {
           <a className="button secondary" href="#north-america">NORTH AMERICA ↓</a>
         </div>
         <p><a className="text-link" href="https://concord.com/artist/not-a-toy/" target="_blank" rel="noreferrer">CHECK THE ARTIST&apos;S TOUR LISTING ↗</a></p>
-        <p><Link className="text-link" href="/tour-side-quests/">GLASGOW FIRST: VERIFIED COMIC + STREET-ART SIDE QUEST ↗</Link></p>
+        <p><Link className="text-link" href="/tour-side-quests/">EXPLORE TOUR SIDE QUESTS ↗</Link></p>
       </section>
       <TourStopGroups stops={tourStops}/>
       <section className="route-bottom">
         <p className="eyebrow">CITY QUEST</p>
         <h2>FOLLOW A SOUND.<br/><em>NOT A CHECKLIST.</em></h2>
         <p>Pick one city and one thing to explore. Map searches are centered around the venue area. No GPS tracking, check-ins, uploads, or spending required.</p>
-        <Link className="button primary" href="/adventure/">BACK TO THE QUESTS ↗</Link>
+        <Link className="button primary" href="/adventure/">BUILD YOUR OWN ADVENTURE ↗</Link>
       </section>
         <p><Link className="text-link" href="/tour-resilience/">TOUR RESILIENCE + LOCAL CREATOR PLAN ↗</Link></p>
       <SiteDirectoryFooter tagline="FAN-LED · ACCESSIBLE · SELF-PACED" />

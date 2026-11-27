@@ -3,7 +3,7 @@ import Link from "next/link";
 const groups = [
   { title: "EXPLORE", links: [
     { label: "Home", href: "/" },
-    { label: "Fan Adventure", href: "/adventure/" },
+    { label: "Build an Adventure", href: "/adventure/" },
     { label: "Radio · Your Week on Air", href: "/radio/" },
     { label: "Tour Map", href: "/route/" },
     { label: "Tour Side Quests", href: "/tour-side-quests/" },
@@ -13,14 +13,13 @@ const groups = [
   { title: "MUSIC & STORIES", links: [
     { label: "DEVOUR · VOILÀ × NOT A TOY", href: "/music/devour/" },
     { label: "FILTHY YUCK! Interactive Story", href: "/filthy-yuck/" },
-    { label: "Every Day · Creator & Sustainability", href: "/every-day/" },
+    { label: "Every Day · Ink Adventures", href: "/every-day/" },
     { label: "Field Notes · Independent Music", href: "/field-notes/" },
   ]},
   { title: "PILOT & PROCESS", links: [
-    { label: "Fan Adventure & Pilot", href: "/adventure/#quests" },
     { label: "Production / Maker Path", href: "/every-day/#makers" },
     { label: "Creator Pilots", href: "/every-day/#pilots" },
-    { label: "Public Review", href: "/filthy-yuck/" },
+    { label: "Tour Resilience · Plan B", href: "/tour-resilience/" },
   ]},
 ];
 

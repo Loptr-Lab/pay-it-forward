@@ -34,7 +34,9 @@ export default function Pilot({ start, scenes }: { start: string; scenes: Record
       </div>
       {scene.choices.length === 0 && <div className="fy-ending-actions">
         <p>One way to leave another. Walk away from unfinished work and follow what still feels like yours.</p>
-        <Link className="button primary" href="/filthy-yuck/">Continue to NOT A TOY and FILTHY YUCK!</Link>
+        <Link className="button primary" href="/every-day/#fans">Choose another story</Link>
+        <a className="button secondary" href="https://notatoymerch.myshopify.com/products/filthy-yuck-comic">Explore the official FILTHY YUCK! comic ↗</a>
+        <Link className="text-link" href="/filthy-yuck/">Continue to NOT A TOY and FILTHY YUCK!</Link>
         <Link className="button secondary" href="/adventure/#make-an-adventure">Build your own adventure</Link>
       </div>}
       <div className="fy-story-footer">

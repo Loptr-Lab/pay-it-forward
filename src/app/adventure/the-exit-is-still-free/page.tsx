@@ -31,7 +31,7 @@ export default function PilotPage() {
   }
 
   return <main className="experience-page fy-page">
-    <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Fan Adventure", href: "/adventure/" }, { label: "The Exit Is Still Free", href: "/adventure/the-exit-is-still-free/" }]} />
+    <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Every Day", href: "/every-day/" }, { label: "The Exit Is Still Free", href: "/adventure/the-exit-is-still-free/" }]} />
     <section className="fy-hero">
       <p className="eyebrow">50 Ways to Leave Another · Play It Forward pilot</p>
       <h1>The Exit Is Still Free</h1>

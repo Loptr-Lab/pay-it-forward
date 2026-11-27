@@ -5,6 +5,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
  return [
  {url:base+"/",lastModified:new Date("2026-11-23"),changeFrequency:"weekly",priority:1},
  {url:base+"/adventure/",lastModified:new Date("2026-11-23"),changeFrequency:"weekly",priority:.9},
+ ...["/adventure/the-exit-is-still-free/","/tour-resilience/london/","/privacy/","/disclosures/"].map(path=>({url:base+path,changeFrequency:"monthly" as const})),
  {url:base+"/route/",lastModified:new Date("2026-11-23"),changeFrequency:"weekly",priority:.9},
  {url:base+"/tour-resilience/",lastModified:new Date("2026-11-23"),changeFrequency:"weekly",priority:.7},
  {url:base+"/tour-side-quests/",lastModified:new Date("2026-11-23"),changeFrequency:"weekly",priority:.9},
