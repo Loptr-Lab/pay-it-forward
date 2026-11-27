@@ -13,7 +13,7 @@ const directions = (stop: TourStop, mode?: "transit" | "walking") => {
 function StopCard({ stop, past, today }: { stop: TourStop; past: boolean; today: boolean }) {
   return (
     <article className="route-card">
-      <span className="route-num">{stop.date} · {past ? "PAST SHOW" : today ? "SHOW DAY" : "SCHEDULED"}</span>
+      <span className="route-num">{stop.date}{past ? " · PAST SHOW" : today ? " · SHOW DAY" : ""}</span>
       <p className="eyebrow">{stop.region}</p>
       <h3>{stop.city}</h3>{stop.city === "London" && <a className="text-link" href="/pay-it-forward/tour-resilience/london/">{past ? "ARCHIVED SIDE QUEST" : "SECRET SIDE QUEST"} · THE WOLF&apos;S GAMBIT ↗</a>}
       <p className="route-address">{stop.venue} · {stop.area}</p>
