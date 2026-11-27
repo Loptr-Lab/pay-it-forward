@@ -18,12 +18,12 @@ const quests = [
 
 export default function AdventurePage() {
   return <main className="experience-page">
-    <header className="experience-nav"><Link href="/" className="wordmark">PIF<span>✳</span></Link><nav aria-label="Visitor pathways"><Link href="/adventure/">Fan adventure</Link><Link href="/route/">Tour side quests</Link><Link href="/culture/">Cultural rabbit hole</Link><Link href="/every-day/#makers">Production</Link><Link href="/every-day/#pilots">Creator pilots</Link><Link href="/">Home</Link></nav></header>
-    <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Tour Map", href: "/route/" }, { label: "Plan B Tour", href: "/tour-resilience/" }, { label: "Build Your Adventure", href: "/adventure/" }]} />
+    <header className="experience-nav"><Link href="/" className="wordmark">PIF<span>✳</span></Link><nav aria-label="Visitor pathways"><Link href="/adventure/">Fan adventure</Link><Link href="/route/">Tour Map</Link><Link href="/culture/">Cultural rabbit hole</Link><Link href="/every-day/#makers">Production</Link><Link href="/every-day/#pilots">Creator pilots</Link><Link href="/">Home</Link></nav></header>
+    <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Build Your Adventure", href: "/adventure/" }]} />
     <section className="experience-hero adventure-hero"><p className="eyebrow">NOT A TOY · PRE-SHOW ADVENTURE</p><h1>BUILD YOUR<br/><em>ADVENTURE.</em></h1><p className="experience-lede">The concert starts before the doors. Build a soundtrack, find a clue in the city, discover something new and make the night yours.</p><div className="hero-actions"><a className="button primary" href="#make-an-adventure">BUILD AN ADVENTURE ↓</a><Link className="button secondary" href="/route/">BUILD A CITY ROUTE ↗</Link></div><p className="disclaimer">An independent fan concept. Not an official artist activity. No ticket, purchase, account, posting or participation required.</p></section>
 
     <AdventureBuilder />
-    <section className="quest-intro compact-section"><h2>Choose an existing adventure</h2><div className="hero-actions"><Link className="button secondary" href="/every-day/#fans">PLAY AN INK ADVENTURE ↗</Link><Link className="button secondary" href="/route/">EXPLORE TOUR SIDE QUESTS ↗</Link><Link className="button secondary" href="/tour-resilience/london/">THE WOLF’S GAMBIT · ARCHIVED CITY GUIDE ↗</Link></div></section>
+    <section className="quest-intro compact-section"><h2>Choose an existing adventure</h2><div className="hero-actions"><Link className="button secondary" href="/every-day/#fans">PLAY AN INK ADVENTURE ↗</Link><Link className="button secondary" href="/route/">EXPLORE TOUR MAP ↗</Link><Link className="button secondary" href="/tour-resilience/london/">THE WOLF’S GAMBIT · ARCHIVED CITY GUIDE ↗</Link></div></section>
 
 
 
