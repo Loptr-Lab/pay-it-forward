@@ -42,7 +42,7 @@ export default function TourSideQuestsPage() {
     <section className="route-stops" id="tour-cities">
       <p className="eyebrow">THE TOUR · CITY BY CITY</p><h2>CHOOSE YOUR STOP.</h2>
       <p className="route-note">Tour dates and venues below match the current Concord artist listing. Local links open map searches so visitors can verify businesses, hours, and routes. We will replace discovery searches with curated, checked city quests as each stop is researched.</p>
-      <p className="route-note">Upcoming and show-day dates only. <Link href="/route/#past-shows">View the date-aware archive ↗</Link>.</p>{now && active.length === 0 && <p>No upcoming dates remain on this schedule. <a href="#post-show">Explore the post-show archive.</a></p>}<div className="route-cards">{active.map(([city, date, venue]) => <article className="route-card" key={city + date}>
+      <p className="route-note">Upcoming and show-day dates only.</p>{now && active.length === 0 && <p>No upcoming dates remain on this schedule. <a href="#post-show">Explore the post-show archive.</a></p>}<div className="route-cards">{active.map(([city, date, venue]) => <article className="route-card" key={city + date}>
         <span className="route-num">{date} · {tourStatus(date,city,now) === "today" ? "SHOW DAY" : "UPCOMING"}</span><h3>{city}</h3>{city === "London" && <Link className="text-link" href="/tour-resilience/london/">REVEAL THE WOLF&apos;S GAMBIT ↗</Link>}<p className="route-address">{venue}</p><p>Explore comic shops, toys, art, and local creative places around the venue.</p>
         <a className="text-link" href={maps(`comic shops toy shops street art near ${venue}, ${city}`)} target="_blank" rel="noreferrer">COMICS · TOYS · ART MAP ↗</a>
         <a className="text-link" href={maps(`${venue}, ${city}`)} target="_blank" rel="noreferrer">VENUE MAP ↗</a>
@@ -50,18 +50,7 @@ export default function TourSideQuestsPage() {
       <p className="route-note"><a className="text-link" href="https://concord.com/artist/not-a-toy/" target="_blank" rel="noreferrer">VERIFY TOUR LISTING WITH CONCORD ↗</a></p>
     </section>
 
-    <section className="adventure-map-cta" id="post-show"><p className="eyebrow">AFTER THE SHOW</p><h2>PASS THE EXPERIENCE FORWARD.</h2><PostShowLinks /><div className="route-cards">{past.map(([city,date,venue]) => <article className="route-card" key={city+date}><span className="route-num">PAST SCHEDULED DATE · {date}</span><h3>{city}</h3><p>{venue}</p><a className="text-link" href={maps(`comic shops toy shops street art near ${venue}, ${city}`)} target="_blank" rel="noreferrer">COMICS · TOYS · ART MAP ↗</a><a className="text-link" href={maps(`${venue}, ${city}`)} target="_blank" rel="noreferrer">VENUE MAP ↗</a>{city === "Glasgow" && <a className="text-link" href="#glasgow">ARCHIVED CITY QUEST ↗</a>}{city === "London" && <Link className="text-link" href="/tour-resilience/london/">ARCHIVED SIDE QUEST · THE WOLF&apos;S GAMBIT ↗</Link>}</article>)}</div><Link className="text-link" href="/adventure/#post-show">POST-SHOW STORIES ↗</Link></section>
-
-    <section className="adventure-map-cta">
-      <p className="eyebrow">FILTHY YUCK! · COMIC · ART · MERCH</p>
-      <h2>EXPLORE THE<br/><em>OTHER WORLD.</em></h2>
-      <p>FILTHY YUCK! is a separate NOT A TOY creative property with a comic and official merchandise. The side quest connects the tour to the IP without requiring a purchase or implying the band has organized these local activities.</p>
-      <div className="hero-actions">
-        <a className="button primary" href="https://notatoymerch.myshopify.com/products/filthy-yuck-comic" target="_blank" rel="noreferrer">FILTHY YUCK! COMIC ↗</a>
-        <a className="button secondary" href="https://notatoymerch.myshopify.com/" target="_blank" rel="noreferrer">OFFICIAL MERCH STORE ↗</a>
-        <Link className="button secondary" href="/adventure/#filthy-yuck">PLAY THE FILTHY YUCK! QUEST ↗</Link>
-      </div>
-    </section>
+    <section className="adventure-map-cta" id="post-show"><p className="eyebrow">AFTER THE SHOW</p><h2>PAST SHOWS &amp; FANVIDS.</h2><PostShowLinks /><div className="route-cards">{past.map(([city,date,venue]) => <article className="route-card" key={city+date}><span className="route-num">PAST SCHEDULED DATE · {date}</span><h3>{city}</h3><p>{venue}</p><a className="text-link" href={maps(`comic shops toy shops street art near ${venue}, ${city}`)} target="_blank" rel="noreferrer">COMICS · TOYS · ART MAP ↗</a><a className="text-link" href={maps(`${venue}, ${city}`)} target="_blank" rel="noreferrer">VENUE MAP ↗</a>{city === "Glasgow" && <a className="text-link" href="#glasgow">ARCHIVED CITY QUEST ↗</a>}{city === "London" && <Link className="text-link" href="/tour-resilience/london/">ARCHIVED SIDE QUEST · THE WOLF&apos;S GAMBIT ↗</Link>}</article>)}</div><Link className="text-link" href="/adventure/#post-show">POST-SHOW STORIES ↗</Link></section>
 
     <section className="route-stops" id="glasgow">
       <p className="eyebrow">{glasgowPast ? "ARCHIVED CITY QUEST" : "CITY QUEST"} · NOV 23, 2026</p>
@@ -92,12 +81,19 @@ export default function TourSideQuestsPage() {
       </div>
       <div className="discovery-prompt"><span>THE FILTHY YUCK! SIDE QUEST</span><strong>Find a comic, character, toy, mural, or object that feels like it belongs in a world of your own. Take a photo or make a sketch. Share only if you want. No purchase required.</strong></div>
     </section>
-    <section className="route-bottom"><p className="eyebrow">CULTURAL DISCOVERY</p><h2>FOLLOW THE<br/><em>RABBIT HOLE.</em></h2><p>Gaming, dystopian fiction, satire, underground music, and the journalism connecting them. Explore the cultural stories behind the tour.</p><Link className="button secondary" href="/culture/">EXPLORE CULTURAL MEDIA ↗</Link></section><section className="route-bottom">
-      <p className="eyebrow">PLAY IT FORWARD · REAL-WORLD EXPLORATION</p>
-      <h2>DISCOVER.<br/><em>EXPERIENCE.</em><br/>PASS IT ON.</h2>
-      <p>The point is not to turn fans into customers at every step. Make the city, story, music, and local creative places worth exploring. Direct support remains optional.</p>
-      <Link className="button primary" href="/every-day/">WHY PLAY IT FORWARD? ↗</Link>
+    <section className="adventure-map-cta">
+      <p className="eyebrow">FILTHY YUCK! · COMIC · ART · MERCH</p>
+      <h2>KEEP EXPLORING.</h2>
+      <p>FILTHY YUCK! is a separate NOT A TOY creative property with a comic and official merchandise. The side quest connects the tour to the IP without requiring a purchase or implying the band has organized these local activities.</p>
+      <div className="hero-actions">
+        <a className="button primary" href="https://notatoymerch.myshopify.com/products/filthy-yuck-comic" target="_blank" rel="noreferrer">FILTHY YUCK! COMIC ↗</a>
+        <a className="button secondary" href="https://notatoymerch.myshopify.com/" target="_blank" rel="noreferrer">OFFICIAL MERCH STORE ↗</a>
+        <Link className="button secondary" href="/adventure/#filthy-yuck">PLAY THE FILTHY YUCK! QUEST ↗</Link>
+        <Link className="button secondary" href="/culture/">EXPLORE CULTURAL MEDIA ↗</Link>
+        <Link className="button secondary" href="/every-day/">WHY PLAY IT FORWARD? ↗</Link>
+      </div>
     </section>
+
     <SiteDirectoryFooter tagline="FAN-LED · ACCESSIBLE · SELF-PACED" />
   </main>;
 }

@@ -51,12 +51,6 @@
 @media(max-width:600px){.hero{padding:10vh 6vw 7vh;}.hero-sidecar{max-width:none;}.hero-sidecar .bandcamp-hero{margin-top:10px;}.hero-photo{aspect-ratio:1.39;}}
 
 
-/* Shared contextual breadcrumbs */
-.breadcrumbs { display:flex; flex-wrap:wrap; gap:.35rem; margin-bottom:20px; font-size:.85rem; color:var(--muted); }
-.breadcrumbs a { color:inherit; text-decoration:underline; text-underline-offset:3px; }
-.breadcrumbs a:hover { color:var(--lime); }
-.breadcrumbs [aria-current="page"] { color:var(--text); }
-
 /* FILTHY YUCK! compact one-row feature with official Instagram embed */
 .filthy-yuck-home{display:grid;grid-template-columns:minmax(0,1fr) minmax(300px,420px);align-items:center;gap:clamp(20px,3vw,40px);padding:34px 8vw;background:#101016;border-block:1px solid var(--line)}
 .filthy-yuck-copy{min-width:0}
@@ -314,7 +308,7 @@
 .route-stops.route-stops-compact{padding-top:16px;}
 @media(max-width:600px){.route-cards.route-cards-balanced{grid-template-columns:minmax(0,1fr);}}
 
-/* Field Notes articles and shared breadcrumbs */
+/* Field Notes articles */
 .editorial-card { border: 1px solid var(--line); padding: 20px; }
 .editorial-card-surface { background: var(--surface); }
 .editorial-card-spaced { margin: 32px 0; }
