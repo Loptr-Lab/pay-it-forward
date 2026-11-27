@@ -5,7 +5,7 @@ import Link from "next/link";
 import Breadcrumbs from "../components/Breadcrumbs";
 import SiteDirectoryFooter from "../components/SiteDirectoryFooter";
 
-import { starterTracks } from "../music/catalog";
+import { listeningRoutes } from "../music/catalog";
 
 type Track = { title: string; artist: string; url: string };
 const starter: Track[] = [
@@ -40,6 +40,8 @@ export default function WeekOnAirPage() {
   const [playlistUrl, setPlaylistUrl] = useState("");
   const [importMessage, setImportMessage] = useState("");
   const [catalogIndex, setCatalogIndex] = useState("0");
+  const [routeIndex, setRouteIndex] = useState("0");
+  const selectedRoute = listeningRoutes[Number(routeIndex)];
 
   useEffect(() => {
     const show = decodeShow();
@@ -217,12 +219,12 @@ export default function WeekOnAirPage() {
         <label className="radio-field">A NOTE FROM THE DJ<textarea value={note} onChange={(e) => setNote(e.target.value)} readOnly={readOnly} rows={3} maxLength={280}/></label>
         {!readOnly && <section className="radio-import" aria-labelledby="catalog-title">
           <h3 id="catalog-title">START WITH THE MUSIC.</h3>
-          <p>Ten curated tracks from the DEVOUR listening route, not a complete discography. Add one or load the whole route. No artist participation is implied.</p>
-          <label className="radio-field">CHOOSE A TRACK<select value={catalogIndex} onChange={e=>setCatalogIndex(e.target.value)}>{starterTracks.map((t,i)=><option key={i} value={i}>{t.title} — {t.artist}</option>)}</select></label>
+          <p>Choose a curated listening route, not a complete discography. Release discovery entries link to an EP or album; replace them with individual songs as you listen. No artist participation is implied.</p>
+          <label className="radio-field">CHOOSE A LISTENING ROUTE<select value={routeIndex} onChange={e=>{setRouteIndex(e.target.value);setCatalogIndex("0");}}>{listeningRoutes.map((route,i)=><option key={route.title} value={i}>{route.title}</option>)}</select></label><label className="radio-field">CHOOSE A TRACK OR RELEASE<select value={catalogIndex} onChange={e=>setCatalogIndex(e.target.value)}>{selectedRoute.tracks.map((t,i)=><option key={i} value={i}>{t.title} — {t.artist}</option>)}</select></label>
           <div className="radio-actions">
-            <button className="button secondary" type="button" onClick={()=>setTracks(items=>[...items,{...starterTracks[Number(catalogIndex)]}])}>ADD SELECTED TRACK</button>
-            <button className="button secondary" type="button" onClick={()=>{if(window.confirm("Replace the current show with the curated route?")) loadShow({title:"Follow the Sound",note:"Curated listening route from the DEVOUR music story.",tracks:starterTracks.map(t=>({...t}))});}}>LOAD TEN-TRACK SHOW</button>
-            <Link className="button secondary" href="/music/devour/">EXPLORE THE SOURCE ROUTE</Link>
+            <button className="button secondary" type="button" onClick={()=>setTracks(items=>[...items,{...selectedRoute.tracks[Number(catalogIndex)]}])}>ADD SELECTED TRACK</button>
+            <button className="button secondary" type="button" onClick={()=>{if(window.confirm("Replace the current show with the curated route?")) loadShow({title:selectedRoute.title,note:selectedRoute.note,tracks:selectedRoute.tracks.map(t=>({...t}))});}}>LOAD SELECTED ROUTE</button>
+            <Link className="button secondary" href={selectedRoute.href}>EXPLORE THE SOURCE ROUTE</Link>
           </div>
         </section>}
         {!readOnly && <section className="radio-import" aria-labelledby="radio-import-title">
@@ -271,7 +273,7 @@ export default function WeekOnAirPage() {
       <section className="radio-how" aria-labelledby="radio-status-details">
         <p className="eyebrow">THE FIRST EDITION</p><h2>YOUR TASTE.<br/><em>YOUR AIRWAVES.</em></h2>
         <p>Add tracks you played this week, import a CSV tracklist, or use a separate playlist-transfer service before bringing a tracklist here. Give the show a title and share the link. This is a link-based show builder: the tracklist is encoded into the link and is not uploaded to a server.</p>
-        <div className="radio-boundary"><strong>WHAT WORKS NOW</strong><ul><li>Manually add, remove and reorder tracks, or start from the curated DEVOUR listening route.</li><li>Import CSV or full-show JSON; download CSV or JSON from both editable and shared shows. Save, restore or delete an optional local draft.</li><li>Open Soundiiz separately as an optional playlist-transfer tool; it is not a direct Play It Forward integration.</li><li>Copy a share link; anyone with the link can view the read-only show.</li><li>Open music links in the relevant listening service. This site does not host audio.</li></ul></div>
+        <div className="radio-boundary"><strong>WHAT WORKS NOW</strong><ul><li>Manually add, remove and reorder tracks, or start from a curated listening route.</li><li>Import CSV or full-show JSON; download CSV or JSON from both editable and shared shows. Save, restore or delete an optional local draft.</li><li>Open Soundiiz separately as an optional playlist-transfer tool; it is not a direct Play It Forward integration.</li><li>Copy a share link; anyone with the link can view the read-only show.</li><li>Open music links in the relevant listening service. This site does not host audio.</li></ul></div>
         <div className="radio-boundary"><strong>PLANNED — NOT LIVE</strong><ul><li>DJ/station profiles, persistent public community archives, follows, discovery feeds, recommendations, and community submissions.</li><li>Native playlist search and provider-connected imports, including Apple Music authorization and a verified listening-history archive.</li><li>AT Protocol identity/publishing, moderation tools, and live audio.</li></ul></div>
         <div className="radio-boundary"><strong>WHAT DEVELOPMENT NEEDS</strong><ul><li>Apple developer configuration, MusicKit setup, explicit opt-in, privacy/retention controls, and tests of the actual API data.</li><li>A backend and operational plan for persistent profiles, archives, follows, feeds, reports, and deletion/export.</li><li>AT Protocol/PDS and existing Lexicon review, authorization, publishing adapter, and moderation model.</li><li>Music-rights review before any hosting or rebroadcast, plus accessibility, security, and release testing.</li></ul></div>
         <div className="radio-boundary"><strong>APPLE MUSIC CONNECTION — NOT CONNECTED</strong><p>Apple Music authorization needs an Apple Music developer token and a MusicKit setup. The recently played endpoint is limited and does not provide reliable per-play timestamps for proving an exact seven-day window. Until an authorized integration is configured and tested, add tracks and links yourself. We will not label a manually assembled list as verified listening history.</p></div>
