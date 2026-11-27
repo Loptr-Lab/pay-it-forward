@@ -15,7 +15,12 @@ export default function EveryDayPage() {
     </section>
     <section className="quest-intro compact-section" id="fans">
       <h2>Play an Ink adventure</h2>
-      <div className="route-cards route-cards-balanced">
+      <div className="route-cards">
+        <article className="route-card">
+          <h3>The Yellow Door</h3>
+          <p>Start in Inpatient Corridors. Your choices change what happens next, and the ending opens an optional path from the story to music and artist support.</p>
+          <a className="button primary" href="https://ibloud.github.io/inpatient-corridors-review/interactive/yellow-door/docs/">PLAY THE YELLOW DOOR ↗</a>
+        </article>
         <article className="route-card">
           <h3>The Exit Is Still Free</h3>
           <p>Start in Room #5 at the Wolf’s Tavern and follow a clue into the Obsidian Realm. Play at your own pace. No account or purchase required.</p>
