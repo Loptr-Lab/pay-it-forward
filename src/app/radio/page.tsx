@@ -35,12 +35,14 @@ export default function RadioPage() {
         </article>)}</div>}
         <p className="route-note">Cannot find your show? Browse the artist directories: {artists.map(artist=><span key={artist.name}> <a href={artist.directory} target="_blank" rel="noreferrer">{artist.name} ↗</a> · </span>)}</p>
       </section>
+      <div className="radio-discovery-row">
       <section className="route-stops" id="transfer"><p className="eyebrow">02 · TAKE THE MUSIC WITH YOU</p><h2>MAKE IT A PLAYLIST.</h2>
         <p>Open a concert’s individual Setlist.fm record, check the songs and copy its URL. Follow the Soundiiz instructions for your chosen service, authorize your own account there and review the matched songs before creating the playlist.</p>
         <div className="hero-actions"><a className="button primary" href="https://soundiiz.com/tutorial/setlist-to-spotify" target="_blank" rel="noreferrer">SPOTIFY ↗</a><a className="button secondary" href="https://soundiiz.com/tutorial/setlist-to-apple-music" target="_blank" rel="noreferrer">APPLE MUSIC ↗</a><a className="button secondary" href="https://soundiiz.com/" target="_blank" rel="noreferrer">OTHER SERVICES ↗</a></div>
         <p className="route-note">No songs listed? Check back or contribute a firsthand correction on Setlist.fm. We do not offer a concert download without a song list. Soundiiz may require an account or paid plan; availability and matching depend on the destination service. Play It Forward does not collect credentials or store playlists.</p>
       </section>
       <section className="route-stops"><p className="eyebrow">03 · KEEP DISCOVERING</p><h2>FOLLOW THE ARTISTS.</h2><p>These are curated release discoveries, not concert setlists.</p><div className="route-cards"><article className="route-card"><h3>DEVOUR · VOILÀ × NOT A TOY</h3><Link className="text-link" href="/music/devour/">EXPLORE THE LISTENING ROUTE ↗</Link>{artists.map(artist=><p key={artist.name}><a href={artist.catalog}>{artist.name} · Bandcamp ↗</a></p>)}</article><article className="route-card"><h3>Independent collaborations</h3><Link className="text-link" href="/field-notes/the-art-of-staying-independent/">REN · THE SKINNER BROTHERS · CHRIS WEBBY ↗</Link><p><a href="https://renmakesmusic.bandcamp.com/album/asylum">Asylum ↗</a> · <a href="https://app.grouped.com/webbysworld/">Webby’s World ↗</a></p></article></div><p><Link className="text-link" href="/route/#post-show">KEEP THE PARTY GOING ↗</Link></p></section>
+      </div>
       <p className="radio-small">Independent fan discovery. No artist affiliation, audio hosting or purchase required. <a href="https://ibloud.github.io/pixie-creator-os/digital-jockey.html">For creator tools, visit PIXIE Creator OS ↗</a>.</p>
     </article><SiteDirectoryFooter tagline="INDEPENDENT · ACCESSIBLE · MUSIC PASSED FORWARD"/>
   </main>;
