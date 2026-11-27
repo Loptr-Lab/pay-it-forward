@@ -44,7 +44,7 @@ export default function RoutePage() {
       <section className="experience-hero route-hero">
         <p className="eyebrow">NOT A TOY · TOUR PILOT MAP</p>
         <h1>THE TOUR.<br/><em>THE MAP.</em></h1>
-        <p className="experience-lede">The tour overview is your starting point. Open a city to find music, art, tattoo culture, food, a quiet reset, or a way to get to the venue.</p>
+        <p className="experience-lede">Follow <Link href="/music/devour/">DEVOUR by VOILÀ × NOT A TOY</Link> from the shared release into the tour. The tour overview is your starting point. Open a city to find music, art, tattoo culture, food, a quiet reset, or a way to get to the venue.</p>
         <p className="disclaimer">Dates and venues cross-checked against the artist&apos;s tour listing. Confirm event details, venue address, accessibility, transit service and hours with official sources before travelling.</p>
         <div className="hero-actions">
           <a className="button primary" href="#europe">EUROPE STOPS ↓</a>
