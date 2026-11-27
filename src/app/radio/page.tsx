@@ -5,7 +5,7 @@ import Link from "next/link";
 import Breadcrumbs from "../components/Breadcrumbs";
 import SiteDirectoryFooter from "../components/SiteDirectoryFooter";
 
-import { starterTracks } from "../music/catalog";
+import { listeningRoutes } from "../music/catalog";
 
 type Track = { title: string; artist: string; url: string };
 const starter: Track[] = [
@@ -37,9 +37,10 @@ export default function WeekOnAirPage() {
   const [tracks, setTracks] = useState<Track[]>(starter);
   const [shared, setShared] = useState(false);
   const [readOnly, setReadOnly] = useState(false);
-  const [playlistUrl, setPlaylistUrl] = useState("");
   const [importMessage, setImportMessage] = useState("");
   const [catalogIndex, setCatalogIndex] = useState("0");
+  const [routeIndex, setRouteIndex] = useState("0");
+  const selectedRoute = listeningRoutes[Number(routeIndex)];
 
   useEffect(() => {
     const show = decodeShow();
@@ -165,18 +166,6 @@ export default function WeekOnAirPage() {
     download(csv, "text/csv;charset=utf-8", "play-it-forward-tracklist.csv");
   }
 
-  function openSoundiiz() {
-    if (playlistUrl.trim()) {
-      try {
-        const parsed = new URL(playlistUrl.trim());
-        if (!["http:", "https:"].includes(parsed.protocol)) throw new Error("Invalid URL");
-      } catch {
-        setImportMessage("Enter a valid public playlist URL, then open Soundiiz.");
-        return;
-      }
-    }
-    window.open("https://soundiiz.com/", "_blank", "noopener,noreferrer");
-  }
   function updateTrack(index: number, key: keyof Track, value: string) {
     setTracks((items) => items.map((item, i) => i === index ? { ...item, [key]: value } : item));
   }
@@ -205,7 +194,7 @@ export default function WeekOnAirPage() {
       <header className="radio-hero">
         <p className="eyebrow">PLAY IT FORWARD · COMMUNITY RADIO</p>
         <h1>YOUR WEEK<br/><em>ON AIR.</em></h1>
-        <p className="experience-lede">A little broadcast of what moved you. Build a post-show playlist or pass your weekly listening experience forward.</p>
+        <p className="experience-lede">Choose a concert setlist or a curated listening route, make it your own, then take your tracklist to your preferred music service. Pass the discovery forward.</p>
         <p className="radio-status">WEEKLY LISTENING SHOW · MADE BY YOU</p>
       </header>
       <section className="radio-builder" data-clarity-mask="true" aria-labelledby="radio-builder-title">
@@ -216,49 +205,45 @@ export default function WeekOnAirPage() {
         <label className="radio-field">SHOW TITLE<input value={title} onChange={(e) => setTitle(e.target.value)} readOnly={readOnly} maxLength={90}/></label>
         <label className="radio-field">A NOTE FROM THE DJ<textarea value={note} onChange={(e) => setNote(e.target.value)} readOnly={readOnly} rows={3} maxLength={280}/></label>
         {!readOnly && <section className="radio-import" aria-labelledby="catalog-title">
-          <h3 id="catalog-title">START WITH THE MUSIC.</h3>
-          <p>Ten curated tracks from the DEVOUR listening route, not a complete discography. Add one or load the whole route. No artist participation is implied.</p>
-          <label className="radio-field">CHOOSE A TRACK<select value={catalogIndex} onChange={e=>setCatalogIndex(e.target.value)}>{starterTracks.map((t,i)=><option key={i} value={i}>{t.title} — {t.artist}</option>)}</select></label>
+          <h3 id="catalog-title">1 · FIND YOUR MUSIC.</h3><p>Revisit a concert using community-edited setlists. Choose a show, then add its songs below; missing song lists are not verified performances.</p><div className="radio-actions"><a className="button secondary" href="https://www.setlist.fm/setlists/not-a-toy-23fc64df.html" target="_blank" rel="noreferrer">NOT A TOY · SETLISTS ↗</a><a className="button secondary" href="https://www.setlist.fm/setlists/voila-6bccee4a.html" target="_blank" rel="noreferrer">VOILÀ · SETLISTS ↗</a><Link className="button secondary" href="/route/#post-show">AFTER THE SHOW ↗</Link></div>
+          <p>Choose a curated listening route, not a complete discography. Release discovery entries link to an EP or album; replace them with individual songs as you listen. No artist participation is implied.</p>
+          <label className="radio-field">CHOOSE A LISTENING ROUTE<select value={routeIndex} onChange={e=>{setRouteIndex(e.target.value);setCatalogIndex("0");}}>{listeningRoutes.map((route,i)=><option key={route.title} value={i}>{route.title}</option>)}</select></label><label className="radio-field">CHOOSE A TRACK OR RELEASE<select value={catalogIndex} onChange={e=>setCatalogIndex(e.target.value)}>{selectedRoute.tracks.map((t,i)=><option key={i} value={i}>{t.title} — {t.artist}</option>)}</select></label>
           <div className="radio-actions">
-            <button className="button secondary" type="button" onClick={()=>setTracks(items=>[...items,{...starterTracks[Number(catalogIndex)]}])}>ADD SELECTED TRACK</button>
-            <button className="button secondary" type="button" onClick={()=>{if(window.confirm("Replace the current show with the curated route?")) loadShow({title:"Follow the Sound",note:"Curated listening route from the DEVOUR music story.",tracks:starterTracks.map(t=>({...t}))});}}>LOAD TEN-TRACK SHOW</button>
-            <Link className="button secondary" href="/music/devour/">EXPLORE THE SOURCE ROUTE</Link>
+            <button className="button secondary" type="button" onClick={()=>setTracks(items=>[...items,{...selectedRoute.tracks[Number(catalogIndex)]}])}>ADD SELECTED ITEM</button>
+            <button className="button secondary" type="button" onClick={()=>{if(window.confirm("Replace the current show with the curated route?")) loadShow({title:selectedRoute.title,note:selectedRoute.note,tracks:selectedRoute.tracks.map(t=>({...t}))});}}>LOAD SELECTED ROUTE</button>
+            <Link className="button secondary" href={selectedRoute.href}>EXPLORE THE SOURCE ROUTE</Link>
           </div>
         </section>}
         {!readOnly && <section className="radio-import" aria-labelledby="radio-import-title">
           <p className="eyebrow">BRING YOUR LISTENING WITH YOU</p>
           <h3 id="radio-import-title">IMPORT OR BUILD YOUR TRACKLIST.</h3>
-          <p>Already have a playlist? Export its tracklist as a CSV from a service that supports it, then import that file here. You can also start with a public playlist URL and use Soundiiz as a separate transfer tool.</p>
-          <label className="radio-field">PUBLIC PLAYLIST URL (OPTIONAL)
-            <input type="url" value={playlistUrl} onChange={(e) => setPlaylistUrl(e.target.value)} placeholder="https://open.spotify.com/playlist/…" />
-          </label>
+          <p>Already have a playlist or setlist tracklist? Import a CSV with title and artist columns, or restore a saved show JSON. You can also add concert songs manually below.</p>
           <div className="radio-actions">
-            <button className="button secondary" type="button" onClick={openSoundiiz}>OPEN SOUNDIIZ ↗</button>
             <label className="button secondary radio-file-button">IMPORT CSV FILE
               <input type="file" accept=".csv,text/csv" onChange={(e) => importTrackFile(e.target.files?.[0])} />
             </label>
             <label className="button secondary radio-file-button">IMPORT SHOW JSON<input aria-label="Import show JSON" type="file" accept=".json,application/json" onChange={e=>{void importShow(e.target.files?.[0]);e.target.value="";}} /></label>
           </div>
-          <p className="radio-import-note">Soundiiz opens in a separate site; it does not connect to this form or automatically import a playlist here. Transfer your playlist there if useful, then export a tracklist file and bring it back here. CSV and JSON import/export happen in this browser only.</p>
+          <p className="radio-import-note">CSV and JSON import/export happen in this browser only. Setlist.fm is a discovery link, not an automatic import.</p>
           
         </section>}
-        <div className="radio-track-heading"><h3>THE TRACKLIST</h3><span>{tracks.length} TRACKS</span></div>
+        <div className="radio-track-heading"><h3>2 · PERSONALIZE YOUR TRACKLIST</h3><span>{tracks.length} TRACKS</span></div>
         <ol className="radio-tracklist">
           {tracks.map((track, index) => <li key={index}>
             <span className="radio-track-number">{String(index + 1).padStart(2, "0")}</span>
             <div className="radio-track-fields">
               <label>TRACK<input value={track.title} readOnly={readOnly} placeholder="Song title" onChange={(e) => updateTrack(index, "title", e.target.value)}/></label>
               <label>ARTIST<input value={track.artist} readOnly={readOnly} placeholder="Artist name" onChange={(e) => updateTrack(index, "artist", e.target.value)}/></label>
-              <label>APPLE MUSIC / LISTEN LINK<input value={track.url} readOnly={readOnly} placeholder="https://music.apple.com/…" onChange={(e) => updateTrack(index, "url", e.target.value)}/></label>
+              <label>LISTEN LINK (OPTIONAL)<input value={track.url} readOnly={readOnly} placeholder="https://music.apple.com/…" onChange={(e) => updateTrack(index, "url", e.target.value)}/></label>
               {!readOnly && <div className="radio-actions"><button className="button secondary" type="button" disabled={index===0} onClick={()=>moveTrack(index,-1)} aria-label={`Move track ${index+1} up`}>MOVE UP</button><button className="button secondary" type="button" disabled={index===tracks.length-1} onClick={()=>moveTrack(index,1)} aria-label={`Move track ${index+1} down`}>MOVE DOWN</button><button className="button secondary" type="button" onClick={()=>setTracks(items=>items.filter((_,i)=>i!==index))} aria-label={`Remove track ${index+1}`}>REMOVE</button></div>}
-              {isSafeListenUrl(track.url) && <a className="radio-listen-link" href={track.url} target="_blank" rel="noreferrer">OPEN TRACK ↗</a>}
+              {isSafeListenUrl(track.url) && <a className="radio-listen-link" href={track.url} target="_blank" rel="noreferrer">OPEN MUSIC ↗</a>}
             </div>
           </li>)}
         </ol>
         {!readOnly && <div className="radio-actions"><button className="button secondary" type="button" onClick={addTrack}>+ ADD A TRACK</button><button className="button primary" type="button" onClick={shareShow}>COPY SHARE LINK ↗</button></div>}
         {shared && <p className="radio-confirmation" role="status">Share link copied. Anyone with the link can view this show.</p>}
-        <div className="radio-actions">
-          <button className="button secondary" type="button" onClick={exportTracklist}>DOWNLOAD TRACKLIST CSV ↓</button>
+        <h3>3 · TAKE IT WITH YOU</h3><p>Download your CSV, open Soundiiz, choose Import Playlist → From File, select the CSV, review matched tracks and choose your streaming service. Remove EP or album discovery entries or replace them with individual songs first. A separate account or paid plan may be required.</p><div className="radio-actions">
+          <button className="button secondary" type="button" onClick={exportTracklist}>DOWNLOAD TRACKLIST CSV ↓</button><a className="button secondary" href="https://soundiiz.com/" target="_blank" rel="noreferrer">OPEN SOUNDIIZ ↗</a><a className="radio-listen-link" href="https://support.soundiiz.com/hc/en-us/articles/360010006793-What-is-the-CSV-format-to-import-playlists-and-favorites" target="_blank" rel="noreferrer">CSV import help ↗</a>
           <button className="button secondary" type="button" onClick={exportShow}>DOWNLOAD FULL SHOW JSON ↓</button>
           {readOnly ? <><button className="button secondary" type="button" onClick={()=>loadShow({title:("Inspired by: "+title).slice(0,90),note:("Source show: "+title).slice(0,280),tracks})}>BUILD FROM THIS SHOW</button><button className="button secondary" type="button" onClick={resetShow}>MAKE YOUR OWN SHOW</button></> : <>
           <button className="button secondary" type="button" onClick={saveDraft}>SAVE DRAFT ON THIS DEVICE</button>
@@ -269,12 +254,9 @@ export default function WeekOnAirPage() {
         {importMessage && <p className="radio-confirmation" role="status">{importMessage}</p>}
       </section>
       <section className="radio-how" aria-labelledby="radio-status-details">
-        <p className="eyebrow">THE FIRST EDITION</p><h2>YOUR TASTE.<br/><em>YOUR AIRWAVES.</em></h2>
+        <p className="eyebrow">THE FIRST EDITION</p><h2 id="radio-status-details">YOUR TASTE.<br/><em>YOUR AIRWAVES.</em></h2>
         <p>Add tracks you played this week, import a CSV tracklist, or use a separate playlist-transfer service before bringing a tracklist here. Give the show a title and share the link. This is a link-based show builder: the tracklist is encoded into the link and is not uploaded to a server.</p>
-        <div className="radio-boundary"><strong>WHAT WORKS NOW</strong><ul><li>Manually add, remove and reorder tracks, or start from the curated DEVOUR listening route.</li><li>Import CSV or full-show JSON; download CSV or JSON from both editable and shared shows. Save, restore or delete an optional local draft.</li><li>Open Soundiiz separately as an optional playlist-transfer tool; it is not a direct Play It Forward integration.</li><li>Copy a share link; anyone with the link can view the read-only show.</li><li>Open music links in the relevant listening service. This site does not host audio.</li></ul></div>
-        <div className="radio-boundary"><strong>PLANNED — NOT LIVE</strong><ul><li>DJ/station profiles, persistent public community archives, follows, discovery feeds, recommendations, and community submissions.</li><li>Native playlist search and provider-connected imports, including Apple Music authorization and a verified listening-history archive.</li><li>AT Protocol identity/publishing, moderation tools, and live audio.</li></ul></div>
-        <div className="radio-boundary"><strong>WHAT DEVELOPMENT NEEDS</strong><ul><li>Apple developer configuration, MusicKit setup, explicit opt-in, privacy/retention controls, and tests of the actual API data.</li><li>A backend and operational plan for persistent profiles, archives, follows, feeds, reports, and deletion/export.</li><li>AT Protocol/PDS and existing Lexicon review, authorization, publishing adapter, and moderation model.</li><li>Music-rights review before any hosting or rebroadcast, plus accessibility, security, and release testing.</li></ul></div>
-        <div className="radio-boundary"><strong>APPLE MUSIC CONNECTION — NOT CONNECTED</strong><p>Apple Music authorization needs an Apple Music developer token and a MusicKit setup. The recently played endpoint is limited and does not provide reliable per-play timestamps for proving an exact seven-day window. Until an authorized integration is configured and tested, add tracks and links yourself. We will not label a manually assembled list as verified listening history.</p></div>
+        <div className="radio-boundary"><strong>WHAT WORKS NOW</strong><ul><li>Manually add, remove and reorder tracks, or start from a curated listening route.</li><li>Import CSV or full-show JSON; download CSV or JSON from both editable and shared shows. Save, restore or delete an optional local draft.</li><li>Open Soundiiz separately as an optional playlist-transfer tool; it is not a direct Play It Forward integration.</li><li>Copy a share link; anyone with the link can view the read-only show.</li><li>Open music links in the relevant listening service. This site does not host audio.</li></ul></div>
         <p className="radio-small">No audio is hosted here. Listening links open the music service. Anyone with the share link can view the show, so share only content and notes you are comfortable making public. A tracklist is not proof of a play event or permission to rebroadcast copyrighted audio.</p>
         <p><a className="radio-listen-link" href="https://ibloud.github.io/pixie-creator-os/digital-jockey.html">Want to build a radio project of your own? Open PIXIE Creator OS Digital Jockey Studio ↗</a></p>
       </section>

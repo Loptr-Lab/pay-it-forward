@@ -31,18 +31,13 @@ const platforms = [
 
 export default function CulturePage() {
   return <main className="experience-page">
-    <header className="experience-nav"><Link href="/" className="wordmark">PIF<span>✳</span></Link><nav aria-label="Visitor pathways"><Link href="/every-day/#fans">Ink adventures</Link><Link href="/tour-side-quests/">Tour side quests</Link><Link href="/">Home</Link></nav></header>
+    <header className="experience-nav"><Link href="/" className="wordmark">PIF<span>✳</span></Link><nav aria-label="Visitor pathways"><Link href="/every-day/#fans">Ink adventures</Link><Link href="/route/">Tour side quests</Link><Link href="/">Home</Link></nav></header>
     <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Cultural Rabbit Hole", href: "/culture/" }]} />
     <section className="experience-hero">
       <p className="eyebrow">NOT A TOY · FILTHY YUCK! · PLAY IT FORWARD</p>
       <h1>THE CULTURAL<br/><em>RABBIT HOLE.</em></h1>
       <p className="experience-lede">Games, science fiction, music, satire, journalism, and the strange real world that connects them. Follow a story because it interests you—not because it is an ad.</p>
       <p className="disclaimer">Independent editorial discovery by PLAY IT FORWARD. No affiliation or endorsement by the referenced properties or publications is implied.</p>
-    </section>
-    <section className="route-stops compact-section" id="stories">
-      <h2>{featured.title}</h2>
-      <p>{featured.description}</p>
-      <Link className="button primary" href={featured.href}>BEGIN THE OBSERVER QUEST ↗</Link>
     </section>
     <div className="adventure-info-row">
       <section className="quest-intro compact-section">
@@ -65,8 +60,13 @@ export default function CulturePage() {
         <ul>
           <li><Link className="text-link" href="/filthy-yuck/">Play the FILTHY YUCK! story ↗</Link></li>
           <li><Link className="text-link" href="/every-day/#fans">Choose an Ink adventure ↗</Link></li>
-          <li><Link className="text-link" href="/tour-side-quests/">Explore tour side quests ↗</Link></li>
+          <li><Link className="text-link" href="/route/">Explore tour side quests ↗</Link></li>
         </ul>
+        <div id="stories">
+          <h3>{featured.title}</h3>
+          <p>{featured.description}</p>
+          <Link className="button primary" href={featured.href}>BEGIN THE OBSERVER QUEST ↗</Link>
+        </div>
       </section>
     </div>
     <SiteDirectoryFooter tagline="INDEPENDENT · ACCESSIBLE · SELF-PACED" />

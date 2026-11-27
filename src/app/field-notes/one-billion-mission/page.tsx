@@ -25,7 +25,7 @@ export default function Page() {
       <Breadcrumbs items={[{label:"Home",href:"/"},{label:"Field Notes",href:"/field-notes/"},{label:"A Number I Lost, A Mission I Found",href:"/field-notes/one-billion-mission/"}]}/>
       <p className="eyebrow">FIELD NOTES 012 · CREATIVE INDEPENDENCE · THE JOURNEY</p>
       <h1 className="editorial-title">A NUMBER I LOST.<br/><em>A MISSION I FOUND.</em></h1>
-      <p className="editorial-lede">Years ago, I signed up for Chris Do and The Futur's 1 Billion Mission. Somewhere in Gmail is the confirmation—and, apparently, my number. I can't find either. But the idea has become clearer with time.</p>
+      <p className="editorial-lede">Years ago, I signed up for Chris Do and <a href="https://thefutur.com/our-story">The Futur&apos;s 1 Billion Mission</a>. Somewhere in Gmail is the confirmation—and, apparently, my number. I can't find either. But the idea has become clearer with time.</p>
 
       <p>The mission was simple to say and difficult to accomplish: help one billion people make a living doing what they love, without losing their soul. The work around it—creative business, pricing, positioning, marketing, finding clients, and learning to value creative labor—was never just about getting better at selling. It was about making creative work sustainable.</p>
 
@@ -53,7 +53,7 @@ export default function Page() {
         <li><strong>Connect and distribute:</strong> reach people through multiple networks, communities, and channels.</li>
         <li><strong>Sustain:</strong> build revenue and relationships without sacrificing creative agency.</li>
       </ul>
-      <p>This is not a finished blueprint. It's the direction our field notes, pilots, and projects are helping us test in public. The point is to turn philosophy into working paths—and to be honest about where the path is still rough.</p>
+      <p>Our independent contribution focuses on music: help DIY artists sustain a livelihood while retaining creative control. <Link href="/field-notes/the-art-of-staying-independent/">The Art of Staying Independent</Link> examines different artist choices; <Link href="/music/devour/">DEVOUR</Link> demonstrates how small, organic acts of discovery can support complementary audiences. This is not a finished blueprint. It's the direction our field notes, pilots, and projects are helping us test in public. The point is to turn philosophy into working paths—and to be honest about where the path is still rough.</p>
 
       <h2>And the number?</h2>
       <p>Maybe the email will turn up. Maybe someone at The Futur can find the record. I would love to recover the number—not as a credential, but as a breadcrumb connecting an old commitment to the work happening now.</p>

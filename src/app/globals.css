@@ -364,3 +364,5 @@
 .radio-field select{width:100%;padding:.85rem;color:#f4f0e8;background:#101110;border:1px solid #555;font:inherit;letter-spacing:normal}
 .radio-actions button:disabled{opacity:.55;cursor:not-allowed}
 .radio-file-button:focus-within{outline:2px solid #b6ef56;outline-offset:3px}
+
+.site-breadcrumbs{padding:12px 8vw;color:var(--muted);font-size:1rem;line-height:1.6}.site-breadcrumbs ol{display:flex;flex-wrap:wrap;gap:4px 10px;list-style:none;margin:0;padding:0}.site-breadcrumbs li+li::before{content:"/";margin-right:10px}.site-breadcrumbs a{color:var(--text);text-decoration:underline}.site-breadcrumbs [aria-current="page"]{color:var(--text)}

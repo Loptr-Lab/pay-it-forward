@@ -6,7 +6,6 @@ const groups = [
     { label: "Build an Adventure", href: "/adventure/" },
     { label: "Radio · Your Week on Air", href: "/radio/" },
     { label: "Tour Map", href: "/route/" },
-    { label: "Tour Side Quests", href: "/tour-side-quests/" },
     { label: "Cultural Rabbit Hole", href: "/culture/" },
     { label: "Creative Routes · The Unwritten Sister", href: "/culture/unwritten-sister/#creative-routes" },
   ]},
