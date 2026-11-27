@@ -11,7 +11,7 @@ export default function Home() {
         <Link className="wordmark" href="/" aria-label="Play It Forward home">PIF<span>✳</span></Link>
         <nav aria-label="Main navigation">
           <Link href="/adventure/">Build an Adventure</Link>
-          <Link href="/route/">Tour side quests</Link>
+          <Link href="/route/">Tour map</Link>
           <Link href="/every-day/#makers">Production</Link>
           <Link href="/radio/">Your Week on Air</Link>
           <Link href="/field-notes/">Field Notes</Link>
