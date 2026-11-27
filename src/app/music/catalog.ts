@@ -12,3 +12,12 @@ export const playlist = [
 ];
 
 export const starterTracks = playlist.map(track => ({title: track.title, artist: track.title === 'DEVOUR' ? 'VOILÀ × NOT A TOY' : 'NOT A TOY', url: track.title === 'DEVOUR' ? 'https://www.youtube.com/watch?v=QS9RtfARHBc' : ''}));
+
+export const listeningRoutes = [
+  { title: "Follow the Sound · DEVOUR", note: "Curated ten-track route from the DEVOUR music story.", href: "/music/devour/", tracks: starterTracks },
+  { title: "Independent collaborations", note: "Start with the shared releases, then choose individual songs from their catalogs.", href: "/field-notes/the-art-of-staying-independent/", tracks: [
+    { title: "DEVOUR", artist: "VOILÀ × NOT A TOY", url: "https://www.youtube.com/watch?v=QS9RtfARHBc" },
+    { title: "Sick Sick Soul (Vol. 1) — EP discovery", artist: "Ren × The Skinner Brothers", url: "https://music.apple.com/us/album/sick-sick-soul-vol-1-ep/1847428336" },
+    { title: "Asylum — release discovery", artist: "Inpatient · Ren · Chris Webby · JP On Da Track", url: "https://renmakesmusic.bandcamp.com/album/asylum" },
+  ] },
+];
