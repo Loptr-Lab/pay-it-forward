@@ -23,13 +23,13 @@ export default function Home() {
         <div className="hero-content">
           <p className="eyebrow">A MUSIC-LED FAN ADVENTURE</p>
           <h1 id="hero-title">PLAY IT<br /><em>FORWARD.</em></h1>
-          <p className="hero-copy">Music is a map. The city is a playground. The next discovery is yours.</p>
+          <p className="hero-copy">Music is a map. The city is a playground. Help independent artists make a living doing what they love without sacrificing their creative freedom.</p>
           <div className="hero-actions">
             <Link className="button primary" href="/every-day/#fans">PLAY A STORY <span aria-hidden="true">↗</span></Link>
             <Link className="button secondary" href="/route/">EXPLORE THE TOUR <span aria-hidden="true">↗</span></Link>
             <Link className="button secondary" href="/music/devour/">LISTEN &amp; DISCOVER</Link>
           </div>
-          <p className="hero-note">An independent concept prototype · Choose your own pace</p>
+          <p className="hero-note">For fans, DIY artists, managers and promoters · <Link href="/field-notes/one-billion-mission/">Why we do this ↗</Link></p>
         </div>
         <aside className="hero-sidecar" aria-label="Featured NOT A TOY imagery and Bandcamp Friday">
           <img className="hero-photo" src={heroPhotoSrc} alt="NOT A TOY portraits arranged in a dark film-strip collage" />
