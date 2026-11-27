@@ -113,7 +113,7 @@ export default function DevourPage() {
       <section className="music-story-editorial" aria-labelledby="tech-team-title">
         <p className="eyebrow">FOR PROMOTERS · MANAGERS · DIY ARTISTS</p>
         <h2 id="tech-team-title">TECH SUPPORT.<br/><em>PART OF THE TEAM.</em></h2>
-        <p>PIXIE Companion is designed to support the artist’s creative lifestyle. Good technology support connects the work artists already do. It should reduce administrative friction, protect creative ownership and make participation accessible, rather than demand more content or replace the people making it.</p>
+        <p>Our purpose is to help artists make a living doing what they love without sacrificing creative freedom. <Link href="/field-notes/one-billion-mission/">Read the mission behind Play It Forward.</Link> PIXIE Companion is designed to support the artist’s creative lifestyle. Good technology support connects the work artists already do. It should reduce administrative friction, protect creative ownership and make participation accessible, rather than demand more content or replace the people making it.</p>
         <div className="music-story-themes">
           <section><h3>PROMOTERS</h3><p>Maintain accurate event links and city information, accessible visitor journeys and clear handoffs to official ticketing and show-request services.</p></section>
           <section><h3>MANAGERS</h3><p>Coordinate reciprocal credits, release links, permissions and consent; review meaningful aggregate signals with the artists and booking team.</p></section>
