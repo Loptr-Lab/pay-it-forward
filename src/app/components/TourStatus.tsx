@@ -35,9 +35,9 @@ export function PostShowLinks() {
   return <article className="route-card" aria-labelledby="after-show-tasks">
     <p className="eyebrow">ALL TOUR STOPS · OPTIONAL ACTIVITIES</p>
     <h3 id="after-show-tasks">Keep the party going.</h3>
-    <p>Choose one activity or come back later. You can make a playlist even if you did not attend.</p>
+    <p>Choose one activity or come back later. You can discover the music even if you did not attend.</p>
     <ol>
-      <li><strong>Remember the music.</strong> Explore community-edited setlists or contribute firsthand corrections: <a href="https://www.setlist.fm/setlists/not-a-toy-23fc64df.html">NOT A TOY</a> · <a href="https://www.setlist.fm/setlists/voila-6bccee4a.html">VOILÀ</a>. <Link href="/radio/#radio-builder-title">Build, download or share your post-show playlist.</Link></li>
+      <li><strong>Remember the music.</strong> Explore community-edited setlists or contribute firsthand corrections: <a href="https://www.setlist.fm/setlists/not-a-toy-23fc64df.html">NOT A TOY</a> · <a href="https://www.setlist.fm/setlists/voila-6bccee4a.html">VOILÀ</a>. <Link href="/radio/#radio-builder-title">Find your concert and transfer its available setlist to your music service.</Link></li>
       <li><strong>Review the show.</strong> Record firsthand highlights, opening acts, sound, lighting and accessibility. Keep venue feedback separate from artist feedback. Find your concert in the <a href="https://www.concertarchives.org/bands/not-a-toy">NOT A TOY Concert Archives</a> and use its available contribution options. Play It Forward does not collect reviews.</li>
       <li><strong>Preserve a moment.</strong> <a href="https://notatoy.fanvids.io/">Share permitted footage through NOT A TOY FanVids.</a> FanVids manages its own submissions, terms and privacy.</li>
       <li><strong>Stay connected.</strong> <a href="https://discord.com/invite/TfAFU9rhNn">Join Toys Aren&apos;t Us on Discord</a> or <a href="https://www.bandsintown.com/a/15507516-not-a-toy">follow NOT A TOY on Bandsintown.</a></li>
