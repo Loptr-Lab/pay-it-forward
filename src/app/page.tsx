@@ -1,5 +1,5 @@
 import Link from "next/link";
-import BandcampFridayHero from "./components/BandcampFridayHero";
+import BandcampFridayHero, { BandcampFridayEvent } from "./components/BandcampFridayHero";
 import SiteDirectoryFooter from "./components/SiteDirectoryFooter";
 
 const heroPhotoSrc = `${process.env.GITHUB_PAGES ? "/pay-it-forward" : ""}/not-a-toy-film.webp`;
@@ -62,13 +62,6 @@ export default function Home() {
       </section>
 
 
-      <section className="next-track-section" id="next-track" aria-labelledby="next-track-title">
-        <p className="eyebrow">FEATURE PRESENTATION · MUSIC DISCOVERY</p>
-        <h2 id="next-track-title">THE NEXT TRACK<br/><em>IS OUT THERE.</em></h2>
-        <p>Follow a collaboration beyond the credits. Discover a new artist, trace the sound back through their catalog, and build a listening path of your own.</p>
-        <Link className="button primary" href="/music/devour/">EXPLORE DEVOUR · VOILÀ × NOT A TOY ↗</Link>
-        <Link className="button secondary" href="/radio/">MAKE YOUR WEEKLY RADIO SHOW ↗</Link>
-      </section>
 
       <section className="split-section" id="tour">
         <div>
@@ -82,7 +75,7 @@ export default function Home() {
           <div className="tour-map-regions">
             <div className="tour-map-region">
               <strong>EUROPE</strong>
-              <span>Manchester · London · Cologne · Berlin · Hamburg · Utrecht</span>
+              <span>Explore current dates and the past-show archive</span>
               <Link href="/route/#europe">EXPLORE EUROPE STOPS ↗</Link>
             </div>
             <div className="tour-map-region">
@@ -106,12 +99,12 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="music-feature-home" aria-labelledby="music-feature-title">
+      <section className="music-feature-home" id="next-track" aria-labelledby="music-feature-title">
         <div className="music-feature-copy">
           <p className="eyebrow">FEATURED COLLABORATION · MUSIC STORY</p>
           <h2 id="music-feature-title">VOILÀ × NOT A TOY<br/><em>DEVOUR.</em></h2>
           <p>A theatrical lyric film inspired by sirens, mythology, and the pull of the deep. Start with the collaboration, then follow a focused path into NOT A TOY&apos;s discography.</p>
-          <Link className="button primary" href="/music/devour/">WATCH · EXPLORE · LISTEN ↗</Link>
+          <Link className="button primary" href="/music/devour/">WATCH · EXPLORE · LISTEN ↗</Link><Link className="button secondary" href="/radio/">MAKE YOUR WEEKLY RADIO SHOW ↗</Link>
         </div>
         <div className="music-feature-art">
           <a href="https://youtu.be/QS9RtfARHBc" target="_blank" rel="noreferrer" aria-label="Watch the Devour lyric film on YouTube">
@@ -120,14 +113,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="event-section" id="event">
-        <p className="eyebrow">PROPOSED FAN ACTIVATION</p>
-        <h2>PLAY IT<br /><em>FORWARD.</em></h2>
-        <p className="event-date">BANDCAMP FRIDAY · DECEMBER 4, 2026</p>
-        <p>Discover music. Create something. Support artists if you choose. Connect with fans. A self-paced digital adventure celebrating independent music.</p>
-        <div className="hero-actions"><a className="button primary" href="https://bandcamp.com/" target="_blank" rel="noreferrer"><span className="bandcamp-mark bandcamp-mark-small" aria-hidden="true">bc</span> DISCOVER MUSIC ON BANDCAMP ↗</a><Link className="button secondary" href="/every-day/">GOODBYE BANDCAMP FRIDAY? HELLO, EVERY DAY. ↗</Link></div>
-        <p className="disclaimer">Independent concept. Not affiliated with or endorsed by NOT A TOY, Songkick, or Bandcamp. Event and partnerships are proposed.</p>
-      </section>
+      <BandcampFridayEvent />
 
       <SiteDirectoryFooter tagline="ACCESSIBLE · SELF-PACED · FAN-LED" />
     </main>
