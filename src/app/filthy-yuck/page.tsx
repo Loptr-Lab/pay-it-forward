@@ -46,11 +46,18 @@ export default function FilthyYuckPage() {
         {showProcess && <div className="fy-process-notes"><strong>How this demo was made</strong><p>Human-authored story beats and choices; React state handles branching. No generative model runs in the experience. AI may assist a creator during development, but it is optional and is not the author or authority.</p><p>This is an Ink-inspired branching prototype, not yet compiled with the Ink runtime. The story source is kept separate so it can be ported to Ink and tested as a true Ink project next.</p></div>}
       </aside>
     </section>
-    <section className="fy-world-links">
-      <p className="eyebrow">FOLLOW YOUR OWN THREAD</p><h2>STORY → SOUND →<br/><em>COMIC / MERCH.</em></h2>
-      <p>Choose what you want to explore. Listening and shopping are separate, optional actions—not the price of finishing the story.</p>
-      <div className="hero-actions"><a className="button primary" href="https://music.apple.com/us/album/filthy-yuck/6803206084" target="_blank" rel="noreferrer">LISTEN TO FILTHY YUCK! ↗</a><a className="button secondary" href="https://notatoymerch.myshopify.com/products/filthy-yuck-comic" target="_blank" rel="noreferrer">OFFICIAL COMIC ↗</a><a className="button secondary" href="https://notatoymerch.myshopify.com/" target="_blank" rel="noreferrer">MERCH STORE ↗</a></div>
-      <p className="fy-note">Official destinations open in a new tab. This prototype does not track clicks, collect personal data, or claim sales/conversion.</p>
+    <section className="fy-world-links" aria-labelledby="fy-world-links-title">
+      <div className="fy-world-links-copy">
+        <p className="eyebrow">FOLLOW YOUR OWN THREAD</p>
+        <h2 id="fy-world-links-title">Story → Sound → <em>Comic / Merch</em></h2>
+        <p>Choose what you want to explore. Listening and shopping are separate, optional actions—not the price of finishing the story.</p>
+        <p className="fy-note">Official destinations open in a new tab. This prototype does not track clicks, collect personal data, or claim sales/conversion.</p>
+      </div>
+      <ul className="fy-world-links-list">
+        <li><a className="button primary" href="https://music.apple.com/us/album/filthy-yuck/6803206084" target="_blank" rel="noreferrer">LISTEN TO FILTHY YUCK! ↗</a></li>
+        <li><a className="button secondary" href="https://notatoymerch.myshopify.com/products/filthy-yuck-comic" target="_blank" rel="noreferrer">OFFICIAL COMIC ↗</a></li>
+        <li><a className="button secondary" href="https://notatoymerch.myshopify.com/" target="_blank" rel="noreferrer">MERCH STORE ↗</a></li>
+      </ul>
     </section>
     <section className="fy-review fy-review-split">
       <div className="fy-review-copy">
