@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Breadcrumbs from "../components/Breadcrumbs";
+import SiteDirectoryFooter from "../components/SiteDirectoryFooter";
 import RoutingReview from "./RoutingReview";
 import type { Metadata } from "next";
 
@@ -115,13 +116,13 @@ export default function TourResiliencePage() {
       <p className="route-note">Rights status should be tracked as pending, approved, licensed, expired or withdrawn. Never publish an asset whose required permissions are unresolved.</p>
     </section>
 
-    <section className="route-stops"><p className="eyebrow">LONDON · ARCHIVED SIDE QUEST</p><h2>THE WOLF&apos;S GAMBIT.</h2><p>Explore Deptford, darts, chess and a budgeted public transit route using the devices you already have.</p><Link className="button primary" href="/tour-resilience/london/">EXPLORE THE LONDON CITY GUIDE ↗</Link></section>
+    <p><Link className="text-link" href="/route/#past-shows">EXPLORE ARCHIVED CITY GUIDES ↗</Link></p>
 
     <section className="route-bottom">
       <p className="eyebrow">PIF PRINCIPLE</p><h2>DON&apos;T MAKE PEOPLE<br/><em>CHASE THE TOUR.</em></h2>
       <p>Build an experience that travels through local knowledge, licensed stories and self-paced discovery. Fans can participate without spending, creators can work without burnout, and the tour can change without making the whole project collapse.</p>
       <div className="hero-actions"><Link className="button primary" href="/route/">RETURN TO TOUR MAP ↗</Link><Link className="button secondary" href="/every-day/#makers">CREATOR SUSTAINABILITY ↗</Link></div>
     </section>
-    <footer className="experience-footer"><span>PLAY IT FORWARD ✳</span><span>FAN-LED · ACCESSIBLE · SELF-PACED</span><Link href="/">HOME ↑</Link></footer>
+    <SiteDirectoryFooter tagline="FAN-LED · ACCESSIBLE · SELF-PACED" />
   </main>;
 }
