@@ -54,7 +54,7 @@ export default function FilthyYuckPage() {
     </section>
     <section className="fy-review fy-review-split">
       <div className="fy-review-copy">
-        <p className="eyebrow">PUBLIC REVIEW · HELP SHAPE THE NEXT VERSION</p><h2>WHAT SHOULD<br/><em>STAY HUMAN?</em></h2><p>Does this make the creative choices visible? Is the story fun enough to explore? What should be improved before the Ink runtime, comic-specific canon, or additional media are added?</p><a className="button primary" href="https://github.com/Loptr-Lab/pay-it-forward/issues" target="_blank" rel="noreferrer">LEAVE PUBLIC FEEDBACK ↗</a><Link className="button secondary" href="/adventure/#filthy-yuck">BACK TO THE FAN ADVENTURE ↗</Link>
+        <p className="eyebrow">PUBLIC REVIEW · HELP SHAPE THE NEXT VERSION</p><h2>WHAT SHOULD<br/><em>STAY HUMAN?</em></h2><p>Does this make the creative choices visible? Is the story fun enough to explore? What should be improved before the Ink runtime, comic-specific canon, or additional media are added?</p><a className="button primary" href="https://github.com/Loptr-Lab/pay-it-forward/issues" target="_blank" rel="noreferrer">LEAVE PUBLIC FEEDBACK ↗</a><Link className="button secondary" href="/every-day/#fans">BACK TO THE STORY LIST ↗</Link>
       </div>
       <aside className="fy-review-source" aria-label="Original FILTHY YUCK! Facebook source">
         <p className="eyebrow">ORIGINAL SOURCE · FILTHY YUCK!</p>

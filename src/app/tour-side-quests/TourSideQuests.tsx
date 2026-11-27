@@ -81,19 +81,18 @@ export default function TourSideQuestsPage() {
       </div>
       <div className="discovery-prompt"><span>THE FILTHY YUCK! SIDE QUEST</span><strong>Find a comic, character, toy, mural, or object that feels like it belongs in a world of your own. Take a photo or make a sketch. Share only if you want. No purchase required.</strong></div>
     </section>
-    <section className="adventure-map-cta">
-      <p className="eyebrow">FILTHY YUCK! · COMIC · ART · MERCH</p>
-      <h2>KEEP EXPLORING.</h2>
-      <p>FILTHY YUCK! is a separate NOT A TOY creative property with a comic and official merchandise. The side quest connects the tour to the IP without requiring a purchase or implying the band has organized these local activities.</p>
-      <div className="hero-actions">
-        <a className="button primary" href="https://notatoymerch.myshopify.com/products/filthy-yuck-comic" target="_blank" rel="noreferrer">FILTHY YUCK! COMIC ↗</a>
-        <a className="button secondary" href="https://notatoymerch.myshopify.com/" target="_blank" rel="noreferrer">OFFICIAL MERCH STORE ↗</a>
-        <Link className="button secondary" href="/adventure/#filthy-yuck">PLAY THE FILTHY YUCK! QUEST ↗</Link>
-        <Link className="button secondary" href="/culture/">EXPLORE CULTURAL MEDIA ↗</Link>
-        <Link className="button secondary" href="/every-day/">WHY PLAY IT FORWARD? ↗</Link>
-      </div>
-    </section>
-
+    <div className="adventure-info-row">
+      <section className="quest-intro compact-section">
+        <h2>Follow the Rabbit Hole</h2>
+        <p>Explore the music, games, fiction, and journalism connected to the tour.</p>
+        <Link className="button secondary" href="/culture/">EXPLORE CULTURE ↗</Link>
+      </section>
+      <section className="quest-intro compact-section">
+        <h2>Discover. Experience. Pass it on.</h2>
+        <p>Follow a clue in an interactive story and discover the art behind it.</p>
+        <Link className="button secondary" href="/every-day/#fans">CHOOSE AN INK ADVENTURE ↗</Link>
+      </section>
+    </div>
     <SiteDirectoryFooter tagline="FAN-LED · ACCESSIBLE · SELF-PACED" />
   </main>;
 }

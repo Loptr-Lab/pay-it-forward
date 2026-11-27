@@ -4,27 +4,15 @@ import SiteDirectoryFooter from "./components/SiteDirectoryFooter";
 
 const heroPhotoSrc = `${process.env.GITHUB_PAGES ? "/pay-it-forward" : ""}/not-a-toy-film.webp`;
 
-const adventures = [
-  { number: "01", title: "THE TOUR", text: "Follow the music. Find a city. Make the night your own.", href: "/route/" },
-  { number: "02", title: "CITY QUEST", text: "Explore with music in your headphones and curiosity in your pocket.", href: "/adventure/" },
-  { number: "03", title: "DISCOVER", text: "Find a sound you have never heard. Play it forward.", href: "/adventure/#discover" },
-  { number: "04", title: "THE FAN EVENT", text: "A proposed Bandcamp Friday adventure for music lovers.", href: "#event" },
-  { number: "05", title: "PILOT LAB · FAN PATH", text: "Explore the Sick Sick Soul pilot and the next NOT A TOY story test as a fan.", href: "/every-day/#fans" },
-  { number: "06", title: "PILOT LAB · PRODUCTION", text: "See the developer, interactive narrative, and production pathway behind the experiments.", href: "/every-day/#makers" },
-  { number: "07", title: "TOUR SIDE QUESTS", text: "Turn the NOT A TOY tour into a city adventure. Start with Glasgow and FILTHY YUCK!", href: "/tour-side-quests/" },
-  { number: "08", title: "YOUR WEEK ON AIR", text: "Make a little radio show from the music you want to pass along.", href: "/radio/" },
-];
-
 export default function Home() {
   return (
     <main>
       <header className="topbar">
         <Link className="wordmark" href="/" aria-label="Play It Forward home">PIF<span>✳</span></Link>
         <nav aria-label="Main navigation">
-          <Link href="/adventure/">Explore</Link>
+          <Link href="/adventure/">Build an Adventure</Link>
           <Link href="/tour-side-quests/">Tour side quests</Link>
           <Link href="/every-day/#makers">Production</Link>
-          <Link href="/every-day/#pilots">Creator sustainability</Link>
           <Link href="/radio/">Your Week on Air</Link>
           <Link href="/field-notes/">Field Notes</Link>
         </nav>
@@ -37,9 +25,9 @@ export default function Home() {
           <h1 id="hero-title">PLAY IT<br /><em>FORWARD.</em></h1>
           <p className="hero-copy">Music is a map. The city is a playground. The next discovery is yours.</p>
           <div className="hero-actions">
-            <Link className="button primary" href="/adventure/">START EXPLORING <span aria-hidden="true">↗</span></Link>
-            <Link className="button secondary" href="/route/">OPEN THE TOUR MAP <span aria-hidden="true">↗</span></Link>
-            <Link className="button secondary" href="#event">THE FAN EVENT</Link>
+            <Link className="button primary" href="/every-day/#fans">PLAY A STORY <span aria-hidden="true">↗</span></Link>
+            <Link className="button secondary" href="/route/">EXPLORE THE TOUR <span aria-hidden="true">↗</span></Link>
+            <Link className="button secondary" href="/music/devour/">LISTEN &amp; DISCOVER</Link>
           </div>
           <p className="hero-note">An independent concept prototype · Choose your own pace</p>
         </div>
@@ -50,16 +38,6 @@ export default function Home() {
       </section>
 
 
-      <section className="visitor-pathways section" id="visitor-pathways" aria-labelledby="visitor-pathways-title">
-        <p className="eyebrow">START HERE · CHOOSE YOUR EXPERIENCE</p>
-        <h2 id="visitor-pathways-title">WHAT BRINGS<br/><em>YOU HERE?</em></h2>
-        <div className="visitor-path-grid">
-          <Link className="visitor-path-card" href="/adventure/"><span>01 · FAN / EXPLORER</span><h3>DISCOVER MUSIC<br/>AND STORIES.</h3><p>Listen, explore, follow a story, find something new. No purchase or technical work needed.</p><strong>START EXPLORING ↗</strong></Link>
-          <Link className="visitor-path-card" href="/tour-side-quests/"><span>02 · TOUR-GOING FAN</span><h3>MAKE THE CITY<br/>PART OF THE SHOW.</h3><p>Find optional side quests around tour stops. Begin with the researched Glasgow experience.</p><strong>TOUR SIDE QUESTS ↗</strong></Link>
-          <Link className="visitor-path-card" href="/every-day/#pilots"><span>03 · ARTIST / CREATOR</span><h3>EXPLORE OWNERSHIP<br/>AND SUSTAINABILITY.</h3><p>See the experiments in direct discovery, creative IP, audience participation, and ongoing support.</p><strong>CREATOR PILOTS ↗</strong></Link>
-          <Link className="visitor-path-card" href="/every-day/#makers"><span>04 · DEVELOPER / PRODUCER</span><h3>SEE HOW IT<br/>IS BUILT.</h3><p>Research, interactive narrative, AI workflows, implementation, production notes, and learning resources.</p><strong>PRODUCTION PATH ↗</strong></Link>
-        </div>
-      </section>
       <section className="pilot-feature" id="pilot" aria-labelledby="pilot-title">
         <div className="pilot-visual">
           <img className="pilot-band" src="https://i.scdn.co/image/ab6761610000e5eb357c40c391323d2f7b2c9cf2" alt="NOT A TOY band portrait" />
@@ -90,22 +68,6 @@ export default function Home() {
         <p>Follow a collaboration beyond the credits. Discover a new artist, trace the sound back through their catalog, and build a listening path of your own.</p>
         <Link className="button primary" href="/music/devour/">EXPLORE DEVOUR · VOILÀ × NOT A TOY ↗</Link>
         <Link className="button secondary" href="/radio/">MAKE YOUR WEEKLY RADIO SHOW ↗</Link>
-      </section>
-
-      <section className="intro section" id="adventure">
-        <p className="eyebrow">NO RULES. NO RUSH.</p>
-        <h2>YOUR MUSIC.<br />YOUR ADVENTURE.</h2>
-        <p>Discover. Explore. Create. Connect. Follow a tour, wander into a city quest, find your next favorite artist, or join a shared fan event. There is no wrong way to play.</p>
-        <div className="adventure-grid">
-          {adventures.map((item) => (
-            <Link className="adventure-card" href={item.href} key={item.number}>
-              <span className="card-number">{item.number}</span>
-              <h3>{item.title}</h3>
-              <p>{item.text}</p>
-              <span className="card-arrow" aria-hidden="true">↗</span>
-            </Link>
-          ))}
-        </div>
       </section>
 
       <section className="split-section" id="tour">
