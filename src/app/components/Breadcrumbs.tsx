@@ -11,7 +11,7 @@ export default function Breadcrumbs({ items }: { items: Crumb[] }) {
     })),
   };
   return <>
-    <nav aria-label="Breadcrumb" style={{fontSize:".85rem",marginBottom:20,color:"var(--muted)"}}>
+    <nav aria-label="Breadcrumb" className="breadcrumbs">
       {items.map((item,index)=><span key={item.href}>{index>0?" / ":""}{index===items.length-1?<span aria-current="page">{item.label}</span>:<Link href={item.href}>{item.label}</Link>}</span>)}
     </nav>
     <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(structuredData)}}/>

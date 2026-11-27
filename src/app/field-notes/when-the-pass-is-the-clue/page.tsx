@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 export default function Page() {
   return <main className="field-notes">
     <header className="topbar"><Link className="wordmark" href="/">PIF<span>✳</span></Link><nav aria-label="Main navigation"><Link href="/adventure/">Explore</Link><Link href="/field-notes/">Field notes</Link></nav></header>
-    <article style={{maxWidth:900,margin:"0 auto",padding:"clamp(28px,6vw,80px) 5vw"}}>
+    <article className="editorial-article editorial-article-spaced">
       <Breadcrumbs items={[{label:"Home",href:"/"},{label:"Field Notes",href:"/field-notes/"},{label:title,href:path}]}/>
       <p className="eyebrow">PLAY IT FORWARD · FIELD NOTES 015</p>
       <h1>{title}</h1>

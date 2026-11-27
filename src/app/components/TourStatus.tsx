@@ -28,5 +28,5 @@ export function tourStatus(date: string, city: string, now: Date | null) {
 }
 
 export function PostShowLinks() {
-  return <><a className="text-link" href="https://notatoy.fanvids.io/" target="_blank" rel="noreferrer">VISIT NOT A TOY FANVIDS · EXTERNAL ↗</a><Link className="text-link" href="/radio/#radio-builder-title">BUILD YOUR POST-SHOW PLAYLIST ↗</Link><p className="route-note">Optional: share only footage you have permission to submit. FanVids controls its own availability, terms and privacy. Play It Forward does not collect footage or imply artist endorsement.</p></>;
+  return <><div className="hero-actions"><a className="button primary" href="https://notatoy.fanvids.io/" target="_blank" rel="noreferrer">VISIT NOT A TOY FANVIDS · EXTERNAL ↗</a><Link className="button secondary" href="/radio/#radio-builder-title">BUILD YOUR POST-SHOW PLAYLIST ↗</Link></div><p className="route-note">Optional: share only footage you have permission to submit. FanVids controls its own availability, terms and privacy. Play It Forward does not collect footage or imply artist endorsement.</p></>;
 }

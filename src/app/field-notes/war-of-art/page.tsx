@@ -21,11 +21,11 @@ export const metadata: Metadata = {
 export default function Page() {
   return <main>
     <header className="topbar"><Link className="wordmark" href="/">PIF<span>✳</span></Link><nav><Link href="/field-notes/">Field Notes</Link><Link href="/adventure/">Explore</Link></nav></header>
-    <article style={{maxWidth:900,margin:"auto",padding:"5vw"}}>
+    <article className="editorial-article">
       <Breadcrumbs items={[{label:"Home",href:"/"},{label:"Field Notes",href:"/field-notes/"},{label:"The War of Art",href:"/field-notes/war-of-art/"}]}/>
       <p className="eyebrow">FIELD NOTES 013 · CREATIVE INDEPENDENCE · ARTIST AGENCY</p>
-      <h1 style={{fontSize:"clamp(3rem,8vw,6.5rem)",lineHeight:.9,letterSpacing:"-.07em"}}>THE WAR OF ART<br/><em>SHOULDN'T BE THE<br/>ARTIST'S BUSINESS MODEL.</em></h1>
-      <p style={{fontSize:"1.3rem",color:"var(--muted)",lineHeight:1.6}}>Artists face Resistance in the work. They should not have to fight the infrastructure that was supposed to help them do it.</p>
+      <h1 className="editorial-title editorial-title-tight">THE WAR OF ART<br/><em>SHOULDN'T BE THE<br/>ARTIST'S BUSINESS MODEL.</em></h1>
+      <p className="editorial-lede">Artists face Resistance in the work. They should not have to fight the infrastructure that was supposed to help them do it.</p>
 
       <p>In <a href="https://stevenpressfield.com/books/the-war-of-art/" target="_blank" rel="noreferrer"><em>The War of Art</em></a>, Steven Pressfield describes Resistance: the force that keeps us from pursuing the work we know we need to do. Fear, self-doubt, procrastination, perfectionism, and the impulse to abandon the work before it reaches the world.</p>
       <p>But creative work can face another kind of resistance—external, professional, and sometimes disguised as advice.</p>
@@ -62,12 +62,12 @@ export default function Page() {
       <p>Artists should be free to spend their energy on the first. Our work through Play It Forward is to document the real costs, tradeoffs, tools, relationships, and experiments that can make the second less inevitable.</p>
       <p><strong>What if the infrastructure of independent music existed to help artists overcome Resistance—rather than becoming another source of it?</strong></p>
 
-      <aside style={{borderLeft:"4px solid var(--accent)",padding:20,background:"var(--surface)"}}>
+      <aside className="editorial-callout">
         <strong>Continue the journey</strong>
         <p>Explore the <Link href="/field-notes/">Play It Forward Field Notes</Link> on artist economics, catalog, direct-to-fan infrastructure, and creative ownership, and the wider <a href="https://atmosphere.loptrlab.com/">Loptr Lab Atmosphere</a> work.</p>
       </aside>
-      <p style={{color:"var(--muted)",fontSize:".9rem"}}>Independent analysis. Public artist accounts are prompts for structural questions, not a claim that different artists had identical experiences or that this publication has insider knowledge.</p>
-      <div style={{display:"flex",gap:12,flexWrap:"wrap",marginTop:32}}><Link className="button secondary" href="/field-notes/">ALL FIELD NOTES ↗</Link><Link className="button primary" href="/field-notes/label-services-and-creative-freedom/">RELATED: WHAT AN ARTIST ACTUALLY BUYS FROM A LABEL ↗</Link></div>
+      <p className="editorial-note">Independent analysis. Public artist accounts are prompts for structural questions, not a claim that different artists had identical experiences or that this publication has insider knowledge.</p>
+      <div className="editorial-actions"><Link className="button secondary" href="/field-notes/">ALL FIELD NOTES ↗</Link><Link className="button primary" href="/field-notes/label-services-and-creative-freedom/">RELATED: WHAT AN ARTIST ACTUALLY BUYS FROM A LABEL ↗</Link></div>
     </article>
     <SiteDirectoryFooter tagline="INDEPENDENT · FAN-LED · ACCESSIBLE · FIELD NOTES"/>
   </main>;

@@ -4,9 +4,6 @@ import { PostShowLinks, useTourDay, tourStatus } from "../components/TourStatus"
 import Breadcrumbs from "../components/Breadcrumbs";
 import SiteDirectoryFooter from "../components/SiteDirectoryFooter";
 
-
-
-
 const cities = [
   ["Glasgow", "Nov 23, 2026", "The Garage"],
   ["Manchester", "Nov 24, 2026", "Academy 2"],
@@ -42,10 +39,8 @@ export default function TourSideQuestsPage() {
       <div className="hero-actions"><a className="button primary" href="#post-show">AFTER THE SHOW ↓</a><Link className="button secondary" href="/route/">ALL TOUR STOPS ↗</Link></div>
     </section>
 
-    <section className="adventure-map-cta" id="post-show"><p className="eyebrow">AFTER THE SHOW</p><h2>PASS THE EXPERIENCE FORWARD.</h2><PostShowLinks /><div className="route-cards">{past.map(([city,date,venue]) => <article className="route-card" key={city+date}><span className="route-num">PAST SCHEDULED DATE · {date}</span><h3>{city}</h3><p>{venue}</p>{city === "Glasgow" && <a className="text-link" href="#glasgow">ARCHIVED CITY QUEST ↗</a>}{city === "London" && <Link className="text-link" href="/tour-resilience/london/">THE WOLF&apos;S GAMBIT ↗</Link>}</article>)}</div><Link className="text-link" href="/adventure/#post-show">POST-SHOW STORIES ↗</Link></section>
+    <section className="adventure-map-cta" id="post-show"><p className="eyebrow">AFTER THE SHOW</p><h2>PASS THE EXPERIENCE FORWARD.</h2><PostShowLinks /><div className="route-cards">{past.map(([city,date,venue]) => <article className="route-card" key={city+date}><span className="route-num">PAST SCHEDULED DATE · {date}</span><h3>{city}</h3><p>{venue}</p><a className="text-link" href={maps(`comic shops toy shops street art near ${venue}, ${city}`)} target="_blank" rel="noreferrer">COMICS · TOYS · ART MAP ↗</a><a className="text-link" href={maps(`${venue}, ${city}`)} target="_blank" rel="noreferrer">VENUE MAP ↗</a>{city === "Glasgow" && <a className="text-link" href="#glasgow">ARCHIVED CITY QUEST ↗</a>}{city === "London" && <Link className="text-link" href="/tour-resilience/london/">THE WOLF&apos;S GAMBIT ↗</Link>}</article>)}</div><Link className="text-link" href="/adventure/#post-show">POST-SHOW STORIES ↗</Link></section>
 
-
-    
     <section className="adventure-map-cta">
       <p className="eyebrow">FILTHY YUCK! · COMIC · ART · MERCH</p>
       <h2>EXPLORE THE<br/><em>OTHER WORLD.</em></h2>

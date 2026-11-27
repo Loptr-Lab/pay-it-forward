@@ -21,11 +21,11 @@ export const metadata: Metadata = {
 export default function Page() {
   return <main>
     <header className="topbar"><Link className="wordmark" href="/">PIF<span>✳</span></Link><nav><Link href="/field-notes/">Field Notes</Link><Link href="/adventure/">Explore</Link></nav></header>
-    <article style={{maxWidth:900,margin:"auto",padding:"5vw"}}>
+    <article className="editorial-article">
       <Breadcrumbs items={[{label:"Home",href:"/"},{label:"Field Notes",href:"/field-notes/"},{label:"Your PDS, Your Terms",href:"/field-notes/your-pds-your-terms/"}]}/>
       <p className="eyebrow">FIELD NOTES 011 · OPEN SOCIAL INFRASTRUCTURE · ARTIST OWNERSHIP</p>
-      <h1 style={{fontSize:"clamp(3rem,8vw,6.5rem)",lineHeight:.9}}>YOUR PDS.<br/><em>YOUR TERMS.</em></h1>
-      <p style={{fontSize:"1.3rem",color:"var(--muted)",lineHeight:1.6}}>What would it take to give an independent artist a home for their Atmosphere identity that they control—and a documented path to bring an existing account with them?</p>
+      <h1 className="editorial-title">YOUR PDS.<br/><em>YOUR TERMS.</em></h1>
+      <p className="editorial-lede">What would it take to give an independent artist a home for their Atmosphere identity that they control—and a documented path to bring an existing account with them?</p>
 
       <p>We reserved <strong>daddyslittlemortis.com</strong> for a deliberate experiment: establish an artist's custom AT Protocol identity on a self-hosted Personal Data Server (PDS), rather than first assigning the domain to a centralized social platform. This is a pilot, not a claim that self-hosting is effortless or that the migration tooling is already finished.</p>
 
@@ -80,7 +80,7 @@ export default function Page() {
         <li><a href="https://atproto.com/guides/account-recovery">Official account recovery guide</a> — identity recovery and rotation keys.</li>
         <li><a href="https://github.com/bluesky-social/pds">Official PDS software</a> — maintained implementation.</li>
       </ul>
-      <aside style={{borderLeft:"4px solid var(--accent)",padding:20,background:"var(--surface)"}}>
+      <aside className="editorial-callout">
         <strong>Field Notes disclosure</strong>
         <p>This is an independent research and implementation project. No hosting company or software vendor paid for, reviewed, approved or sponsored this entry. Our provider comparisons and deployment notes are subject to change as we test the process.</p>
       </aside>
