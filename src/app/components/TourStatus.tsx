@@ -27,6 +27,22 @@ export function tourStatus(date: string, city: string, now: Date | null) {
   return local > event ? "past" : local === event ? "today" : "upcoming";
 }
 
+export function showCardId(city: string, date: string) {
+  return "show-" + (city + "-" + date).toLowerCase().replace(/[^a-z0-9]+/g, "-");
+}
+
 export function PostShowLinks() {
-  return <><div className="hero-actions"><a className="button primary" href="https://notatoy.fanvids.io/" target="_blank" rel="noreferrer">VISIT NOT A TOY FANVIDS · EXTERNAL ↗</a><Link className="button secondary" href="/radio/#radio-builder-title">BUILD YOUR POST-SHOW PLAYLIST ↗</Link></div><p className="route-note">Optional: share only footage you have permission to submit. FanVids controls its own availability, terms and privacy. Play It Forward does not collect footage or imply artist endorsement.</p></>;
+  return <article className="route-card" aria-labelledby="after-show-tasks">
+    <p className="eyebrow">ALL TOUR STOPS · OPTIONAL ACTIVITIES</p>
+    <h3 id="after-show-tasks">Keep the party going.</h3>
+    <p>Choose one activity or come back later. You can make a playlist even if you did not attend.</p>
+    <ol>
+      <li><strong>Remember the music.</strong> Explore community-edited setlists or contribute firsthand corrections: <a href="https://www.setlist.fm/setlists/not-a-toy-23fc64df.html">NOT A TOY</a> · <a href="https://www.setlist.fm/setlists/voila-6bccee4a.html">VOILÀ</a>. <Link href="/radio/#radio-builder-title">Build, download or share your post-show playlist.</Link></li>
+      <li><strong>Review the show.</strong> Record firsthand highlights, opening acts, sound, lighting and accessibility. Keep venue feedback separate from artist feedback. Find your concert in the <a href="https://www.concertarchives.org/bands/not-a-toy">NOT A TOY Concert Archives</a> and use its available contribution options. Play It Forward does not collect reviews.</li>
+      <li><strong>Preserve a moment.</strong> <a href="https://notatoy.fanvids.io/">Share permitted footage through NOT A TOY FanVids.</a> FanVids manages its own submissions, terms and privacy.</li>
+      <li><strong>Stay connected.</strong> <a href="https://discord.com/invite/TfAFU9rhNn">Join Toys Aren&apos;t Us on Discord</a> or <a href="https://www.bandsintown.com/a/15507516-not-a-toy">follow NOT A TOY on Bandsintown.</a></li>
+      <li><strong>Bring the music to your city.</strong> Use the Request a Show / Play My City option on the Bandsintown artist profile when available. Requests are not bookings or ticket commitments.</li>
+    </ol>
+    <p className="route-note">Independent fan participation. No purchase required. Share only material you have permission to publish. No artist endorsement is implied.</p>
+  </article>;
 }
