@@ -31,7 +31,7 @@ const platforms = [
 
 export default function CulturePage() {
   return <main className="experience-page">
-    <header className="experience-nav"><Link href="/" className="wordmark">PIF<span>✳</span></Link><nav aria-label="Visitor pathways"><Link href="/every-day/#fans">Ink adventures</Link><Link href="/tour-side-quests/">Tour side quests</Link><Link href="/">Home</Link></nav></header>
+    <header className="experience-nav"><Link href="/" className="wordmark">PIF<span>✳</span></Link><nav aria-label="Visitor pathways"><Link href="/every-day/#fans">Ink adventures</Link><Link href="/route/">Tour side quests</Link><Link href="/">Home</Link></nav></header>
     <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Cultural Rabbit Hole", href: "/culture/" }]} />
     <section className="experience-hero">
       <p className="eyebrow">NOT A TOY · FILTHY YUCK! · PLAY IT FORWARD</p>
@@ -60,7 +60,7 @@ export default function CulturePage() {
         <ul>
           <li><Link className="text-link" href="/filthy-yuck/">Play the FILTHY YUCK! story ↗</Link></li>
           <li><Link className="text-link" href="/every-day/#fans">Choose an Ink adventure ↗</Link></li>
-          <li><Link className="text-link" href="/tour-side-quests/">Explore tour side quests ↗</Link></li>
+          <li><Link className="text-link" href="/route/">Explore tour side quests ↗</Link></li>
         </ul>
         <div id="stories">
           <h3>{featured.title}</h3>
