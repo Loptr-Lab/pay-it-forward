@@ -1,4 +1,3 @@
-import Link from "next/link";
 const site = "https://loptr-lab.github.io/pay-it-forward";
 type Crumb = { label: string; href: string };
 export default function Breadcrumbs({ items }: { items: Crumb[] }) {
@@ -10,10 +9,5 @@ export default function Breadcrumbs({ items }: { items: Crumb[] }) {
       item: item.href.startsWith("http") ? item.href : `${site}${item.href}`,
     })),
   };
-  return <>
-    <nav aria-label="Breadcrumb" className="breadcrumbs">
-      {items.map((item,index)=><span key={item.href}>{index>0?" / ":""}{index===items.length-1?<span aria-current="page">{item.label}</span>:<Link href={item.href}>{item.label}</Link>}</span>)}
-    </nav>
-    <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(structuredData)}}/>
-  </>;
+  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />;
 }
