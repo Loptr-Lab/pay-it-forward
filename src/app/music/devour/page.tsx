@@ -57,7 +57,7 @@ export default function DevourPage() {
       <section className="music-story-editorial" aria-labelledby="growth-title">
         <p className="eyebrow">PLAY IT FORWARD · A PRACTICAL GROWTH EXAMPLE</p>
         <h2 id="growth-title">RAISE THE TIDE.<br/><em>TOGETHER.</em></h2>
-        <p>Growth does not have to begin with another advertising campaign. A shared song gives each audience a reason to discover the other artist. A shared tour gives that discovery a real-world setting. Thoughtful links, credits and invitations can help keep those connections alive after the show.</p>
+        <p>Growth does not have to begin with another advertising campaign. Artists may have complementary audiences in different cities or countries; the opportunity is reciprocal discovery, not a sales pitch. A shared song gives each audience a reason to discover the other artist. A shared tour gives that discovery a real-world setting. Thoughtful links, credits and invitations can help keep those connections alive after the show.</p>
         <div className="music-story-themes">
           <section><h3>01 · RELEASE</h3><p>Credit both artists and link their catalogs from the collaboration. Make the next discovery easy, in either direction.</p></section>
           <section><h3>02 · TOUR</h3><p>Give fans one useful city guide and a way to explore the music before the concert, including the artists they have not heard yet.</p></section>
@@ -112,7 +112,7 @@ export default function DevourPage() {
       <section className="music-story-editorial" aria-labelledby="tech-team-title">
         <p className="eyebrow">FOR PROMOTERS · MANAGERS · DIY ARTISTS</p>
         <h2 id="tech-team-title">TECH SUPPORT.<br/><em>PART OF THE TEAM.</em></h2>
-        <p>Good technology support connects the work artists already do. It should reduce administrative friction, protect creative ownership and make participation accessible, rather than demand more content or replace the people making it.</p>
+        <p>PIXIE Companion is designed to support the artist’s creative lifestyle. Good technology support connects the work artists already do. It should reduce administrative friction, protect creative ownership and make participation accessible, rather than demand more content or replace the people making it.</p>
         <div className="music-story-themes">
           <section><h3>PROMOTERS</h3><p>Maintain accurate event links and city information, accessible visitor journeys and clear handoffs to official ticketing and show-request services.</p></section>
           <section><h3>MANAGERS</h3><p>Coordinate reciprocal credits, release links, permissions and consent; review meaningful aggregate signals with the artists and booking team.</p></section>
@@ -120,7 +120,7 @@ export default function DevourPage() {
           <section><h3>TECH SUPPORT</h3><p>Keep links, shared data, accessibility, exports and deployments working. Verify what is live, document rights and integration limits, and avoid unnecessary paid services or duplicate systems.</p></section>
         </div>
         <p>Start small: a shared release, accurate links, a reusable listening route and one post-show destination. No streaming API credentials are required for these steps.</p>
-        <div className="music-story-links"><Link href="/radio/#radio-builder-title">TRY THE PORTABLE RADIO BUILDER ↗</Link><Link href="/field-notes/from-plan-b-to-plan-a/">READ THE TOUR DEMAND FIELD NOTES ↗</Link></div>
+        <div className="music-story-links"><Link href="/radio/#radio-builder-title">TRY THE PORTABLE RADIO BUILDER ↗</Link><Link href="/field-notes/from-plan-b-to-plan-a/">READ THE TOUR DEMAND FIELD NOTES ↗</Link><Link href="/field-notes/the-art-of-staying-independent/">THE ART OF STAYING INDEPENDENT ↗</Link></div>
       </section>
       <section className="music-story-quest">
         <p className="eyebrow">YOUR MUSIC QUEST</p>
