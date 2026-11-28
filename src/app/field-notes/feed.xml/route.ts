@@ -1,6 +1,7 @@
 export const dynamic = "force-static";
 const site = "https://loptr-lab.github.io/pay-it-forward";
 const entries = [
+{"title":"There Can Be More Than One","path":"/field-notes/there-can-be-more-than-one/","description":"Two initiatives, one shared name: what music fundraising reveals about competition, cooperation and the cost of putting people first.","pubDate":"Sat, 28 Nov 2026 17:00:00 GMT"},
 {title:"The Art of Staying Independent",path:"/field-notes/the-art-of-staying-independent/",description:"Complementary audiences, independent artist lifestyles and technical support.",pubDate:"Fri, 27 Nov 2026 16:00:00 GMT"},
 {title:"When the Pass Is the Clue",path:"/field-notes/when-the-pass-is-the-clue/",description:"What two Hunger Games passes taught me about making a souvenir that opens a story.",pubDate:"Thu, 26 Nov 2026 15:00:00 GMT"},
 {title:"The War of Art Shouldn't Be the Artist's Business Model",path:"/field-notes/war-of-art/",description:"Creative autonomy, external resistance, and infrastructure that supports artists rather than becoming another source of friction."},
